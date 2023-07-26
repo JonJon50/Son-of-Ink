@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build artifacts
+/build/
+
+# Environment variables
+.env
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Editor and IDE specific files
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.pem
+
+# Sass cache
+.sass-cache/
+
+# Compiled CSS
+*.css
+
+# macOS
+.DS_Store
