@@ -1,13 +1,13 @@
 // pages/artist.js
+
 import React from 'react';
-import Navbar from '../components/Navbar';
+import ArtistList from '../components/ArtistList';
 
 const ArtistPage = () => {
   return (
     <div>
-      <Navbar />
-      <h1>Artist Page</h1>
-      {/* Add the artist gallery using Splide */}
+      <h1>Artists</h1>
+      <ArtistList />
     </div>
   );
 };
