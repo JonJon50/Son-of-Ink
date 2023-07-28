@@ -1,15 +1,15 @@
-// pages/artist.js
+// src/components/Artist.jsx
 
 import React from 'react';
-import ArtistList from '../components/ArtistList';
 
-const ArtistPage = () => {
+const Artist = () => {
   return (
     <div>
-      <h1>Artists</h1>
-      <ArtistList />
+      <h1>Artists Page</h1>
+      {/* Add content specific to the Artist page */}
+      {/* For example, you can display information about the artist here */}
     </div>
   );
 };
 
-export default ArtistPage;
+export default Artist;
