@@ -1,6 +1,7 @@
 import React from 'react';
 import videoBg from 'public/static/videos/Tattoo Video.mp4';
 import styles from './Home.module.css'; // Import the CSS module
+import Navbar from './Navbar'; // Import the Navbar component
 
 const Home = () => {
   return (
