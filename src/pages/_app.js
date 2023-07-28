@@ -1,6 +1,7 @@
 // pages/_app.js
 import React from 'react';
 import Navbar from '../components/Navbar';
+import '../../styles/globals.module.css';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
