@@ -7,7 +7,6 @@ const ArtistPage = () => {
   return (
     <div>
       {/* Add any content specific to the artist page */}
-      <h1>Artist Page</h1>
       <Artist />
     </div>
   );
