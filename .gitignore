@@ -1,5 +1,7 @@
 # Node.js
 node_modules/
+/.pnp
+.pnp.js
 
 # Next.js
 .next/
@@ -44,3 +46,10 @@ yarn.lock
 
 # macOS
 .DS_Store
+*.pem
+
+# vercel
+.vercel
+
+# debug
+npm-debug.log*
