@@ -1,7 +1,7 @@
 // pages/artist.js
 
-import React from 'react';
-import Artist from '../components/Artist';
+import React from "react";
+import Artist from "../components/artist/Artist";
 
 const ArtistPage = () => {
   return (

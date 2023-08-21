@@ -1,26 +1,26 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-
-import { Home, Artist, Booking, Navbar, Works } from './components';
+import Navbar from './Navbar';
+import Home from './Home';
+import Artist from './Artist';
+import Works from './Works';
+import Booking from './Booking';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary"> 
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-        </div>
-        <Home />
-        <Artist />
-        <Works />
-        <div className="relative z-0">
-          <Booking />
-        </div>
+    <div className="relative z-0 bg-primary">
+      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        <Navbar />
       </div>
-    </BrowserRouter>
+      <Home />
+      <Artist /> {/* This renders the Artist component */}
+      <Works />
+      <div className="relative z-0">
+        <Booking />
+      </div>
+    </div>
   );
 };
 
 export default App;
+
 
 
