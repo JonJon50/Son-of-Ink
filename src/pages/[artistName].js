@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import artistsData from '@/components/artistsData';
 import Link from 'next/link';
+import styles from '../components/artistGalleryPage/../artist/Artist.module.css'; // Adjust the path as needed
 
 const ArtistGalleryPage = () => {
   const router = useRouter();
@@ -17,19 +18,21 @@ const ArtistGalleryPage = () => {
   let backgroundStyle = {}; // Define background styles based on artistName
   if (selectedArtist.name === 'Theron') {
     backgroundStyle = {
-      background: `url("/Assets/gallery_bg.png")`,
-      backgroundSize: '100% 100%',
+      background: `url("https://img.freepik.com/free-photo/tattoo-salon-process-tattoo-girl-stuffed-tattoo-process-stuffing-tattoo-body-hands-close-up_1321-3001.jpg?w=1800&t=st=1693420168~exp=1693420768~hmac=56663410eb92bd76b6980e489222e461de3a884e4bae83278a38772100edc9dc")`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center top', // Adjust the background position
       backgroundRepeat: 'no-repeat',
       width: '100vw',
-      height: '100vh',
+      height: '60vh',
     };
   } else if (selectedArtist.name === 'Jonny') {
     backgroundStyle = {
-      background: `url("/images/jonny-background.jpg")`,
-      backgroundSize: '100% 100%',
+      background: `url("https://img.freepik.com/free-photo/man-doing-tattoo-tattoo-salon_1157-24948.jpg?w=1800&t=st=1693421685~exp=1693422285~hmac=0a579f5faddebd06bbef97a21db2ad00e88bcb057dc37706cc8bfd142a0989f5")`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center top', // Adjust the background position
       backgroundRepeat: 'no-repeat',
       width: '100vw',
-      height: '100vh',
+      height: '60vh',
     };
   }
 
@@ -49,7 +52,7 @@ const ArtistGalleryPage = () => {
           ))}
         </div>
         <Link href="/booking">
-          <button style={{ padding: '10px 20px', background: '#333', color: '#fff', border: 'none' }}>
+        <button className={`${styles['round-button']} ${styles['text-overlay']}`} style={{ padding: '10px 20px' }}>
             Book Now
           </button>
         </Link>
