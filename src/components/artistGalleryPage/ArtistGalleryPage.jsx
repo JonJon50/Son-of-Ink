@@ -1,50 +1,52 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import styles from './ArtistGalleryPage.module.css';
+// // ArtistGalleryPage.js contains the styles for this component
 
-const ArtistGalleryPage = ({ artistsData }) => {
-  const router = useRouter();
-  const { artistName } = router.query;
+// import React from 'react';
+// import { useRouter } from 'next/router';
+// import styles from './ArtistGalleryPage.module.css';
 
-  const selectedArtist = artistsData.find(artist => artist.name === artistName);
+// const ArtistGalleryPage = ({ artistsData }) => {
+//   const router = useRouter();
+//   const { artistName } = router.query;
 
-  if (!selectedArtist) {
-    return <div>Artist not found</div>;
-  }
+//   const selectedArtist = artistsData.find(artist => artist.name === artistName);
 
-  // Ensure that selectedArtist.galleryImages has at least 15 images
-  const galleryImages = selectedArtist.galleryImages.slice(0, 15);
+//   if (!selectedArtist) {
+//     return <div>Artist not found</div>;
+//   }
 
-  return (
-    <div className={styles.galleryPage}>
-      <h2 className={styles.galleryHeader}>{selectedArtist.name}'s Gallery</h2>
-      <div className={styles.galleryImages}>
-        {galleryImages.map((image, index) => (
-          <img
-            key={index}
-            src={image.url}
-            alt={`Image ${index}`}
-            className={styles.galleryImage}
-          />
-        ))}
-      </div>
+//   // Ensure that selectedArtist.galleryImages has at least 15 images
+//   const galleryImages = selectedArtist.galleryImages.slice(0, 15);
 
-      {/* Display images in a grid at the bottom of the page */}
-      <div className={styles.gridContainer}>
-        {selectedArtist.galleryImages.map((image, index) => (
-          <img
-            key={index}
-            src={image.url}
-            alt={`Image ${index}`}
-            className={styles.gridImage}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className={styles.galleryPage}>
+//       <h2 className={styles.galleryHeader}>{selectedArtist.name}'s Gallery</h2>
+//       <div className={styles.galleryImages}>
+//         {galleryImages.map((image, index) => (
+//           <img
+//             key={index}
+//             src={image.url}
+//             alt={`Image ${index}`}
+//             className={styles.galleryImage}
+//           />
+//         ))}
+//       </div>
 
-export default ArtistGalleryPage;
+//       {/* Display images in a grid at the bottom of the page */}
+//       <div className={styles.gridContainer}>
+//         {selectedArtist.galleryImages.map((image, index) => (
+//           <img
+//             key={index}
+//             src={image.url}
+//             alt={`Image ${index}`}
+//             className={styles.gridImage}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ArtistGalleryPage;
 
 
 
