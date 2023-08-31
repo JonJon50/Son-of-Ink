@@ -18,18 +18,18 @@ const ArtistGalleryPage = () => {
   let backgroundStyle = {}; // Define background styles based on artistName
   if (selectedArtist.name === 'Theron') {
     backgroundStyle = {
-      background: `url("${selectedArtist.imageUrl}")`, // Use the imageUrl from artistsData
+      background: `url("${selectedArtist.imageUrl}")`,
       backgroundSize: 'cover',
-      backgroundPosition: 'center top', // Adjust the background position
+      backgroundPosition: 'center top',
       backgroundRepeat: 'no-repeat',
       width: '100vw',
       height: '60vh',
     };
   } else if (selectedArtist.name === 'Jonny') {
     backgroundStyle = {
-      background: `url("${selectedArtist.imageUrl}")`, // Use the imageUrl from artistsData
+      background: `url("${selectedArtist.imageUrl}")`,
       backgroundSize: 'cover',
-      backgroundPosition: 'center', // Adjust the background position for pic gallery
+      backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       width: '100vw',
       height: '60vh',
@@ -40,7 +40,15 @@ const ArtistGalleryPage = () => {
     <div className="gallery-page" style={{ overflow: 'hidden', position: 'relative' }}>
       <div className="background-image" style={backgroundStyle}></div>
       <div className="gallery-content" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', maxWidth: '1200px', width: '100%', padding: '20px' }}>
-        <h2>{selectedArtist.name}'s Gallery</h2>
+        {/* Apply the artist name text style */}
+        <h2 className={`${styles.artistName} ${selectedArtist.name === 'Theron' ? styles.theronText : ''}`}>
+          {selectedArtist.name}'s Gallery
+        </h2> 
+        <Link href="/booking">
+          <button className={`${styles['round-button']} ${styles['text-overlay']}`} style={{ padding: '10px 20px' }}>
+            Book Now
+          </button>
+        </Link>
         <div className={styles.galleryContainer}>
           <div className={styles.galleryImages}>
             {selectedArtist.galleryImages.map((image, index) => (
@@ -53,17 +61,13 @@ const ArtistGalleryPage = () => {
             ))}
           </div>
         </div>
-        <Link href="/booking">
-          <button className={`${styles['round-button']} ${styles['text-overlay']}`} style={{ padding: '10px 20px' }}>
-            Book Now
-          </button>
-        </Link>
-      </div>
+       </div>
     </div>
   );
 };
 
 export default ArtistGalleryPage;
+
 
 
 
