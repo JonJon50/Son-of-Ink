@@ -2,6 +2,7 @@
 
 import React from 'react';
 import BookingStyles from '../pages/booking.module.css'; // Import the CSS module
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 const Booking = () => {
   // Handle form submission logic here

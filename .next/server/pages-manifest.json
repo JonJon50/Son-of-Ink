@@ -1,8 +1,9 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/[artistName]": "pages/[artistName].js",
+  "/_document": "pages/_document.js",
   "/artist": "pages/artist.js",
-  "/booking": "pages/booking.js"
+  "/booking": "pages/booking.js",
+  "/[artistName]": "pages/[artistName].js",
+  "/": "pages/index.js"
 }

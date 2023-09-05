@@ -57,6 +57,7 @@ const ArtistGalleryPage = () => {
           </button>
         </Link>
 
+      </div>
         {/* Gallery images */}
         <div className={styles.galleryContainer}>
           <div className={styles.galleryImages}>
@@ -70,7 +71,6 @@ const ArtistGalleryPage = () => {
             ))}
           </div>
         </div>
-      </div>
     </div>
   );
 };
