@@ -1,11 +1,11 @@
 # Node.js
-node_modules/
+/node_modules
 /.pnp
 .pnp.js
 
 # Next.js
-.next/
-out/
+/.next
+/out
 
 # Build artifacts
 /build/
@@ -22,7 +22,7 @@ package-lock.json
 yarn.lock
 
 # Visual Studio Code
-.vscode/
+/.vscode
 
 # macOS
 .DS_Store
@@ -41,8 +41,7 @@ yarn.lock
 # Sass cache
 .sass-cache/
 
-# Compiled CSS
-*.css
+
 
 # macOS
 .DS_Store

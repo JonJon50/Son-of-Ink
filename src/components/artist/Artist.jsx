@@ -1,12 +1,12 @@
 // Artist.jsx
 
-// I need to get the artist data from the database
-
+// Import necessary modules and components
 import React from "react";
 import styles from "./Artist.module.css"; // Import the CSS module for styling
 import artistsData from "../artistsData"; // Import the artistsData array
 import Link from "next/link"; // Import Link from Next.js
 
+// Define the Artist functional component
 const Artist = () => {
   // Use the artistsData array to populate the artists array
   const artists = artistsData.map((artistData) => ({
@@ -17,19 +17,28 @@ const Artist = () => {
 
   return (
     <div>
+      {/* Header */}
       <h2 style={{ color: "red" }}>Son's of Ink</h2>
+      
+      {/* Container for artist cards */}
       <div className={styles.artistContainer}>
         {artists.map((artist, index) => (
           <div key={index} className={styles.artistCard}>
+            {/* Artist image */}
             <img
               src={artist.imageUrl}
               alt={artist.name}
               className={styles.artistImage}
             />
+            
+            {/* Artist overlay */}
             <div className={styles.artistOverlay}>
               <h2 className={styles.artistName}>{artist.name}</h2>
+              
+              {/* Button container */}
               <div className={styles.buttonContainer}>
                 <div className={styles["button-overlay"]}>
+                  {/* Link to artist's gallery */}
                   <Link href={`/${artist.name}`}>
                     <div
                       className={`${styles["round-button"]} ${styles["text-overlay"]}`}
@@ -40,6 +49,8 @@ const Artist = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Artist bio */}
             <div className={styles.artistBio}>
               <p>{artist.bio}</p>
             </div>
@@ -50,4 +61,5 @@ const Artist = () => {
   );
 };
 
+// Export the Artist component for use in other parts of the application
 export default Artist;

@@ -1,0 +1,12 @@
+/* styles.css */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+body {
+  margin: 0; /* Reset default margin */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background-color: white; /* Set the background color to white */
+}
+
+
