@@ -1,0 +1,99 @@
+/* Styling for the main container of the home section */
+.home {
+  position: relative;
+  height: 100vh; /* Set the height to cover the entire viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+/* Styling for the container that holds the video */
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Styling for the video element */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+/* Styling for the text overlay */
+.text-overlay {
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 30%; /* Adjust to move the text vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Place above the video */
+  animation: fadeInAnimation 7s ease; /* Apply fade-in animation */
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styling for the button container */
+.button-container {
+  position: absolute;
+  bottom: 10%; /* Adjust to move the button vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Place above the video */
+}
+
+/* Styling for the transparent round button */
+.round-button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 999px; /* Create a round shape */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Apply styles to the button inside the button container */
+.button-container .round-button {
+  text-transform: uppercase;
+}
+
+/* Show a slightly opaque background on button hover */
+.button-container .round-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Define a custom font using @font-face */
+@font-face {
+  font-family: 'YourCustomFont'; /* Replace with the actual font name */
+  src: url('/path/to/your/font-file.ttf'); /* Replace with the actual font file path */
+}
+
+/* Styling for the "Brought to you by" text */
+.brought-by {
+  font-family: 'YourCustomFont', Courier New; /* Use custom font with a fallback */
+  font-size: 54px;
+  font-weight: lighter;
+  color: #ffffff;
+}
+
+
+

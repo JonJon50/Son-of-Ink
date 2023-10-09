@@ -41,8 +41,7 @@ yarn.lock
 # Sass cache
 .sass-cache/
 
-# Compiled CSS
-*.css
+
 
 # macOS
 .DS_Store
