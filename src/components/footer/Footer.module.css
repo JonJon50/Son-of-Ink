@@ -24,4 +24,6 @@
 .social-icons img {
     width: 3rem;
     height: 3rem;
+    color: white;
+    text-decoration: none;
 }
