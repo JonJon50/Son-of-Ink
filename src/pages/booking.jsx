@@ -13,7 +13,7 @@ const Booking = () => {
 
   return (
     <div className={`${BookingStyles.container} container mt-5`}>
-      <h1 className="text-center">Booking Page</h1>
+      <h1 className="text-center mt-5">Bookings</h1>
       <div className={`d-flex ${BookingStyles.center}`}>
         <form className={`card p-4 ${BookingStyles.form}`} onSubmit={handleSubmit}>
           <div className="mb-3">

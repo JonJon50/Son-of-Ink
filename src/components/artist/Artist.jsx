@@ -18,10 +18,11 @@ const Artist = () => {
   return (
     <div>
       {/* Header */}
-      <h2 style={{ color: "red" }}>Son's of Ink</h2>
+
+      <h2 className="text-center mt-5">Artists</h2>
       
       {/* Container for artist cards */}
-      <div className={styles.artistContainer}>
+      <div className={`${styles.artistContainer}`}>
         {artists.map((artist, index) => (
           <div key={index} className={styles.artistCard}>
             {/* Artist image */}
