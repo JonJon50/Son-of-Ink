@@ -19,10 +19,10 @@ const Artist = () => {
     <div>
       {/* Header */}
 
-      <h2 className="text-center mt-5">Artists</h2>
+      <h2 className={`text-center ${styles.artistTitle}`}>Artists</h2>
       
       {/* Container for artist cards */}
-      <div className={`${styles.artistContainer}`}>
+      <div className={`${styles.artistContainer} ms-3 me-3`}>
         {artists.map((artist, index) => (
           <div key={index} className={styles.artistCard}>
             {/* Artist image */}
@@ -42,7 +42,7 @@ const Artist = () => {
                   {/* Link to artist's gallery */}
                   <Link href={`/${artist.name}`}>
                     <div
-                      className={`${styles["round-button"]} ${styles["text-overlay"]}`}
+                      className={`${styles["round-button"]}`}
                     >
                       View Gallery
                     </div>

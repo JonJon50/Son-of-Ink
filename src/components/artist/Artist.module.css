@@ -19,6 +19,11 @@
 }
 
 /* Styles for each artist card */
+
+.artistTitle {
+  margin-top: 7rem;
+}
+
 .artistCard {
   width: calc(50% - 1rem); /* Set each card to occupy 50% width minus some margin */
   margin-bottom: 1rem;
@@ -30,7 +35,7 @@
   align-items: center;
   position: relative; /* Set the container to relative position for overlay */
   margin-bottom: 1rem; /* Add margin at the bottom to create space between cards */
-  margin-top: 7rem; /* Add margin at the top to lower the cards */
+  margin-top: 2rem; /* Add margin at the top to lower the cards */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Add the box-shadow property */
 }
 
