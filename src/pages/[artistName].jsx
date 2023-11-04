@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import artistsData from '@/components/artistsData'; // Import the artist data array
 import Link from 'next/link';
-import styles from '../components/artistGalleryPage/../artist/Artist.module.css'; // Import the CSS module (Adjust the path as needed)
+import styles from '../components/artist/Artist.module.css'; // Import the CSS module (Adjust the path as needed)
 
 // Define the ArtistGalleryPage component
 const ArtistGalleryPage = () => {
@@ -48,9 +48,9 @@ const ArtistGalleryPage = () => {
       {/* Gallery content */}
       <div className="gallery-content" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', maxWidth: '1200px', width: '100%', padding: '20px' }}>
         {/* Artist name and booking button */}
-        <h2 className={`${styles.artistName} ${selectedArtist.name === 'Theron' ? styles.theronText : ''}`}>
+        {/* <h2 className={`${styles.artistName} ${selectedArtist.name === 'Theron' ? styles.theronText : ''}`}>
           {selectedArtist.name}'s Gallery
-        </h2>
+        </h2> */}
         <Link href="/booking">
           <button className={`${styles['round-button']} ${styles['text-overlay']}`} style={{ padding: '10px 20px' }}>
             Book Now
