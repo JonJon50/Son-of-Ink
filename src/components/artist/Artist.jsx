@@ -16,7 +16,7 @@ const Artist = () => {
   }));
 
   return (
-    <div>
+    <div className={styles.wholeContainer}>
       {/* Header */}
 
       <h2 className={`text-center ${styles.artistTitle}`}>Artists</h2>

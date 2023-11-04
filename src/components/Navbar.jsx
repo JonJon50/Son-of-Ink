@@ -13,7 +13,7 @@ const Navbar = () => {
         </Link>
         {/* Link directly to the /artist route */}
         <Link href="/artist">
-          Artist
+          Artists
         </Link>
         <Link href="/booking">
           Booking
