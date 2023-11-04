@@ -61,12 +61,12 @@ const ArtistGalleryPage = () => {
         {/* Gallery images */}
         <div className={styles.galleryContainer}>
           <div className={styles.galleryImages}>
-            {selectedArtist.galleryImages.map((image, index) => (
+            {selectedArtist.galleryImages.map((image, index) => (               
               <img
                 key={index}
                 src={image.url}
                 alt={`Gallery Image ${index}`}
-                className={styles.galleryImage}
+                className='m-1'
               />
             ))}
           </div>
