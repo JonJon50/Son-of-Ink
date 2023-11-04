@@ -8,7 +8,9 @@ const artistsData = [
     bio: "I'm Artist 1. Ut commodo pharetra nisi a egestas...", // Biography of Theron
     galleryImages: [
       { url: '/Assets/gallery_bg.png' }, // Image URL for Theron's gallery image 1
-      
+      { url: '/Assets/gallery_bg.png' },
+      { url: '/Assets/gallery_bg.png' },
+      { url: '/Assets/gallery_bg.png' },
       // ... add more images for Theron's gallery
     ],
   },
@@ -17,8 +19,6 @@ const artistsData = [
     imageUrl: '/Assets/Johnny.png', // Image URL for Jonny's profile picture
     bio: "I'm Artist 2. Ut commodo pharetra nisi a egestas...", // Biography of Jonny
     galleryImages: [
-      { url: '/images/jonny-gallery1.jpg' }, // Image URL for Jonny's gallery image 1
-      { url: '/images/jonny-gallery2.jpg' }, // Image URL for Jonny's gallery image 2
       // ... add more images for Jonny's gallery
     ],
   },
