@@ -61,14 +61,14 @@ const ArtistGalleryPage = () => {
         {/* Gallery images */}
         <div className={styles.galleryContainer}>
           <div className={styles.galleryImages}>
-            {selectedArtist.galleryImages.map((image, index) => (               
-              <img
-                key={index}
-                src={image.url}
-                alt={`Gallery Image ${index}`}
-                className='m-1'
-              />
-            ))}
+             {selectedArtist.galleryImages.length > 0 ? (selectedArtist.galleryImages.map((image, index) => (               
+                <img
+                  key={index}
+                  src={image.url}
+                  alt={`Gallery Image ${index}`}
+                  className={styles.artistArt}
+                />
+              ))) : (<div className={styles.noImages}> Artwork coming soon! </div>)}
           </div>
         </div>
     </div>
