@@ -11,6 +11,7 @@
 /build/
 
 # Environment variables
+.env.local
 .env
 
 # Logs and temporary files
