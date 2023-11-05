@@ -12,6 +12,7 @@
 
 # Environment variables
 .env
+.env.local
 
 # Logs and temporary files
 *.log

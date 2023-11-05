@@ -150,8 +150,6 @@
 
 .galleryImages {
   display: flex;
-  align-items: center;
-  /* justify-content: center; */
   flex-wrap: wrap;
   margin-top: 1rem;
 }
@@ -159,6 +157,7 @@
 .artistArt {
 
   margin: .1rem;
+  width: calc(50% - 1rem)
   
 }
 
@@ -333,6 +332,7 @@
   .artistArt {
   
     margin: .1rem;
+
   }
   
   .noImages {

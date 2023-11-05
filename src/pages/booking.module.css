@@ -5,8 +5,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
-    margin-bottom: 3rem;
-    
- }
+    margin-bottom: 3rem;  
+   
+}
+
+.form {
+    animation: fadeInAnimation 2s ease; /* Apply fade-in animation */ 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+
+}
+
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .Times {
+    font-family: 'Luminari', sans-serif;
+    /* Add any other font styles as needed */
+  }

@@ -28,7 +28,7 @@
 /* Styling for the text overlay */
 .text-overlay {
   color: white;
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: bold;
   text-align: center;
   position: absolute;
@@ -36,7 +36,14 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1; /* Place above the video */
-  animation: fadeInAnimation 7s ease; /* Apply fade-in animation */
+  animation: fadeInAnimation 20s ease; /* Apply fade-in animation */
+}
+
+.customFont {
+  font-family: 'Snell Roundhand', sans-serif;
+  font-style: italic;
+  font-stretch: ultra-condensed;
+  animation: fadeInAnimation 7s ease, colorFlash 7s linear 1;
 }
 
 /* Keyframes for the fade-in animation */
@@ -46,6 +53,21 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes colorFlash {
+  0% {
+    background-image: linear-gradient(to right, red, yellow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  100% {
+    background-image: none;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    color: white;
   }
 }
 

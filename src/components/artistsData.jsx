@@ -7,19 +7,28 @@ const artistsData = [
     imageUrl: '/Assets/Theron.png', // Image URL for Theron's profile picture
     bio: "I'm Artist 1. Ut commodo pharetra nisi a egestas...", // Biography of Theron
     galleryImages: [
-      { url: '/Assets/gallery_bg.png' }, // Image URL for Theron's gallery image 1
-      { url: '/Assets/gallery_bg.png' },
-      { url: '/Assets/gallery_bg.png' },
-      { url: '/Assets/gallery_bg.png' },
+      { url: '/Assets/1.png' },
+      { url: '/Assets/2.png' },
+      { url: '/Assets/3.png' },
+      { url: '/Assets/4.png' },
+      { url: '/Assets/5.png' },
+      { url: '/Assets/6.png' },
+      { url: '/Assets/7.png' },
+
       // ... add more images for Theron's gallery
     ],
   },
   {
-    name: 'Jonny',
-    imageUrl: '/Assets/Johnny.png', // Image URL for Jonny's profile picture
+    name: 'Art',
+    imageUrl: '/Assets/tatArt.png', // Image URL for Art profile picture
     bio: "I'm Artist 2. Ut commodo pharetra nisi a egestas...", // Biography of Jonny
     galleryImages: [
       // ... add more images for Jonny's gallery
+      { url: '/Assets/d.png' },
+      { url: '/Assets/c.png' },
+      { url: '/Assets/b.png' },
+      { url: '/Assets/a.png' },
+      { url: '/Assets/e.png' }, 
     ],
   },
   // ... add more artists with their data
