@@ -40,9 +40,7 @@ const Booking = () => {
 
 
   // Handle form submission logic here
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-
+  const handleSubmit = async () => {
     setState((prev) => ({
       ...prev,
       isLoading: true,
