@@ -19,11 +19,16 @@ const artistsData = [
     ],
   },
   {
-    name: 'Jonny',
-    imageUrl: '/Assets/Johnny.png', // Image URL for Jonny's profile picture
+    name: 'Art',
+    imageUrl: '/Assets/tatArt.png', // Image URL for Art profile picture
     bio: "I'm Artist 2. Ut commodo pharetra nisi a egestas...", // Biography of Jonny
     galleryImages: [
       // ... add more images for Jonny's gallery
+      { url: '/Assets/d.png' },
+      { url: '/Assets/c.png' },
+      { url: '/Assets/b.png' },
+      { url: '/Assets/a.png' },
+      { url: '/Assets/e.png' }, 
     ],
   },
   // ... add more artists with their data
