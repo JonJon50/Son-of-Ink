@@ -3,7 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/artist": "pages/artist.js",
-  "/booking": "pages/booking.js",
   "/": "pages/index.js",
-  "/[artistName]": "pages/[artistName].js"
+  "/booking": "pages/booking.js"
 }
