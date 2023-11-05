@@ -2,11 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/[artistName]": "pages/[artistName].js",
+  "/artist": "pages/artist.js",
+  "/booking": "pages/booking.js",
   "/": "pages/index.js",
-<<<<<<< HEAD
   "/[artistName]": "pages/[artistName].js"
-=======
-  "/booking": "pages/booking.js"
->>>>>>> e596e09926a78c4282df778a79be6e90161635c4
 }
