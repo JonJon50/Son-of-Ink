@@ -9,8 +9,8 @@ const HomePage = () => {
   return (
     <div>
       <section><Home /></section>
-      <section><Artist/></section>
-      <section><Booking /> </section>  
+      <section><Artist /></section>
+      <section><Booking /> </section>
     </div>
   );
 };

@@ -43,7 +43,7 @@ const Booking = () => {
       ...prev,
       values: {
         ...prev.values,
-        newClient: !prev.values.newClient, // Toggle the checkbox value
+        newClient: !prev.values.newClient, 
       },
     }));
   };
@@ -60,12 +60,6 @@ const Booking = () => {
       await sendContactForm(values);
       setTouched({});
       setState(initState);
-      toast({
-        title: "Message sent.",
-        status: "success",
-        duration: 2000,
-        position: "top",
-      });
     } catch (error) {
       setState((prev) => ({
         ...prev,
@@ -77,7 +71,8 @@ const Booking = () => {
 
   return (
     <div className={`${BookingStyles.container} container mt-5`}>
-      <h1 className={`${BookingStyles.Times} text-center mt-5`}>Info</h1>
+      <h1 className={`${BookingStyles.Times} text-center mt-5`}>Booking</h1>
+      <p>* Denotes a required field.</p>
       <div className={`d-flex ${BookingStyles.center}`}>
         <form className={`card p-4 ${BookingStyles.form}`} onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -88,7 +83,8 @@ const Booking = () => {
               value={values.firstName}
               onChange={handleChange}
               onBlur={onBlur}
-              placeholder="First Name" />
+              placeholder="First Name*"
+              required />
           </div>
           <div className="mb-3">
             <input
@@ -108,7 +104,8 @@ const Booking = () => {
               value={values.phoneNumber}
               onChange={handleChange}
               onBlur={onBlur}
-              placeholder="Phone Number" />
+              placeholder="Phone Number*"
+              required />
           </div>
           <div className="mb-3">
             <input
@@ -118,7 +115,8 @@ const Booking = () => {
               value={values.email}
               onChange={handleChange}
               onBlur={onBlur}
-              placeholder="Email" />
+              placeholder="Email*"
+              required />
           </div>
           <div className="mb-3">
             <textarea
@@ -198,7 +196,7 @@ const Booking = () => {
               onClick={handleSubmit}
             >Submit</button>
           </div>
-        </form>
+        </form>        
       </div>
     </div>
   );
