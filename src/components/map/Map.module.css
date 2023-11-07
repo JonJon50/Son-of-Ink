@@ -1,0 +1,7 @@
+/* components/map/Map.module.css */
+
+  @media (max-width:800px) {
+    #map {
+      width: 320px;
+    }
+  }
