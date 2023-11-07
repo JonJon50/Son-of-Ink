@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import MapStyles from './map.module.css';
+import MapStyles from './Map.module.css';
+
 
 function Map() {
   // Define the apiKey outside of the useEffect block
