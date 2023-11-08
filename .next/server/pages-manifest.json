@@ -1,15 +1,8 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-<<<<<<< HEAD
   "/_error": "pages/_error.js",
-<<<<<<< HEAD
-  "/[artistName]": "pages/[artistName].js",
+  "/_document": "pages/_document.js",
   "/": "pages/index.js",
+  "/[artistName]": "pages/[artistName].js",
   "/booking": "pages/booking.js"
-=======
-=======
->>>>>>> b8df60277542dc2af1ed38bb504fb06af3a004fa
-  "/": "pages/index.js"
->>>>>>> main
 }
