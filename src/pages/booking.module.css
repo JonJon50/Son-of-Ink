@@ -1,12 +1,5 @@
 /* booking.module.css */
 
-.bigContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -25,12 +18,11 @@
   max-width: 1200px; /* Max width of the layout */
 }
 
-
+.bookingCard,
 .mapContainer {
   width: 100%; /* Take the full width on small screens */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-  margin-top: 10%;
-
+  margin-bottom: 2rem; /* Space between the booking card and the map */
 }
 
 /* Additional styles for the form animation and font */
