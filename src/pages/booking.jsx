@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import BookingStyles from '../pages/booking.module.css'; // Import the CSS module
 import { sendContactForm } from "../lib/api";
+import Map from "../components/map/Map"; // Import the Map component
 
 const initValues = {
   firstName: "",
@@ -19,7 +20,6 @@ const initValues = {
 const initState = { isLoading: false, error: "", values: initValues };
 
 const Booking = () => {
-
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
 
@@ -202,4 +202,3 @@ const Booking = () => {
 };
 
 export default Booking;
-
