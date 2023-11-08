@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import MapStyles from './Map.module.css';
 
 
+
 function Map() {
   // Define the apiKey outside of the useEffect block
-  const apiKey = 'AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w';
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
   const [userLocation, setUserLocation] = useState(null);
   const [map, setMap] = useState(null);
@@ -18,7 +19,7 @@ function Map() {
 
     // Dynamically insert the Google Maps script tag with a callback to initMap
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+    script.src = process.env.NEXT_PUBLIC_API_URL;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
