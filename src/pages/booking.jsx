@@ -1,5 +1,4 @@
 // pages/booking.js
-
 import React, { useState } from 'react';
 import BookingStyles from '../pages/booking.module.css'; // Import the CSS module
 import { sendContactForm } from "../lib/api";
