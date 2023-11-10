@@ -15,7 +15,7 @@ const initValues = {
   artist: "",
   hearAbout: "",
   tattooPic: "",
-  newClient: "",
+  newClient: false,
 };
 
 const initState = { isLoading: false, error: "", values: initValues };
