@@ -62,3 +62,71 @@
     margin-bottom: 0; /* Remove the bottom margin on larger screens */
   }
 }
+
+.fadeOut {
+  animation: fadeOut 1s ease-out forwards;
+  z-index: -1; /* Ensure the video goes behind after fading out */
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in forwards;
+  visibility: visible;                     /* Make the content visible after the animation */
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden; /* Hide the video at the end of the animation */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden; /* Start with the content hidden */
+  }
+  to {
+    opacity: 1;
+    visibility: visible; /* Make the content visible at the end of the animation */
+  }
+}
+
+
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  object-fit: cover; /* This ensures the video covers the entire area of .InfoBG */
+  z-index: 1; /* Ensure this is higher than the content initially */
+  box-shadow: 0px -10px 50px rgba(0, 0, 0, 0.9);
+
+
+}
+
+.InfoBG {
+  position: relative;
+  /* Make sure this container stretches to the desired area,
+     excluding the footer, and is the parent of the video element */
+     width: 100%; /* Or the width of your choice */
+  height: 85vh; /* Or the height of your choice */
+}
+
+/* Add a new CSS class for fading out the video */
+.videoFadeOut {
+  animation: fadeOutVideo 5s linear forwards;
+  opacity: 1; /* Start with full opacity */
+  z-index: 2; /* Ensure this is higher than the content initially */
+}
+
+@keyframes fadeOutVideo {
+  0% {
+    opacity: 1; /* Start with full opacity */
+  }
+  100% {
+    opacity: 0; /* End with complete transparency */
+    z-index: -1; /* Ensure the video goes behind after fading out */
+  }
+}
