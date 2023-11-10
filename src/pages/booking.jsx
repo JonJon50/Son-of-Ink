@@ -38,6 +38,15 @@ const Booking = () => {
       },
     }));
 
+  const handleChangeCheckbox = ({ target }) =>
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: target.checked,
+      },
+    }))
+
   // Handle form submission logic here
   const handleSubmit = async () => {
     setState((prev) => ({
@@ -63,13 +72,13 @@ const Booking = () => {
     }
   };
 
-  return ( 
+  return (
     <div className={BookingStyles.container}>
-    <div className={BookingStyles.layout}>
-      <div className={BookingStyles.bookingCard}>
-        {/* Booking card */}
+      <div className={BookingStyles.layout}>
+        <div className={BookingStyles.bookingCard}>
+          {/* Booking card */}
           {" "}
-         
+
           {/* Adjust the width as needed */}
           <form
             className={`card p-4 ${BookingStyles.form}`}
@@ -187,8 +196,8 @@ const Booking = () => {
                 type="checkbox"
                 name="newClient"
                 className="form-check-input"
-                value={values.newClient}
-                onChange={handleChange}
+                checked={values.newClient}  
+                onChange={handleChangeCheckbox}
                 onBlur={onBlur}
                 id="clientStatus"
               />
