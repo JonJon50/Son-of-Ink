@@ -16,7 +16,7 @@ const initValues = {
   artist: "",
   hearAbout: "",
   tattooPic: "",
-  newClient: "",
+  newClient: false,
 };
 
 const initState = { isLoading: false, error: "", values: initValues };
@@ -40,6 +40,17 @@ const Booking = () => {
         [target.name]: target.value,
       },
     }));
+
+  const handleChangeCheckbox = ({ target }) =>
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: target.checked,
+      },
+    }))
+
+    
 
   // Handle form submission logic here
   const handleSubmit = async () => {
@@ -105,11 +116,11 @@ const Booking = () => {
  
    
     <div className={BookingStyles.container}>
-    <div className={BookingStyles.layout}>
-      <div className={BookingStyles.bookingCard}>
-        {/* Booking card */}
+      <div className={BookingStyles.layout}>
+        <div className={BookingStyles.bookingCard}>
+          {/* Booking card */}
           {" "}
-         
+
           {/* Adjust the width as needed */}
           <form
             className={`card p-4 ${BookingStyles.form}`}
@@ -227,8 +238,8 @@ const Booking = () => {
                 type="checkbox"
                 name="newClient"
                 className="form-check-input"
-                value={values.newClient}
-                onChange={handleChange}
+                checked={values.newClient}  
+                onChange={handleChangeCheckbox}
                 onBlur={onBlur}
                 id="clientStatus"
               />
