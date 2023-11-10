@@ -1,9 +1,10 @@
 // pages/booking.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BookingStyles from "../pages/booking.module.css"; // Import the CSS module
 import { sendContactForm } from "../lib/api";
 import Map from "../components/map/Map"; // Import the Map component
+import videoBg2 from 'public/static/videos/Contact us background video.mp4'; // Import the background video
 
 const initValues = {
   firstName: "",
@@ -23,8 +24,10 @@ const initState = { isLoading: false, error: "", values: initValues };
 const Booking = () => {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
-
+  const [contentVisible, setContentVisible] = useState(false);
   const { values, isLoading, error } = state;
+
+ const [videoVisible, setVideoVisible] = useState(true);
 
   const onBlur = ({ target }) =>
     setTouched((prev) => ({ ...prev, [target.name]: true }));
@@ -74,7 +77,44 @@ const Booking = () => {
     }
   };
 
-  return (
+  useEffect(() => {
+    const fadeOutTimer = setTimeout(() => {
+      setVideoVisible(false);
+    }, 8000);
+  
+    // Cleanup the timers when the component unmounts or the effect re-runs
+    return () => clearTimeout(fadeOutTimer);
+  }, []);
+  
+  useEffect(() => {
+    let fadeInTimer;
+    if (!videoVisible) {
+      fadeInTimer = setTimeout(() => {
+        setContentVisible(true);
+      }, 1000); // Assuming the fade out takes 1 second
+    }
+  
+    // Cleanup the timer
+    return () => clearTimeout(fadeInTimer);
+  }, [videoVisible]); // This effect runs when videoVisible changes
+  
+  
+
+  return ( 
+           // videoBG
+           <div className={BookingStyles.InfoBG}>
+           <video
+             src={videoBg2}
+             autoPlay
+             muted
+             className={`${BookingStyles.video} ${!videoVisible ? BookingStyles.fadeOut : ''} ${!videoVisible ? BookingStyles.videoFadeOut : ''}`}
+           />
+           <div
+             className={`${BookingStyles.content} ${contentVisible ? BookingStyles.fadeIn : ''}`}
+           >
+   
+ 
+   
     <div className={BookingStyles.container}>
       <div className={BookingStyles.layout}>
         <div className={BookingStyles.bookingCard}>
@@ -230,7 +270,12 @@ const Booking = () => {
         </div>
       </div>
     </div>
+  </div>
+ </div>
+  
   );
 };
 
 export default Booking;
+
+
