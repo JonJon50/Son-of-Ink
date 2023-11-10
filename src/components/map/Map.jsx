@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MapStyles from './Map.module.css';
 
 
+
 function Map() {
   // Define the apiKey outside of the useEffect block
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
