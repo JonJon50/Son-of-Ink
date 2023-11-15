@@ -7,7 +7,7 @@ const ArtistPage = () => {
   return (
     <div>
       {/* Add any content specific to the artist page */}
-      <Artist />
+      <Artist showBioSection={true} />
     </div>
   );
 };
