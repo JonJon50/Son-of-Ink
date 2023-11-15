@@ -1,17 +1,16 @@
-// pages/booking.js
+// pages/booking.jxs
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BookingStyles from "../pages/booking.module.css"; // Import the CSS module
 import { sendContactForm } from "../lib/api";
-import Map from "../components/map/Map"; // Import the Map component
-import videoBg2 from 'public/static/videos/Contact us background video.mp4'; // Import the background video
+
 
 const initValues = {
   firstName: "",
   lastName: "",
   phoneNumber: "",
   email: "",
-  tatoo: "",
+  tattoo: "",
   bodyLocation: "",
   artist: "",
   hearAbout: "",
@@ -21,13 +20,11 @@ const initValues = {
 
 const initState = { isLoading: false, error: "", values: initValues };
 
-const Booking = () => {
+const Booking = ({ showBackground = true }) => {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
-  const [contentVisible, setContentVisible] = useState(false);
-  const { values, isLoading, error } = state;
 
- const [videoVisible, setVideoVisible] = useState(true);
+  const { values, isLoading, error } = state;
 
   const onBlur = ({ target }) =>
     setTouched((prev) => ({ ...prev, [target.name]: true }));
@@ -48,13 +45,11 @@ const Booking = () => {
         ...prev.values,
         [target.name]: target.checked,
       },
-    }))
-
-    
+    }));
 
   // Handle form submission logic here
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setState((prev) => ({
       ...prev,
       isLoading: true,
@@ -78,51 +73,14 @@ const Booking = () => {
     }
   };
 
-  useEffect(() => {
-    const fadeOutTimer = setTimeout(() => {
-      setVideoVisible(false);
-    }, 8000);
-  
-    // Cleanup the timers when the component unmounts or the effect re-runs
-    return () => clearTimeout(fadeOutTimer);
-  }, []);
-  
-  useEffect(() => {
-    let fadeInTimer;
-    if (!videoVisible) {
-      fadeInTimer = setTimeout(() => {
-        setContentVisible(true);
-      }, 1000); // Assuming the fade out takes 1 second
-    }
-  
-    // Cleanup the timer
-    return () => clearTimeout(fadeInTimer);
-  }, [videoVisible]); // This effect runs when videoVisible changes
-  
-  
-
-  return ( 
-           // videoBG
-           <div className={BookingStyles.InfoBG}>
-           <video
-             src={videoBg2}
-             autoPlay
-             muted
-             className={`${BookingStyles.video} ${!videoVisible ? BookingStyles.fadeOut : ''} ${!videoVisible ? BookingStyles.videoFadeOut : ''}`}
-           />
-           <div
-             className={`${BookingStyles.content} ${contentVisible ? BookingStyles.fadeIn : ''}`}
-           >
-   
- 
-   
-    <div className={BookingStyles.container}>
+  return (
+    <>
+   {showBackground && <div className={BookingStyles.parallaxBackground} />} 
+    <div className={BookingStyles.container}> 
+    <h2 className={BookingStyles.title}>Book Your Appointment</h2> {/* Add this line for the title */}
       <div className={BookingStyles.layout}>
-        <div className={BookingStyles.bookingCard}>
-          {/* Booking card */}
-          {" "}
-
-          {/* Adjust the width as needed */}
+      <div className={BookingStyles.bookingCard}>
+          {/* Booking card */} {/* Adjust the width as needed */}
           <form
             className={`card p-4 ${BookingStyles.form}`}
             onSubmit={handleSubmit}
@@ -205,7 +163,7 @@ const Booking = () => {
               >
                 <option>Select Artist</option>
                 <option value="Theron">Theron</option>
-                <option value="Jonny">Jonny</option>
+                <option value="Art">Art</option>
               </select>
             </div>
             <div className="mb-3">
@@ -239,7 +197,7 @@ const Booking = () => {
                 type="checkbox"
                 name="newClient"
                 className="form-check-input"
-                checked={values.newClient}  
+                checked={values.newClient}
                 onChange={handleChangeCheckbox}
                 onBlur={onBlur}
                 id="clientStatus"
@@ -262,21 +220,10 @@ const Booking = () => {
             </div>
           </form>
         </div>
-        {/* Map card */}
-        <div className={BookingStyles.mapContainer}>
-          {" "}
-          {/* Adjust the width as needed */}
-          {/* Map component */}
-          <Map />
-        </div>
       </div>
     </div>
-  </div>
- </div>
-  
+    </>
   );
 };
 
 export default Booking;
-
-

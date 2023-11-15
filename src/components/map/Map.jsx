@@ -1,47 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import MapStyles from './Map.module.css';
 
+// Define defaultLocation outside of the component
 
 
 function Map() {
-  // Define the apiKey outside of the useEffect block
-  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
-  const [userLocation, setUserLocation] = useState(null);
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Ensure this is set in your environment variables
+  const [userLocation, setUserLocation] = useState({}); // Initialize state with defaultLocation
   const [map, setMap] = useState(null);
   const officeAddress = '2181 Crain Hwy, Waldorf, MD 20601';
 
   useEffect(() => {
-    // This function needs to be on the window object to be accessible by the Google Maps script
     window.initMap = function () {
       getLocationAndRenderMap(officeAddress);
     };
 
-    // Dynamically insert the Google Maps script tag with a callback to initMap
+    // Create a script element to load the Google Maps API
     const script = document.createElement('script');
-    script.src = process.env.NEXT_PUBLIC_API_URL;
+    script.src = process.env.NEXT_PUBLIC_API_URL 
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
   }, [officeAddress, apiKey]);
 
-  // Get the user's current location
+  // Geolocation useEffect
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setUserLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-      },
-      (err) => {
-        console.error(err);
-        alert('Error getting your location. ' + err.message);
-      }
-    );
+    const handleSuccess = (position) => {
+     
+      setUserLocation({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      });
+    };
+
+    const handleError = (error) => {
+      console.error('Geolocation error:', error);
+      setUserLocation(defaultLocation); // Fallback to default location
+    };
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
   }, []);
 
-  // Once the user location and map are set, draw the directions
+  // Directions useEffect
   useEffect(() => {
     if (map && userLocation) {
       drawDirections(map, userLocation, officeAddress);
@@ -49,15 +53,16 @@ function Map() {
   }, [map, userLocation, officeAddress]);
 
   function getLocationAndRenderMap(address) {
+    // Initialize the map with the given address
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ 'address': address }, (results, status) => {
       if (status === 'OK') {
         const location = results[0].geometry.location;
-        const map = new google.maps.Map(document.getElementById('map'), {
+        const newMap = new google.maps.Map(document.getElementById('map'), {
           center: location,
           zoom: 15,
         });
-        setMap(map);
+        setMap(newMap);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
@@ -65,6 +70,7 @@ function Map() {
   }
 
   function drawDirections(map, userLocation, destination) {
+    // Draw directions from the user's location to the destination
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer();
     directionsRenderer.setMap(map);

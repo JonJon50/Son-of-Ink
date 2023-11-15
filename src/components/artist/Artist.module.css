@@ -1,119 +1,138 @@
 /* Artist.module.css */
 
-
-/* Styles for the container that holds artist cards */
-.artistContainer {
-  display: flex;
-  flex-wrap: wrap; /* Allow artists to wrap to the next row if needed */
-  justify-content: space-between;
-  animation: fadeInAnimation 1s ease; /* Apply the fade-in animation */
-}
-
-/* Keyframes for the fade-in animation */
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Styles for each artist card */
-
-.artistTitle {
-  margin-top: 7rem;
-}
-
-.artistCard {
-  width: calc(50% - 1rem); /* Set each card to occupy 50% width minus some margin */
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative; /* Set the container to relative position for overlay */
-  margin-bottom: 1rem; /* Add margin at the bottom to create space between cards */
-  margin-top: 2rem; /* Add margin at the top to lower the cards */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Add the box-shadow property */
-}
-
-/* Styles for the artist image */
-.artistImage {
-  width: 100%; /* Make the image fill the container width */
-  height: 800px; /* Set a fixed height for the images */
-  object-fit: cover; /* Crop the image to fit the container without stretching */
-  border-radius: 8px; /* Add a border-radius for rounded corners */
-}
-
-/* Styles for the artist bio */
-.artistBio {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-/* Styles for the overlay that appears on artist card hover */
-.artistOverlay {
-  position: absolute;
+.parallaxBackground {
+  background-image: url('https://i.pinimg.com/564x/06/a5/b0/06a5b00829dc10325e2d6fcaaec68711.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100vh; /* This should be vh not % to cover the full viewport height */
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  transition: opacity 0.9s ease;
+  z-index: -1;
 }
 
-/* Show the overlay on artist card hover */
+
+/* General container styles */
+.artistContainer,
+.artistBios {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Animation */
+@keyframes fadeInAnimation {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Title */
+.artistTitle {
+  margin-top: 13rem;
+  text-align: center;
+  font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem; 
+}
+
+/* Cards layout */
+.artistContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  animation: fadeInAnimation 1s ease;
+}
+
+/* Individual card */
+.artistCard {
+  width: calc(50% - 1rem);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+  background-color: #ffffff; /* Ensure a solid white background */
+}
+
+/* Image styles */
+.artistImage {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+/* Bio section */
+.artistBios {
+  padding-top: 1rem;
+  
+}
+
+.artistBio p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 1rem;
+  font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Overlay */
+.artistOverlay {
+  color: #050505;
+ 
+}
+
 .artistCard:hover .artistOverlay {
   opacity: 1;
 }
 
-/* Styles for the artist name text in the overlay */
+/* Name text Art Gallery */
 .artistName {
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 2.0rem;
+  margin: 0.5rem 0;
+  padding-top: 3%;
+  font-family:  Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-transform: uppercase;
+  color: #050505;
 }
 
-/* Styles for the button container */
-.button-container {
+/* Button container */
+.buttonContainer {
   position: absolute;
-  bottom: 0.5rem; /* Adjust the value to move the button up or down */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
 }
 
-/* Styles for the transparent round button */
+/* Button styles */
 .round-button {
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  border-radius: 999px; /* Use a high value to create a round shape */
-  padding: 0.75rem 1.5rem;
-  font-size: 1.2rem;
-  font-weight: lighter; /* Adjust the font weight as needed */
+  border: 1px solid rgb(5, 4, 4);
+  color: rgb(5, 5, 5);
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem; /* Adjust padding */
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: inline-block; /* Change to inline-block for link styling */
+  text-decoration: none; /* Remove text decoration */
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
-/* Apply the round-button styles to the button */
-.button-container .round-button {
-  text-transform: uppercase; /* Optional: Convert text to uppercase */
+.round-button:hover {
+  background-color: rgba(106, 102, 102, 0.2); /* Light background on hover */
+  color: #000; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly increase button size */
+  border-color: #000; /* Change border color on hover */
 }
 
-/* Show a slightly opaque background on button hover */
- .round-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Styles for the button overlay */
+/* Button overlay */
 .button-overlay {
   position: absolute;
   top: 15%;
@@ -124,26 +143,25 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.0);
-  color: #fff;
   transition: opacity 0.3s ease;
 }
 
-/* Show the button overlay on artist card hover */
 .artistCard:hover .button-overlay {
   opacity: 1;
 }
 
-/* Styles for the button text */
+/* Text and other elements */
 .button-text {
   font-size: 1.2rem;
 }
-
-/* Styling for Theron's text using the defined class */
+/* Art Gallery */
 .theronText {
-  color: #fff; /* Replace with the desired color value */
+  color: #fff;
 }
-
+.artText {
+  color: #fff;
+}
+/* Gallery styles */
 .galleryContainer {
   min-height: 30vh;
 }
@@ -155,196 +173,50 @@
 }
 
 .artistArt {
-
-  margin: .1rem;
-  width: calc(50% - 1rem)
-  
+  margin: 0.1rem;
+  width: calc(50% - 1rem);
 }
 
 .noImages {
-
-  margin: 25vh 50vw;
+  margin: 25vh auto;
   font-weight: bolder;
   font-size: larger;
-  text-align: center; 
-  
+  text-align: center;
 }
 
+/* Responsive adjustments */
 @media (max-width: 750px) {
-  /* Styles for small screens */
+  .artistContainer,
+  .artistBios {
+    padding: 0 1rem;
+  }
 
-  .artistContainer {
-    display: flex;
-    flex-wrap: wrap; /* Allow artists to wrap to the next row if needed */
-    justify-content: space-between;
-    animation: fadeInAnimation 1s ease; /* Apply the fade-in animation */
-  }
-  
-  /* Keyframes for the fade-in animation */
-  @keyframes fadeInAnimation {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  /* Styles for each artist card */
-  
-  .artistTitle {
-    margin-top: 7rem;
-  }
-  
-  .artistCard {
-    /* width: calc(50% - 1rem); Set each card to occupy 50% width minus some margin */
-    width: calc(100% - 1rem) ;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative; /* Set the container to relative position for overlay */
-    margin-bottom: 1rem; /* Add margin at the bottom to create space between cards */
-    margin-top: 2rem; /* Add margin at the top to lower the cards */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Add the box-shadow property */
-  }
-  
-  /* Styles for the artist image */
-  .artistImage {
-    width: 100%; /* Make the image fill the container width */
-    height: 800px; /* Set a fixed height for the images */
-    object-fit: cover; /* Crop the image to fit the container without stretching */
-    border-radius: 8px; /* Add a border-radius for rounded corners */
-  }
-  
-  /* Styles for the artist bio */
-  .artistBio {
-    margin-top: 1rem;
-    text-align: center;
-  }
-  
-  /* Styles for the overlay that appears on artist card hover */
-  .artistOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    transition: opacity 0.9s ease;
-  }
-  
-  /* Show the overlay on artist card hover */
-  .artistCard:hover .artistOverlay {
-    opacity: 1;
-  }
-  
-  /* Styles for the artist name text in the overlay */
-  .artistName {
-    font-size: 3.5rem;
-    font-weight: bold;
-  }
-  
-  /* Styles for the button container */
-  .button-container {
-    position: absolute;
-    bottom: 0.5rem; /* Adjust the value to move the button up or down */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  
-  /* Styles for the transparent round button */
-  .round-button {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    border-radius: 999px; /* Use a high value to create a round shape */
-    padding: 0.75rem 1.5rem;
-    font-size: 1.2rem;
-    font-weight: lighter; /* Adjust the font weight as needed */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Apply the round-button styles to the button */
-  .button-container .round-button {
-    text-transform: uppercase; /* Optional: Convert text to uppercase */
-  }
-  
-  /* Show a slightly opaque background on button hover */
-   .round-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  /* Styles for the button overlay */
-  .button-overlay {
-    position: absolute;
-    top: 15%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.0);
-    color: #fff;
-    transition: opacity 0.3s ease;
-  }
-  
-  /* Show the button overlay on artist card hover */
-  .artistCard:hover .button-overlay {
-    opacity: 1;
-  }
-  
-  /* Styles for the button text */
-  .button-text {
-    font-size: 1.2rem;
-  }
-  
-  /* Styling for Theron's text using the defined class */
-  .theronText {
-    color: #fff; /* Replace with the desired color value */
-  }
-  
-  .galleryContainer {
-    min-height: 30vh;
-  }
-  
-  .galleryImages {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: center; */
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-  
+  .artistCard,
   .artistArt {
-  
-    margin: .1rem;
-
-  }
-  
-  .noImages {
-  
-    margin: 25vh 45vw;
-    font-weight: bolder;
-    font-size: larger;
-    text-align: center; 
-    
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
+  .artistImage {
+    height: auto;
+  }
+
+  .artistDetails {
+    padding: 0.25rem;
+  }
+
+  .artistName {
+    font-size: 1.25rem;
+  }
+
+  .buttonContainer {
+    bottom: 10px;
+  }
 }
 
-
+@media (min-width: 751px) and (max-width: 1024px) {
+  .artistCard {
+    width: calc(50% - 1rem);
+  }
+}
 
