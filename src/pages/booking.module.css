@@ -1,6 +1,5 @@
 /* booking.module.css */
 .parallaxBackground {
-  /* Add your background image URL here */
   background-image: url('../../public/Assets/Contact\ us.jpeg');
   background-attachment: fixed;
   background-position: center;
@@ -18,10 +17,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  padding: 15rem;
+  min-height: 100vh; /* Use viewport height to ensure full page coverage */
+  padding: 5rem 1rem; /* Adjust padding to be responsive */
   flex-direction: column;
-  margin-top: -2%;
 }
 
 .layout {
@@ -29,53 +27,86 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  /* Max width of the layout */
+  max-width: 1400px;
+  margin: 0 auto; /* Ensure margin is auto to center the layout */
 }
 
 .title {
   text-align: center;
-  font-size: 2rem; /* Example size, adjust as needed */
-  color: #dc9213; /* Example color, adjust as needed */
-  margin-bottom: 2rem; /* Space between title and form */
-  font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem;
+  color: #050505;
+  margin-bottom: 1rem;
+  font-family: 'Hoefler Text', 'Arial Narrow Bold', sans-serif;
+  margin-top: 10%;
 }
 
-/* Additional styles for the form animation and font */
 .form {
   animation: fadeInAnimation 2s ease;
-  /* Apply fade-in animation */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .Times {
   font-family: 'Luminari', sans-serif;
-  /* Add any other font styles as needed */
 }
 
-/* Media query adjustments */
-@media (min-width: 750px) {
+/* Simplify media queries and ensure they are mobile-first */
+@media (max-width: 750px) {
   .bookingCard {
-    width: calc(50% - 1rem);
-    /* Adjust for larger screens */
-    margin-right: 2rem;
-    margin-bottom: 0;
+    width: 50%; /* Use percentage for responsiveness */
+   
   }
 }
 
 .bookingCard {
-  width: 80%;
-  /* Adjust width as needed */
-  margin: auto;
-  /* Center horizontally */
+  width: 100%; /* Default to full width on smaller screens */
+  margin: 1rem auto; /* Center the card with automatic margins */
+}
+
+@media (min-width: 750px) {
+  .bookingCard {
+    width: 50%; /* adjust this percentage based on the Artist card width */
+    /* ... */
+  }
+}
+
+
+
+/* Styling for the button container */
+.button-container {
+  position: absolute;
+  bottom: 10%;
+  /* Adjust to move the button vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  /* Place above the video */
+}
+
+/* Styling for the transparent round button */
+.round-button {
+  background-color: transparent;
+  border: 1px solid rgb(8, 8, 8);
+  color: rgb(8, 8, 8);
+  border-radius: 999px;
+  /* Create a round shape */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 350;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Apply styles to the button inside the button container */
+.button-container .round-button {
+  text-transform: uppercase;
+}
+
+/* Show a slightly opaque background on button hover */
+.round-button:hover {
+  background-color: rgba(117, 115, 115, 0.329);
 }

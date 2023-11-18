@@ -19,7 +19,7 @@ const Home = () => {
 
       {/* Text overlay */}
       <h5 className={`${styles["text-overlay"]} ${styles["customFont"]}`}>
-        Son's of Ink
+        Son of Ink
       </h5>
 
       {/* Button container */}

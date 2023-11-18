@@ -2,8 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/location": "pages/location.js",
+  "/artist": "pages/artist.js",
   "/booking": "pages/booking.js",
-  "/artist": "pages/artist.js"
+  "/[artistName]": "pages/[artistName].js",
+  "/location": "pages/location.js",
+  "/": "pages/index.js"
 }

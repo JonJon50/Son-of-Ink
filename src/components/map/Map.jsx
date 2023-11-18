@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import MapStyles from './Map.module.css';
 
+
+
 // Define defaultLocation outside of the component
-
-
 function Map() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Ensure this is set in your environment variables
   const [userLocation, setUserLocation] = useState({}); // Initialize state with defaultLocation

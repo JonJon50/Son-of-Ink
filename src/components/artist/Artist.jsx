@@ -8,7 +8,7 @@ const Artist = ({ showBioSection = false }) => {
     <>
       <div className={styles.parallaxBackground} /> {/* Parallax Background */}
       <div className={styles.wholeContainer}>
-        <h2 className={`text-center ${styles.artistTitle}`}>Artists</h2>
+        <h2 className={`text-center ${styles.artistTitle}`}>Artist</h2>
         
         {/* Conditionally render artist bios section */}
         {showBioSection && (

@@ -31,7 +31,7 @@
 
 /* Title */
 .artistTitle {
-  margin-top: 13rem;
+  margin-top: 17rem;
   text-align: center;
   font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 3rem; 
@@ -42,7 +42,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  animation: fadeInAnimation 1s ease;
+  animation: fadeInAnimation 2s ease;
+  margin-top: 2%;
 }
 
 /* Individual card */
@@ -68,8 +69,7 @@
 
 /* Bio section */
 .artistBios {
-  padding-top: 1rem;
-  
+  padding-top: 1rem; 
 }
 
 .artistBio p {
@@ -220,3 +220,22 @@
   }
 }
 
+/* Adjust .artistArt to display three images per row */
+.artistArt {
+  width: calc(33.333% - 10px); /* Change the percentage to adjust for three images */
+  margin: 5px; /* Adjust margin for spacing */
+  cursor: pointer; /* Indicates the image is clickable */
+}
+
+/* Update your media queries to handle the new layout */
+@media (max-width: 750px) {
+  .artistArt {
+    width: calc(50% - 10px); /* Two images per row for smaller screens */
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1024px) {
+  .artistArt {
+    width: calc(33.333% - 10px); /* Three images per row for medium screens */
+  }
+}
