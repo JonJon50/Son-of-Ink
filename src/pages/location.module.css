@@ -1,0 +1,14 @@
+.whole-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    margin-top: 7rem;
+}
+
+.direction-container {
+    width: calc(50% - 1rem);
+    /* Take the full width on small screens */
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    margin-bottom: 2rem;
+}

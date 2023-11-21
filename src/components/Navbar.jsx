@@ -14,7 +14,7 @@ const Navbar = () => {
         {/* Link directly to the /artist route */}
         <Link href="/artist">Artist</Link>
         <Link href="/booking">Booking</Link>
-        <Link href="/location">Location</Link>
+        {/* <Link href="/location">Location</Link> */}
       </div>
     </nav>
   );

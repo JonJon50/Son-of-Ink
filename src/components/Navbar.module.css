@@ -30,8 +30,9 @@
 
 /* Styles for navigation links when hovered over */
 .navbar a:hover {
-  color: #e61515; /* Darker color on hover */
-  font-size: 1.9rem; /* Decrease the font size on hover */
+  color: black; /* Darker color on hover */
+  font-size: 1.9rem; /* Increase the font size on hover */
+  text-decoration: underline;
 }
 
   
