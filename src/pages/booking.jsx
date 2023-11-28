@@ -5,6 +5,7 @@ import BookingStyles from "../pages/booking.module.css"; // Import the CSS modul
 import { sendContactForm } from "../lib/api";
 import Link from "next/link";
 import styles from "./booking.module.css";
+import { motion } from "framer-motion";
 
 const initValues = {
   firstName: "",
@@ -17,6 +18,11 @@ const initValues = {
   hearAbout: "",
   tattooPic: "",
   newClient: false,
+};
+
+const slideIn = {
+  hidden: { x: 100, opacity: 0 },
+  visible: { x: 0, opacity: 1 },
 };
 
 const initState = { isLoading: false, error: "", values: initValues };
@@ -78,22 +84,27 @@ const Booking = ({ showBackground = true }) => {
     <>
       {showBackground && <div className={BookingStyles.parallaxBackground} />}
       <div className={BookingStyles.container}>
-        <h2 className={BookingStyles.title}>Book Your Appointment</h2>{" "}
-        {/* Add this line for the title */}
+        <motion.h2 
+          className={BookingStyles.title}
+          initial="hidden"
+          animate="visible"
+          variants={slideIn}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          Book Your Appointment
+        </motion.h2>
         {/* Button container */}
         <div className={styles["button-container round-button"]}>
-          {/* Wrap the button with Link and specify the href */}
-          <Link
-            href="https://www.google.com/search?q=son+of+ink&oq=&gs_lcrp=EgZjaHJvbWUqCQgCECMYJxjq
-                  AjIPCAAQLhgnGMcBGOoCGNEDMgkIARAjGCcY6gIyCQgCECMYJxjqAjIPCAMQLhgnGMcBGOoCGNEDMgkIBBAjGCcY6gIy
-                  CQgFECMYJxjqAjIPCAYQLhgnGMcBGOoCGNEDMhIIBxAuGCcYrwEYxwEY6gIYjgXSAQkzMTkwajBqMTWoAgiwAgE&
-                  sourceid=chrome&ie=UTF-8#lrd=0x89b7a1700cf1d6cf:0x71fb69d645eccf44,1,,,,"
-          >
-            <button
+          <Link href="https://www.google.com/...lrd=0x89b7a1700cf1d6cf:0x71fb69d645eccf44,1,,,">
+            <motion.button
               className={`${styles["round-button"]} ${styles["text-overlay"]}`}
+              initial="hidden"
+              animate="visible"
+              variants={slideIn}
+              transition={{ duration: 0.5, delay: 1 }}
             >
               READ THE REVIEWS
-            </button>
+            </motion.button>
           </Link>
         </div>
         <div className={BookingStyles.layout}>
