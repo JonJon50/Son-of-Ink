@@ -20,7 +20,7 @@ const Location = () => {
   return (
     <div className={styles["whole-container"]}>
       <div className={styles["location-header"]}>
-        <span>Location</span>
+        <h4>Contact Infomation</h4>
       </div>
       <div className={styles["content-container"]}>
         <div
@@ -32,11 +32,9 @@ const Location = () => {
             <FontAwesomeIcon icon={faAddressCard} />
             <h5>ADDRESS</h5>
             <p>
-              2170 West State Road 434
+            2181 Crain Hwy,
               <br />
-              Suite 190
-              <br />
-              Longwood, FL 32779
+              Waldorf, MD 20601
             </p>
           </div>
           <div className={styles["contact-info"]}>
@@ -48,16 +46,16 @@ const Location = () => {
             <FontAwesomeIcon icon={faClock} />
             <h5>OPENING HOURS</h5>
             <p>
-              Mon – Fri, 8:00am – 4:30pm
+              Mon – Fri, 3pm – 8pm
               <br />
               Closed on Weekends, Thanksgiving, Christmas, New Years, Memorial
               Day, 4th of July, Labor Day
             </p>
           </div>
           <div className={styles["toggle-arrow"]} onClick={toggleContactInfo}>
-          <FontAwesomeIcon
-  icon={isContactVisible ? faChevronLeft : faChevronRight}
-/>
+            <FontAwesomeIcon
+              icon={isContactVisible ? faChevronLeft : faChevronRight}
+            />
           </div>
         </div>
         <div className={styles["map-container"]}>

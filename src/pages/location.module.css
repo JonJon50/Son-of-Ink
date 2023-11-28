@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    margin-top: 15rem;
+    margin-top: 10rem;
     min-height: 71vh; /* Make sure the container is at least the height of the viewport */
     
 }
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 1rem;
+    padding-bottom: 4rem;
     height: fit-content;
 }
 
@@ -79,30 +79,35 @@
     /* ... other styles ... */
 
     .contact-container {
-        /* ... other styles ... */
-        position: fixed;
-        top: 0;
-        left: -100%; /* Start off-screen */
-        height: 100%;
-        overflow: auto;
-        transition: left 0.3s;
-        z-index: 100; /* Make sure it's above other content */
-    }
+        position: fixed; /* Fixed position to stay in view */
+        top: 22%; /* Align to the top */
+        left: 0; /* Start from the left edge */
+        width: 80%; /* Take up 80% of the screen width */
+        height: 70%; /* Full height */
+        transform: translateX(-100%); /* Hide off-screen to the left */
+        transition: transform 0.3s; /* Animate the transform property */
+        z-index: 10; /* Make sure it's above the map */
+        padding: 2rem; /* Adjust padding as needed */
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
+      .contact-container.visible {
+        transform: translateX(0); /* Reset transform to show */
+      }
 
-    .contact-container.visible {
-        left: 0; /* Bring on-screen when visible */
-    }
-
-    .toggle-arrow {
+      .toggle-arrow {
         position: absolute;
-        top: 50%; /* Center vertically */
-        right: -25px; /* Adjust as needed to position the arrow outside the container */
-        width: 25px; /* Width of the arrow */
-        height: 25px; /* Height of the arrow */
-        background: orange; /* Match the contact-container color */
-        /* Style your arrow to be a > or < depending on the state */
-        /* Add content for the arrow with pseudo-elements or an image */
-    }
-
+        top: 50%;
+        right: -25px; /* Adjust so it's outside the contact-container */
+        transform: translateY(-50%);
+        z-index: 20; /* Above the contact-container */
+        /* Style your arrow here */
+      }
+      .map-container {
+        padding-top: 0rem;
+        width: 100%; /* Full width */
+        height: calc(100vh - 50px); /* Height minus header and potential other elements */
+        z-index: 5; /* Below the contact-container */
+      }
     /* ... other styles ... */
 }
+
