@@ -1,14 +1,84 @@
 .whole-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
+    flex-direction: column;
+    align-items: stretch;
     margin-top: 7rem;
 }
 
-.direction-container {
-    width: calc(50% - 1rem);
-    /* Take the full width on small screens */
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
-    margin-bottom: 2rem;
+.location-header {
+    background-color: red;
+    padding: 1rem;
+    color: white; 
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-container {
+    background-color: orange;
+    width: 300px; /* Adjust as needed */
+    padding: 5rem 1rem 1rem 1rem; /* Reduced left padding */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row; /* Stack icon, title, and text vertically */
+    margin-bottom: 1rem;
+}
+
+.contact-info h5 {
+    margin-left: 0.5rem; /* Space after the icon */
+    margin-bottom: 0; /* No bottom margin to keep title close to the details */
+    font-size: 1.2em; /* Adjust title size as needed */
+  }
+  
+  .contact-info .icon-title-container {
+    display: flex;
+    flex-direction: row; /* Icon and title in one line */
+  }
+
+  .contact-info p {
+    margin: 0; /* No margin for paragraph to align start with the title */
+    padding-left: 2rem; /* Align text with the title; adjust as needed */
+  }
+
+
+  .contact-info svg {
+    font-size: 1.5em; /* Adjust the size of the icon */
+    color: white; /* Color of the icon */
+  }
+
+.map-container {
+    flex-grow: 1;
+    /* Add any additional styling for the map container here */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .contact-container {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hide by default */
+        height: 100%;
+        overflow: auto;
+        transition: left 0.3s;
+    }
+
+    .contact-container.visible {
+        left: 0;
+    }
+
+    .map-container {
+        padding-top: 1rem;
+    }
 }
