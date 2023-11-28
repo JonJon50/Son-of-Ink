@@ -22,10 +22,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/booking": [
+    "/artist": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/booking.js"
+      "static/chunks/pages/artist.js"
     ],
     "/location": [
       "static/chunks/webpack.js",

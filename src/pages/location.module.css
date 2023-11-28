@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    margin-top: 7rem;
+    margin-top: 15rem;
+    min-height: 71vh; /* Make sure the container is at least the height of the viewport */
+    
 }
 
 .location-header {
@@ -14,6 +16,8 @@
 .content-container {
     display: flex;
     flex-direction: row;
+    flex-grow: 1; /* Allow container to fill the space in the flex-direction */
+    
 }
 
 .contact-container {
@@ -23,18 +27,21 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: 1rem;
+    height: fit-content;
 }
 
 .contact-info {
     display: flex;
     flex-direction: row; /* Stack icon, title, and text vertically */
-    margin-bottom: 1rem;
+    margin-bottom: 4.8rem;
 }
 
 .contact-info h5 {
     margin-left: 0.5rem; /* Space after the icon */
     margin-bottom: 0; /* No bottom margin to keep title close to the details */
-    font-size: 1.2em; /* Adjust title size as needed */
+    font-size: 1.0em; /* Adjust title size as needed */
+    
   }
   
   .contact-info .icon-title-container {
@@ -58,27 +65,44 @@
     /* Add any additional styling for the map container here */
 }
 
+.toggle-arrow {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 100%; /* Place it to the right side of the contact-container */
+    transform: translateY(-50%); /* Align the center of the arrow with the vertical middle */
+    cursor: pointer;
+    /* Style your arrow here */
+  }
+
 /* Responsive design */
 @media (max-width: 768px) {
-    .content-container {
-        flex-direction: column;
-    }
+    /* ... other styles ... */
 
     .contact-container {
-        width: 100%;
+        /* ... other styles ... */
         position: fixed;
         top: 0;
-        left: -100%; /* Hide by default */
+        left: -100%; /* Start off-screen */
         height: 100%;
         overflow: auto;
         transition: left 0.3s;
+        z-index: 100; /* Make sure it's above other content */
     }
 
     .contact-container.visible {
-        left: 0;
+        left: 0; /* Bring on-screen when visible */
     }
 
-    .map-container {
-        padding-top: 1rem;
+    .toggle-arrow {
+        position: absolute;
+        top: 50%; /* Center vertically */
+        right: -25px; /* Adjust as needed to position the arrow outside the container */
+        width: 25px; /* Width of the arrow */
+        height: 25px; /* Height of the arrow */
+        background: orange; /* Match the contact-container color */
+        /* Style your arrow to be a > or < depending on the state */
+        /* Add content for the arrow with pseudo-elements or an image */
     }
+
+    /* ... other styles ... */
 }

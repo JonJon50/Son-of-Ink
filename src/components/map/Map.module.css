@@ -10,7 +10,6 @@
     /* Take the full width on small screens */
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
     margin-bottom: 2rem;
-    /* Space between the booking card and the map */
    
   }
 }
@@ -20,7 +19,7 @@
     width: calc(100% - rem);
     /* Take the full width on small screens */
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     /* Space between the booking card and the map */
 
   }
