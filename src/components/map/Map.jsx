@@ -47,7 +47,7 @@ function Map() {
 
   // Directions useEffect
   useEffect(() => {
-    if (map && userLocation) {
+    if (map && userLocation.lat && userLocation.lng) {
       drawDirections(map, userLocation, officeAddress);
     }
   }, [map, userLocation, officeAddress]);

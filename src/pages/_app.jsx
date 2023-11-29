@@ -1,4 +1,4 @@
-// pages/_app.js
+// pages/_app.jxs
 
 import React from 'react';
 import Navbar from '../components/Navbar';

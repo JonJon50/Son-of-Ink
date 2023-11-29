@@ -9,7 +9,7 @@ const Artist = ({ showBioSection = false }) => {
       <div className={styles.parallaxBackground} /> {/* Parallax Background */}
       <div className={styles.wholeContainer}>
         <h2 className={`text-center ${styles.artistTitle}`}>Artist</h2>
-        
+
         {/* Conditionally render artist bios section */}
         {showBioSection && (
           <div className={styles.artistBios}>
@@ -31,7 +31,6 @@ const Artist = ({ showBioSection = false }) => {
                 className={styles.artistImage}
               />
               <div className={styles.artistOverlay}>
-                
                 <h2 className={styles.artistName}>{artist.name}</h2>
                 <div className={styles.buttonContainer}>
                   <Link href={`/${artist.name}`} passHref>
@@ -48,4 +47,3 @@ const Artist = ({ showBioSection = false }) => {
 };
 
 export default Artist;
-
