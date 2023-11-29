@@ -5,8 +5,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useInView } from 'react-intersection-observer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHourglass, faHandshake, faUsers, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
-const StatItem = ({ end, suffix, title }) => {
+
+const StatItem = ({ end, suffix, title, icon }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, // The animation will only run once when the component comes into view for the first time
     threshold: 0.3,    // The component starts the animation when 30% of it is visible within the viewport
@@ -14,6 +17,9 @@ const StatItem = ({ end, suffix, title }) => {
 
   return (
     <div className={styles.statItem} ref={ref}>
+      <div className={styles.statIcon}>
+        <FontAwesomeIcon icon={icon} />
+      </div>
       <div className={styles.statNumber}>
         <CountUp end={inView ? end : 0} duration={1} suffix={suffix} />
       </div>
@@ -57,10 +63,10 @@ const Home = () => {
       </div>
       {/* Statistics section */}
       <div className={styles.statisticsSection}>
-        <StatItem end={10} suffix="+" title="Years in the Industry" />
-        <StatItem end={3192} title="Client Relationships" />
-        <StatItem end={204070} title="Tattoos Done" />
-        <StatItem end={6173} title="Members" />
+        <StatItem end={10} suffix="+" title="Years in the Industry" icon={faHourglass} />
+        <StatItem end={3192} title="Client Relationships" icon={faHandshake} />
+        <StatItem end={204070} title="Tattoos Done" icon={faUsers} />
+        <StatItem end={6173} title="Members" icon={faChalkboardTeacher} />
       </div>
     </div>
   );

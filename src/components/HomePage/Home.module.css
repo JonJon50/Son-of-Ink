@@ -1,44 +1,42 @@
 /* Styling for the main container of the home section */
 .home {
   position: relative;
-  height: 100vh;
+  width: 100%; /* Changed to width to prevent overflow on small screens */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .videoContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative; /* Changed to relative */
   width: 100%;
-  height: 100%;
+  padding-top: 53%; /* Aspect ratio for 16:9 videos */
   overflow: hidden;
-  z-index: 0; /* Behind the content */
 }
 
 .video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .text-overlay {
+  position: absolute;
   color: white;
   font-size: 6rem;
   font-weight: bold;
+  top: 20%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
   animation: fadeInAnimation 20s ease;
-  left: 50%;
-  top: 50%;
 }
 
 @media (max-width: 768px) {
   .text-overlay {
-    font-size: 3rem;
-    /* Adjust the font size for mobile */
+    font-size: 3rem; /* Adjust the font size for mobile */
   }
 }
 
@@ -50,26 +48,18 @@
 
 /* Keyframes for the fade-in animation */
 @keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes colorFlash {
   0% {
     background-image: linear-gradient(to right, red, yellow);
-    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
-
   100% {
     background-image: none;
-    background-clip: initial;
     -webkit-background-clip: initial;
     color: white;
   }
@@ -78,10 +68,10 @@
 /* Styling for the button container */
 .button-container {
   position: absolute;
-  bottom: 10%;
-  left: 50%;
+  bottom: 65%;
+  left: 46%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2; /* Ensure it's above the video */
 }
 
 /* Styling for the transparent round button */
@@ -95,9 +85,6 @@
   font-weight: lighter;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.button-container .round-button {
   text-transform: uppercase;
 }
 
@@ -107,65 +94,67 @@
 
 @media (max-width: 768px) {
   .round-button {
-    font-size: 0.75rem;
+    font-size: 0.75rem; /* Smaller button font on mobile */
   }
 }
-
- /* Add to your Home.module.css */
-
 
 /* This will be your stats section styling */
 .statisticsSection {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start; /* Align items to start to prevent stretching */
   width: 100%;
   padding: 20px;
-  background: #f8f9fa; /* Or any other background color */
-  margin-top: 58rem; /* Adjust this value so the section sits right under the video */
-  z-index: 1; /* Above the video */
+  background: #f8f9fa;
+  position: relative; /* Relative positioning to follow the flow */
+  z-index: 2; /* Above the video */
 }
 
 .statItem {
+  flex: 1 0 21%; /* Flex grow, no shrink, basis of 21% to fit 4 items */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   margin: 10px;
   text-align: center;
+  max-width: 200px; /* Maximum width for each stat item */
 }
 
 .statIcon {
-  width: 50px; /* Example size, adjust as needed */
-  height: 50px; /* Maintain aspect ratio for icons */
-  margin-bottom: 10px; /* Space between icon and number */
+  font-size: 3em; /* Adjust icon size */
+  color: blue; /* Icon color */
+  margin-bottom: 10px;
 }
 
-
 .statNumber {
-  font-size: 2rem; /* Adjust the size as needed */
+  font-size: 2.5rem; /* Adjust number size */
   font-weight: bold;
 }
 
 .statText {
-  font-size: 1rem;
-  color: #6c757d; /* Adjust text color as needed */
+  font-size: 1.2rem; /* Adjust text size */
+  color: #6c757d;
 }
-
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .statItem {
-    /* Make each stat item take full width on small screens */
-    flex-basis: 100%;
+    flex-basis: 100%; /* Full width for each stat item on mobile */
+    margin: 10px 0; /* Margin top and bottom only */
+  }
+
+  .statIcon {
+    font-size: 2em; /* Smaller icon size on mobile */
   }
 
   .statNumber {
-    font-size: 1.5rem; /* Adjust font size for smaller screens if necessary */
+    font-size: 1.5rem; /* Smaller number size on mobile */
   }
 
   .statText {
-    font-size: 0.9rem; /* Adjust text size for smaller screens if necessary */
+    font-size: 1rem; /* Smaller text size on mobile */
   }
 }
+
