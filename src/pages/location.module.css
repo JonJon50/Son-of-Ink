@@ -11,12 +11,14 @@
     background-color: red;
     padding: 1rem;
     color: white; 
+    text-align: center;
 }
 
 .content-container {
     display: flex;
     flex-direction: row;
     flex-grow: 1; /* Allow container to fill the space in the flex-direction */
+    color: white;
     
 }
 
@@ -71,6 +73,8 @@
     left: 100%; /* Place it to the right side of the contact-container */
     transform: translateY(-50%); /* Align the center of the arrow with the vertical middle */
     cursor: pointer;
+    color: red;
+    font-size: 2rem;
     /* Style your arrow here */
   }
 
