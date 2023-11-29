@@ -4,7 +4,7 @@
     align-items: stretch;
     margin-top: 10rem;
     min-height: 71vh; /* Make sure the container is at least the height of the viewport */
-    
+    padding-bottom: 10%;
 }
 
 .location-header {
