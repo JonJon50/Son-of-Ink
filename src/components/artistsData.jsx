@@ -21,16 +21,13 @@ const artistsData = [
       { url: "/Assets/5.png" },
       { url: "/Assets/6.png" },
       { url: "/Assets/7.png" },
-
-      // ... add more images for Theron's gallery
     ],
   },
   {
     name: "Art",
     imageUrl: "/Assets/tatArt.png", // Image URL for Art profile picture
-    bio: "", // Biography of Art
+    bio: "", 
     galleryImages: [
-      // ... add more images for Art gallery
       { url: "/Assets/d.png" },
       { url: "/Assets/c.png" },
       { url: "/Assets/b.png" },
@@ -41,5 +38,5 @@ const artistsData = [
   // ... add more artists with their data
 ];
 
-// Export the array of artist data for use in other parts of your application
+
 export default artistsData;

@@ -8,7 +8,7 @@
   background-size: cover;
   position: fixed;
   width: 100%;
-  height: 100vh; /* This should be vh not % to cover the full viewport height */
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: -1;
@@ -27,18 +27,21 @@
   padding: 0 2rem;
 }
 
-/* Animation */
 @keyframes fadeInAnimation {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-/* Title */
 .artistTitle {
   margin-top: 17rem;
   text-align: center;
   font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 3rem; 
+  font-size: 3rem;
 }
 
 /* Cards layout */
@@ -58,10 +61,10 @@
   border: 1px solid #ddd;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   position: relative;
-  background-color: #ffffff; /* Ensure a solid white background */
+  background-color: #ffffff;
+  /* Ensure a solid white background */
 }
 
-/* Image styles */
 .artistImage {
   width: 100%;
   height: 500px;
@@ -69,11 +72,8 @@
   border-radius: 8px;
 }
 
-
-
-/* Bio section */
 .artistBios {
-  padding-top: 1rem; 
+  padding-top: 1rem;
 }
 
 .artistBio p {
@@ -85,22 +85,19 @@
   font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-/* Overlay */
 .artistOverlay {
   color: #050505;
- 
 }
 
 .artistCard:hover .artistOverlay {
   opacity: 1;
 }
 
-/* Name text Art Gallery */
 .artistName {
   font-size: 2.0rem;
   margin: 0.5rem 0;
   padding-top: 3%;
-  font-family:  Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
   color: #050505;
 }
@@ -119,21 +116,28 @@
   border: 1px solid rgb(5, 4, 4);
   color: rgb(5, 5, 5);
   border-radius: 999px;
-  padding: 0.75rem 1.5rem; /* Adjust padding */
+  padding: 0.75rem 1.5rem;
+  /* Adjust padding */
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  display: inline-block; /* Change to inline-block for link styling */
-  text-decoration: none; /* Remove text decoration */
+  display: inline-block;
+  /* Change to inline-block for link styling */
+  text-decoration: none;
+  /* Remove text decoration */
   transition: all 0.3s ease;
   text-transform: uppercase;
 }
 
 .round-button:hover {
-  background-color: rgba(106, 102, 102, 0.2); /* Light background on hover */
-  color: #000; /* Change text color on hover */
-  transform: scale(1.05); /* Slightly increase button size */
-  border-color: #000; /* Change border color on hover */
+  background-color: rgba(106, 102, 102, 0.2);
+  /* Light background on hover */
+  color: #000;
+  /* Change text color on hover */
+  transform: scale(1.05);
+  /* Slightly increase button size */
+  border-color: #000;
+  /* Change border color on hover */
 }
 
 /* Button overlay */
@@ -158,13 +162,16 @@
 .button-text {
   font-size: 1.2rem;
 }
+
 /* Art Gallery */
 .theronText {
   color: #fff;
 }
+
 .artText {
   color: #fff;
 }
+
 /* Gallery styles */
 .galleryContainer {
   min-height: 30vh;
@@ -190,6 +197,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 750px) {
+
   .artistContainer,
   .artistBios {
     padding: 0 1rem;
@@ -226,20 +234,25 @@
 
 /* Adjust .artistArt to display three images per row */
 .artistArt {
-  width: calc(33.333% - 10px); /* Change the percentage to adjust for three images */
-  margin: 5px; /* Adjust margin for spacing */
-  cursor: pointer; /* Indicates the image is clickable */
+  width: calc(33.333% - 10px);
+  /* Change the percentage to adjust for three images */
+  margin: 5px;
+  /* Adjust margin for spacing */
+  cursor: pointer;
+  /* Indicates the image is clickable */
 }
 
 /* Update your media queries to handle the new layout */
 @media (max-width: 750px) {
   .artistArt {
-    width: calc(50% - 10px); /* Two images per row for smaller screens */
+    width: calc(50% - 10px);
+    /* Two images per row for smaller screens */
   }
 }
 
 @media (min-width: 751px) and (max-width: 1024px) {
   .artistArt {
-    width: calc(33.333% - 10px); /* Three images per row for medium screens */
+    width: calc(33.333% - 10px);
+    /* Three images per row for medium screens */
   }
 }

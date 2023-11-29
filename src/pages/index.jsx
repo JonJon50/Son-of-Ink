@@ -3,7 +3,7 @@ import React from "react";
 import Home from "../components/HomePage/Home"; // Adjust the path accordingly
 import Artist from "../components/artist/Artist";
 import Booking from "./booking";
-import Location from "./location";
+// import Location from "./location";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = () => {

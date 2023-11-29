@@ -1,41 +1,44 @@
-// Home.jsx
-
-// Import necessary modules and assets
 import React from "react";
-import videoBg from "public/static/videos/Tattoo Video.mp4"; // Import the background video
-import styles from "./Home.module.css"; // Import the CSS module for styling
+import videoBg from "public/static/videos/Tattoo Video.mp4";
+import styles from "./Home.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-// Define the Home functional component
 const Home = () => {
+  const fadeInUp = {
+    initial: { y: 60, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 1 } },
+  };
+
   return (
-    // Main container for the home section
     <div className={styles.home}>
-      {/* Container for the background video */}
       <div className={styles.videoContainer}>
-        {/* Background video element */}
         <video src={videoBg} autoPlay loop muted className={styles.video} />
       </div>
 
-      {/* Text overlay */}
-      <h5 className={`${styles["text-overlay"]} ${styles["customFont"]}`}>
+      <motion.h5
+        className={`${styles["text-overlay"]} ${styles["customFont"]}`}
+        variants={fadeInUp}
+        initial="initial"
+        animate="animate"
+      >
         Son of Ink
-      </h5>
+      </motion.h5>
 
-      {/* Button container */}
       <div className={styles["button-container"]}>
-        {/* Wrap the button with Link and specify the href */}
         <Link href="/booking">
-          <button
+          <motion.button
             className={`${styles["round-button"]} ${styles["text-overlay"]}`}
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
           >
             CONSULTATIONS
-          </button>
+          </motion.button>
         </Link>
       </div>
     </div>
   );
 };
 
-// Export the Home component for use in other parts of the application
 export default Home;

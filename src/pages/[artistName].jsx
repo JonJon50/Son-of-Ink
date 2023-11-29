@@ -1,10 +1,11 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import artistsData from '@/components/artistsData'; // Adjust the import path as necessary
-import Link from 'next/link';
-import styles from '../components/artist/Artist.module.css'; // Adjust the import path as necessary
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
+// [artistName].jsx
+import React from "react";
+import { useRouter } from "next/router";
+import artistsData from "@/components/artistsData"; 
+import Link from "next/link";
+import styles from "../components/artist/Artist.module.css"; 
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 // Define the ArtistGalleryPage component
 const ArtistGalleryPage = () => {
@@ -34,12 +35,15 @@ const ArtistGalleryPage = () => {
   // Background style configuration moved here for clarity
   const backgroundStyle = {
     background: `url("${selectedArtist.imageUrl}") no-repeat center top / cover`,
-    width: '100vw',
-    height: '60vh',
+    width: "100vw",
+    height: "60vh",
   };
 
   return (
-    <div className="gallery-page" style={{ overflow: 'hidden', position: 'relative' }}>
+    <div
+      className="gallery-page"
+      style={{ overflow: "hidden", position: "relative" }}
+    >
       {/* Background image */}
       <div className="background-image" style={backgroundStyle}></div>
 
@@ -47,32 +51,31 @@ const ArtistGalleryPage = () => {
       <div
         className="gallery-content"
         style={{
-          position: 'absolute',
-          top: '9%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          maxWidth: '1200px',
-          width: '100%',
-          padding: '20px',
+          position: "absolute",
+          top: "9%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          maxWidth: "1200px",
+          width: "100%",
+          padding: "20px",
         }}
       >
         {/* Artist name and booking button */}
         <h2
           className={`${styles.artistName} ${
-            selectedArtist.name === 'Theron' ? styles.theronText : ''
-          } ${selectedArtist.name === 'Art' ? styles.artText : ''}`}
+            selectedArtist.name === "Theron" ? styles.theronText : ""
+          } ${selectedArtist.name === "Art" ? styles.artText : ""}`}
         >
           {selectedArtist.name}'s Gallery
         </h2>
         <Link href="/booking">
-  <button
-    className={`${styles['round-button']} ${styles['text-overlay']}`}
-    style={{ padding: '10px 20px' }}
-  >
-    Book Now
-  </button>
-</Link>
-
+          <button
+            className={`${styles["round-button"]} ${styles["text-overlay"]}`}
+            style={{ padding: "10px 20px" }}
+          >
+            Book Now
+          </button>
+        </Link>
       </div>
 
       {/* Gallery images */}
@@ -92,7 +95,9 @@ const ArtistGalleryPage = () => {
       <Lightbox
         open={isOpen}
         close={() => setOpen(false)}
-        slides={selectedArtist.galleryImages.map((image) => ({ src: image.url }))}
+        slides={selectedArtist.galleryImages.map((image) => ({
+          src: image.url,
+        }))}
         currentIndex={selectedIndex}
       />
     </div>
