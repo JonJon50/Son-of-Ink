@@ -30,8 +30,8 @@ const StatItem = ({ end, suffix, title, icon }) => {
 
 const Home = () => {
   const fadeInUp = {
-    initial: { y: 80, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 1 } },
+    initial: { y: 90, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
   };
 
   return (
@@ -45,6 +45,7 @@ const Home = () => {
         variants={fadeInUp}
         initial="initial"
         animate="animate"
+        transition={{ duration: 1.9, delay: 0.2 }}
       >
         Son of Ink
       </motion.h5>
@@ -56,6 +57,7 @@ const Home = () => {
             variants={fadeInUp}
             initial="initial"
             animate="animate"
+            transition={{ duration: 1.9, delay: 0.4 }}
           >
             CONSULTATIONS
           </motion.button>

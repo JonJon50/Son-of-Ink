@@ -2,8 +2,13 @@ import React from "react";
 import styles from "./Artist.module.css";
 import artistsData from "../artistsData";
 import Link from "next/link";
-
+import { motion } from 'framer-motion';
 const Artist = ({ showBioSection = false }) => {
+
+  const bioVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <>
       <div className={styles.parallaxBackground} /> {/* Parallax Background */}
@@ -12,19 +17,28 @@ const Artist = ({ showBioSection = false }) => {
 
         {/* Conditionally render artist bios section */}
         {showBioSection && (
-          <div className={styles.artistBios}>
-            {artistsData.map((artist, index) => (
-              <div key={index} className={styles.artistBio}>
-                <div>{artist.bio}</div>
-              </div>
+            <div className={styles.artistBios}>
+            {artistsData.map((artist) => (
+              // Use a unique piece of data for the key, such as an id
+              <motion.div 
+                key={artist.id} 
+                className={styles.artistBio}
+                variants={bioVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, delay: 0.2 * artistsData.indexOf(artist) }}
+              >
+                {artist.bio}
+              </motion.div>
             ))}
+      
           </div>
         )}
 
         {/* Container for artist cards */}
         <div className={styles.artistContainer}>
-          {artistsData.map((artist, index) => (
-            <div key={index} className={styles.artistCard}>
+          {artistsData.map((artist) => (
+            <div key={artist.id} className={styles.artistCard}>
               <img
                 src={artist.imageUrl}
                 alt={artist.name}
