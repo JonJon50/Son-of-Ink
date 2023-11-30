@@ -81,7 +81,6 @@ const Home = () => {
       </div>
       {/* New video section with overlay */}
       <div className={styles.videoOverlaySection}>
-        {/* Use the URL directly in the src attribute */}
         <video
           src="https://www.sentinelone.com/wp-content/uploads/2019/11/S1_Website_Section4_Background_Waves-1.mp4%22%20type=%22video/mp4%22%20src=%22https://www.sentinelone.com/wp-content/uploads/2019/11/S1_Website_Section4_Background_Waves-1.mp4"
           autoPlay
@@ -102,11 +101,38 @@ const Home = () => {
           <div className={styles.sideBySideParagraphs}>
             <div className={styles.paragraphSection}>
               <h2 className={styles.subtitle}>Who we are</h2>
-              <p>I'm Theron who has a passion for art. Making client ideas come to life is the best satisfaction along with a smile.  </p>
+              <p>
+                I am passionate about what I do and offer clients, and want to
+                give them the ultimate tattoo experience. Whether it's the
+                ability to book their appointments online, offering and
+                including specific aftercare, or just within the tattoo design
+                itself. I want your tattoo experience with me to stand out from
+                the rest. My goal is to create an instant positive reaction each
+                and every time I show a client the initial drawing of their new
+                tattoo. With over a decade of experience, I have found the right
+                location for me, at Grey Havens Tattoo. I’m at a shop that lets
+                me express who I am and who I want to be artistically. Here I’m
+                able to really focus on tailoring my experience to each
+                individual client and giving them the best custom tattoo they
+                could ask for.
+              </p>
             </div>
             <div className={styles.paragraphSection}>
               <h2 className={styles.subtitle}>What we do</h2>
-              <p>Artists from DMV area with 10 years + experience   </p>
+              <p>
+                I pride myself on standing out by being a client driven artist
+                who listens and wants the customer to have a one of a kind
+                experience they will always remember. Based on past personal
+                experiences at other shops I realize the process of getting a
+                tattoo can be a very intimidating experience for anyone, so I
+                want them to be comfortable and understand that I’m on the same
+                page, patient and listening. Different from many other artists,
+                I set aside a lot of time to prepare for each client and hold
+                myself to an extremely high standard. I envision every detail of
+                the tattoo they want and create a custom piece that exceeds
+                their expectations. I enjoy implementing aspects of texture into
+                each unique tattoo I create to give it added depth.{" "}
+              </p>
             </div>
           </div>
         </div>
