@@ -234,3 +234,9 @@
   }
 }
 
+
+@media (max-width: 768px) {
+  .videoOverlaySection {
+    display: none;
+  }
+}

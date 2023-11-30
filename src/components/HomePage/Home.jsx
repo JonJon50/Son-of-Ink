@@ -38,6 +38,7 @@ const Home = () => {
     animate: { y: 0, opacity: 1 },
   };
 
+  
   return (
     <div className={styles.home}>
       <div className={styles.videoContainer}>
