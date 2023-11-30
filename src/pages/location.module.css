@@ -11,7 +11,7 @@
     background-color: red;
     padding: 1rem;
     color: white; 
-    text-align: center;
+    padding-left: 2%;
 }
 
 .content-container {
@@ -84,7 +84,7 @@
 
     .contact-container {
         position: fixed; /* Fixed position to stay in view */
-        top: 22%; /* Align to the top */
+        /* top: 22%;  */
         left: 0; /* Start from the left edge */
         width: 80%; /* Take up 80% of the screen width */
         height: 70%; /* Full height */

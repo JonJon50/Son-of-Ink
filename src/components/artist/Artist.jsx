@@ -31,7 +31,6 @@ const Artist = ({ showBioSection = false }) => {
                 {artist.bio}
               </motion.div>
             ))}
-      
           </div>
         )}
 
