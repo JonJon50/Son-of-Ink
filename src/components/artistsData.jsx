@@ -3,6 +3,7 @@
 // Define an array of artist objects
 const artistsData = [
   {
+    id: 1,
     name: "Theron",
     imageUrl: "/Assets/Theron.png", // Image URL for Theron's profile picture
     bio: (
@@ -24,6 +25,7 @@ const artistsData = [
     ],
   },
   {
+    id: 2,
     name: "Art",
     imageUrl: "/Assets/tatArt.png", // Image URL for Art profile picture
     bio: "", 

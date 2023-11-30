@@ -4,19 +4,21 @@
     align-items: stretch;
     margin-top: 10rem;
     min-height: 71vh; /* Make sure the container is at least the height of the viewport */
-    
+    padding-bottom: 10%;
 }
 
 .location-header {
     background-color: red;
     padding: 1rem;
     color: white; 
+    padding-left: 2%;
 }
 
 .content-container {
     display: flex;
     flex-direction: row;
     flex-grow: 1; /* Allow container to fill the space in the flex-direction */
+    color: white;
     
 }
 
@@ -71,6 +73,8 @@
     left: 100%; /* Place it to the right side of the contact-container */
     transform: translateY(-50%); /* Align the center of the arrow with the vertical middle */
     cursor: pointer;
+    color: red;
+    font-size: 2rem;
     /* Style your arrow here */
   }
 
@@ -80,7 +84,7 @@
 
     .contact-container {
         position: fixed; /* Fixed position to stay in view */
-        top: 22%; /* Align to the top */
+        /* top: 22%;  */
         left: 0; /* Start from the left edge */
         width: 80%; /* Take up 80% of the screen width */
         height: 70%; /* Full height */
