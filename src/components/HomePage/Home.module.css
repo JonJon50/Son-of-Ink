@@ -167,3 +167,70 @@
   }
 }
 
+/* blue background */
+.videoOverlaySection {
+  position: relative;
+  width: 100%;
+  /* This padding-top will be 25% of the width, which is half the height of a 16:9 aspect ratio video */
+  padding-top: 35%;
+  overflow: hidden; /* This ensures no part of the video overflows the container */
+}
+
+.overlayVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Set width to 50% to make the video half its size */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area without distorting the ratio */
+  /* Center the video horizontally */
+ 
+}
+
+.overlayContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2; /* This ensures the text appears above the video */
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.sideBySideParagraphs {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.paragraphSection {
+  width: 45%;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .sideBySideParagraphs {
+    flex-direction: column;
+  }
+
+  .paragraphSection {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .mainTitle,
+  .subtitle {
+    /* Adjust font sizes for mobile responsiveness */
+    font-size: calc(1rem + 1.5vw);
+  }
+}
+
