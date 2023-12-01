@@ -95,7 +95,7 @@ const Booking = ({ showBackground = true }) => {
         </motion.h2>
         {/* Button container */}
         <div className={styles["button-container round-button"]}>
-          <Link href="https://www.google.com/...lrd=0x89b7a1700cf1d6cf:0x71fb69d645eccf44,1,,,">
+          <Link href="https://www.google.com/search?q=sons+of+ink&oq=son&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIOCAEQRRgnGDsYgAQYigUyBggCEEUYOTIGCAMQRRg7MhIIBBAuGEMYrwEYxwEYgAQYigUyEAgFEC4YgwEYsQMYgAQY5QQyEAgGEC4YxwEYsQMY0QMYgAQyDAgHEAAYQxiABBiKBTIQCAgQLhiDARjUAhixAxiABDIQCAkQLhiDARjUAhixAxiABNIBCTU4MTlqMGoxNagCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x89c260d8d6782ea3:0x6c46c1b72a85ddd7,1,,,,">
             <motion.button
               className={`${styles["round-button"]} ${styles["text-overlay"]}`}
               initial="hidden"
