@@ -18,9 +18,7 @@ const nextConfig = {
 
     return config;
   },
-
-  // Include Tailwind CSS
-  css: ['tailwind.css'],
 };
 
 module.exports = nextConfig;
+

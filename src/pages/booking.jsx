@@ -1,8 +1,8 @@
 // pages/booking.jxs
 
 import React, { useState } from "react";
-import BookingStyles from "../pages/booking.module.css"; // Import the CSS module
-import { sendContactForm } from "../lib/api";
+import BookingStyles from "../pages/booking.module.css"; 
+import { sendContactForm } from "../lib/api"; 
 import Link from "next/link";
 import styles from "./booking.module.css";
 import { motion } from "framer-motion";
