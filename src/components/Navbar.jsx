@@ -15,6 +15,7 @@ const Navbar = () => {
         <Link href="/artist">Artist</Link>
         <Link href="/booking">Booking</Link>
         <Link href="/location">Location</Link>
+        <Link href="/prep">Prep</Link>
       </div>
     </nav>
   );
