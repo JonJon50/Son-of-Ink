@@ -113,6 +113,7 @@ const Booking = ({ showBackground = true }) => {
             <form
               className={`card p-4 ${BookingStyles.form}`}
               onSubmit={handleSubmit}
+              enctype="multipart/form-data" // Add this attribute to upload files with the form 
             >
               <div className="mb-3">
                 <input
