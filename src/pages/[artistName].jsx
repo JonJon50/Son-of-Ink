@@ -1,11 +1,12 @@
 // [artistName].jsx
 import React from "react";
 import { useRouter } from "next/router";
-import artistsData from "@/components/artistsData"; 
+import artistsData from "@/components/artistsData";
 import Link from "next/link";
-import styles from "../components/artist/Artist.module.css"; 
+import styles from "../components/artist/Artist.module.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { motion } from "framer-motion";
 
 // Define the ArtistGalleryPage component
 const ArtistGalleryPage = () => {
@@ -38,6 +39,13 @@ const ArtistGalleryPage = () => {
     width: "100vw",
     height: "60vh",
   };
+  // Define your animation variants
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    hover: { scale: 1.1 },
+    tap: { scale: 0.9 },
+  };
 
   return (
     <div
@@ -52,12 +60,12 @@ const ArtistGalleryPage = () => {
         className="gallery-content"
         style={{
           position: "absolute",
-          top: "9%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          top: "16%", // Position from the top
+          left: "70%", // Start in the horizontal center
+          transform: "translate(-50%, -50%)", // Adjust for the element's own width and height
           maxWidth: "1200px",
           width: "100%",
-          padding: "20px",
+          padding: "50px",
         }}
       >
         {/* Artist name and booking button */}
@@ -81,12 +89,18 @@ const ArtistGalleryPage = () => {
       {/* Gallery images */}
       <div className={styles.galleryContainer}>
         {selectedArtist.galleryImages.map((image, index) => (
-          <img
+          <motion.img
             key={index}
             src={image.url}
             alt={`Gallery Image ${index}`}
             className={styles.artistArt}
+            variants={variants} // Pass the variants to the motion component
+            initial="hidden" // Set the initial animation state
+            animate="visible" // Set the target animation state
+            transition={{ duration: 1, delay: index * 0.2 }} // Define the animation transition
             onClick={() => openLightbox(index)}
+            whileHover="hover" // Specify the hover state variant
+            whileTap="tap" // Specify the tap state variant
           />
         ))}
       </div>

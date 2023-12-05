@@ -19,7 +19,7 @@
   color: rgb(9, 8, 8); /* Set link color */
   text-decoration: none; /* Remove underline */
   font-size: 1.2rem; /* Set font size */
-  margin-right: 20px; /* Add space between the links */
+  /* margin-right: 20px; Add space between the links */
   transition: font-size 0.3s ease; /* Add a smooth transition effect for font size */
 }
 
@@ -34,7 +34,9 @@
   font-size: 1.9rem; /* Increase the font size on hover */
   text-decoration: underline;
 }
-
+.prepLink {
+  font-family:Apple Chancery, cursive;
+}
   
   
   

@@ -6,7 +6,11 @@ import MapStyles from './Map.module.css';
 // Define defaultLocation outside of the component
 function Map() {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Ensure this is set in your environment variables
-  const [userLocation, setUserLocation] = useState({}); // Initialize state with defaultLocation
+  
+  // Define the default location here
+  const defaultLocation = { lat: 38.6171, lng: -76.9178 }; // Replace with your desired coordinates
+  
+  const [userLocation, setUserLocation] = useState(defaultLocation); // Initialize state with defaultLocation
   const [map, setMap] = useState(null);
   const officeAddress = '2181 Crain Hwy, Waldorf, MD 20601';
 

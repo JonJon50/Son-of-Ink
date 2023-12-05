@@ -1,4 +1,4 @@
-import { mailOptions, transporter } from "../../config/nodemailer";
+import { mailOptions, transporter } from "../../config/nodemailer"; // import nodemailer transporter and mail options
 
 const CONTACT_MESSAGE_FIELDS = {
     firstName: "First Name",
