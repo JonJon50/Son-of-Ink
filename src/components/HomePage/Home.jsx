@@ -87,6 +87,8 @@ const Home = () => {
           autoPlay
           loop
           muted
+          preload="auto"
+          poster="./Assets/Contact us.jpeg" // Add a poster image
           className={styles.overlayVideo}
         />
         <div className={styles.overlayContent}>
