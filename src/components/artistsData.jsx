@@ -5,7 +5,7 @@ const artistsData = [
   {
     id: 1,
     name: "Theron",
-    imageUrl: "/Assets/Theron.png", // Image URL for Theron's profile picture
+    imageUrl: "/Assets/d.png", // Image URL for Theron's profile picture
     bio: (
       <>
       <p>Hello, my name is Theron.</p>
