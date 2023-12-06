@@ -6,7 +6,7 @@
 body {
   margin: 0; /* Reset default margin */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background-color: white; /* Set the background color to white */
+  background-color: rgb(3, 2, 2); /* Set the background color to white */
 }
 
 
