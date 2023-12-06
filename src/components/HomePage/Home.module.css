@@ -50,7 +50,7 @@
   .text-overlay, .overlayContent {
     transform: translate(0, 0); /* Remove the -50% translation on mobile */
     left: auto; /* Reset left positioning */
-    top: 7rem; /* Reset top positioning */
+    top: 8rem; /* Reset top positioning */
      font-size: 2rem; /* Adjust the font size for mobile */
   }
 }
@@ -79,7 +79,7 @@
 .button-container {
   position: absolute;
   bottom: 72%;
-  left: 45%;
+  left: 47%;
   transform: translateX(-50%);
   z-index: 2; /* Ensure it's above the video */
 }
@@ -251,10 +251,39 @@
     font-size: calc(1rem + 1.5vw);
   }
 }
+@media (max-width: 768px) {
+  /* Hide elements that are not needed on mobile */
+   .paragraphSection, .button-container {
+    display: none;
+  }
 
+  /* Ensure the video overlay section has a blue background */
+  .videoOverlaySection {
+    padding-top: 0; /* Remove padding-top to fit the content */
+    background-color: #0000ff; /* Set the background color to blue */
+  }
 
+  /* Adjust the overlay content to be relative and fit within the new blue background */
+  .overlayContent {
+    position: relative;
+    top: initial;
+    left: initial;
+    transform: none;
+    text-align: center;
+    padding: 2rem 1rem; /* Add some padding around the text */
+  }
+
+  /* Adjust the main title font size and margins for mobile */
+  .mainTitle {
+    font-size: 2rem; /* Adjust the font size for mobile readability */
+    margin-bottom: 1rem; /* Adjust the bottom margin */
+    color: white; /* Ensure the title color is white for contrast */
+  }
+}
+
+/* 
 @media (max-width: 768px) {
   .videoOverlaySection {
     display: none;
   }
-}
+} */
