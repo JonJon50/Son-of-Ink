@@ -1,117 +1,144 @@
 .whole-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    margin-top: 10rem;
-    min-height: svh; /* Make sure the container is at least the height of the viewport */
-    padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 10rem;
+  min-height: svh;
+  /* Make sure the container is at least the height of the viewport */
+  padding-bottom: 10%;
 }
 
 .location-header {
-    background-color: rgb(3, 2, 2);
-    padding: 1rem;
-    color: white; 
-    padding-left: 2%;
+  background-color: rgb(3, 2, 2);
+  padding: 1rem;
+  color: white;
+  padding-left: 2%;
 }
 
 .content-container {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1; /* Allow container to fill the space in the flex-direction */
-    color: white;
-    
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  /* Allow container to fill the space in the flex-direction */
+  color: white;
 }
 
 .contact-container {
-    background-color: orange;
-    width: 300px; /* Adjust as needed */
-    padding: 5rem 1rem 1rem 1rem; /* Reduced left padding */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 4rem;
-    height: fit-content;
+  background-color: orange;
+  width: 300px;
+  /* Adjust as needed */
+  padding: 5rem 1rem 1rem 1rem;
+  /* Reduced left padding */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 4rem;
+  height: fit-content;
 }
 
 .contact-info {
-    display: flex;
-    flex-direction: row; /* Stack icon, title, and text vertically */
-    margin-bottom: 4.8rem;
+  display: flex;
+  flex-direction: row;
+  /* Stack icon, title, and text vertically */
+  margin-bottom: 4.8rem;
 }
 
 .contact-info h5 {
-    margin-left: 0.5rem; /* Space after the icon */
-    margin-bottom: 0; /* No bottom margin to keep title close to the details */
-    font-size: 1.0em; /* Adjust title size as needed */
-    
-  }
-  
-  .contact-info .icon-title-container {
-    display: flex;
-    flex-direction: row; /* Icon and title in one line */
-  }
+  margin-left: 0.5rem; /* Space after the icon */
+  margin-bottom: 0; /* No bottom margin to keep title close to the details */
+  font-size: 1.0em;
+}
+  /* Icon and title in one line */
+.contact-info .icon-title-container {
+  display: flex;
+  flex-direction: row;
+}
 
-  .contact-info p {
-    margin: 0; /* No margin for paragraph to align start with the title */
-    padding-left: 2rem; /* Align text with the title; adjust as needed */
-  }
+.contact-info p {
+  margin: 0;
+  /* No margin for paragraph to align start with the title */
+  padding-left: 2rem;
+  /* Align text with the title; adjust as needed */
+}
 
-
-  .contact-info svg {
-    font-size: 1.5em; /* Adjust the size of the icon */
-    color: white; /* Color of the icon */
-  }
+.contact-info svg {
+  font-size: 1.5em;
+  /* Adjust the size of the icon */
+  color: white;
+  /* Color of the icon */
+}
 
 .map-container {
-    flex-grow: 1;
-    /* Add any additional styling for the map container here */
+  flex-grow: 1;
+  /* Add any additional styling for the map container here */
 }
 
 .toggle-arrow {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 100%; /* Place it to the right side of the contact-container */
-    transform: translateY(-50%); /* Align the center of the arrow with the vertical middle */
-    cursor: pointer;
-    color: red;
-    font-size: 2rem;
-    /* Style your arrow here */
-  }
+  position: absolute;
+  top: 50%;
+  /* Center vertically */
+  left: 100%;
+  /* Place it to the right side of the contact-container */
+  transform: translateY(-50%);
+  /* Align the center of the arrow with the vertical middle */
+  cursor: pointer;
+  color: red;
+  font-size: 2rem;
+  /* Style your arrow here */
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
-    /* ... other styles ... */
+  /* ... other styles ... */
 
-    .contact-container {
-        position: fixed; /* Fixed position to stay in view */
-        /* top: 22%;  */
-        left: 0; /* Start from the left edge */
-        width: 80%; /* Take up 80% of the screen width */
-        height: 70%; /* Full height */
-        transform: translateX(-100%); /* Hide off-screen to the left */
-        transition: transform 0.3s; /* Animate the transform property */
-        z-index: 10; /* Make sure it's above the map */
-        padding: 2rem; /* Adjust padding as needed */
-        box-sizing: border-box; /* Include padding in width calculation */
-      }
-      .contact-container.visible {
-        transform: translateX(0); /* Reset transform to show */
-      }
+  .contact-container {
+    position: fixed;
+    /* Fixed position to stay in view */
+    /* top: 22%;  */
+    left: 0;
+    /* Start from the left edge */
+    width: 80%;
+    /* Take up 80% of the screen width */
+    height: 70%;
+    /* Full height */
+    transform: translateX(-100%);
+    /* Hide off-screen to the left */
+    transition: transform 0.3s;
+    /* Animate the transform property */
+    z-index: 10;
+    /* Make sure it's above the map */
+    padding: 1.5rem;
+    /* Adjust padding as needed */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+  }
 
-      .toggle-arrow {
-        position: absolute;
-        top: 50%;
-        right: -25px; /* Adjust so it's outside the contact-container */
-        transform: translateY(-50%);
-        z-index: 20; /* Above the contact-container */
-        /* Style your arrow here */
-      }
-      .map-container {
-        padding-top: 0rem;
-        width: 100%; /* Full width */
-        height: calc(100vh - 50px); /* Height minus header and potential other elements */
-        z-index: 5; /* Below the contact-container */
-      }
-    /* ... other styles ... */
+  .contact-container.visible {
+    transform: translateX(0);
+    /* Reset transform to show */
+  }
+
+  /* Style your arrow here */
+  .toggle-arrow {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    /* Adjust so it's outside the contact-container */
+    transform: translateY(-50%);
+    z-index: 20;
+    /* Above the contact-container */
+
+  }
+
+  .map-container {
+    padding-top: 0rem;
+    width: 100%;
+    /* Full width */
+    height: calc(100vh - 50px);
+    /* Height minus header and potential other elements */
+    z-index: 5;
+    /* Below the contact-container */
+  }
+
+  /* ... other styles ... */
 }
-
