@@ -47,8 +47,11 @@
 }
 
 @media (max-width: 768px) {
-  .text-overlay {
-    font-size: 3rem; /* Adjust the font size for mobile */
+  .text-overlay, .overlayContent {
+    transform: translate(0, 0); /* Remove the -50% translation on mobile */
+    left: auto; /* Reset left positioning */
+    top: 7rem; /* Reset top positioning */
+     font-size: 2rem; /* Adjust the font size for mobile */
   }
 }
 
@@ -57,8 +60,6 @@
   font-stretch: ultra-condensed;
   animation: ease, colorFlash 7s;
 }
-
-/* Keyframes for the fade-in animation */
 
 
 @keyframes colorFlash {
@@ -77,8 +78,8 @@
 /* Styling for the button container */
 .button-container {
   position: absolute;
-  bottom: 65%;
-  left: 46%;
+  bottom: 72%;
+  left: 45%;
   transform: translateX(-50%);
   z-index: 2; /* Ensure it's above the video */
 }
@@ -101,9 +102,19 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Adjustments for mobile view */
 @media (max-width: 768px) {
+  .button-container {
+    transform: translate(0, 0); /* Align without translation on mobile */
+    left: 33%; /* Reset left positioning */
+    bottom: auto; /* You may adjust this as needed */
+    top: 5%;
+    /* Adjust the position to match the desired mobile layout */
+  }
+
   .round-button {
     font-size: 0.75rem; /* Smaller button font on mobile */
+    /* Add any other necessary adjustments for mobile layout */
   }
 }
 
@@ -189,7 +200,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  /* Set width to 50% to make the video half its size */
   width: 100%;
   height: 100%;
   object-fit: cover; /* Cover the area without distorting the ratio */
