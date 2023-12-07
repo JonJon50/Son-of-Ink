@@ -10,16 +10,13 @@
   padding: 8px 16px; /* Add padding to the navbar */
   border-radius: 50px; /* Rounded corners */
   box-shadow: 0 9px 1px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  z-index: 1; /* Place above other elements */
+  z-index: 1; 
 }
-
-
 /* Styles for navigation links in the navbar */
 .navbar a {
   color: rgb(9, 8, 8); /* Set link color */
   text-decoration: none; /* Remove underline */
-  font-size: 1.2rem; /* Set font size */
-  /* margin-right: 20px; Add space between the links */
+  font-size: 1.1rem; 
   transition: font-size 0.3s ease; /* Add a smooth transition effect for font size */
 }
 
@@ -31,12 +28,12 @@
 /* Styles for navigation links when hovered over */
 .navbar a:hover {
   color: black; /* Darker color on hover */
-  font-size: 1.9rem; /* Increase the font size on hover */
+  font-size: 1.5rem; /* Increase the font size on hover */
   text-decoration: underline;
 }
 .prepLink {
   font-family:Apple Chancery, cursive;
 }
-  
-  
+
+
   

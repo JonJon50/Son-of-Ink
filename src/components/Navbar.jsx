@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav
       className={`${styles.navbar} py-4 text-black text-center position-fixed`}
     >
-      <div className="inline-flex space-x-4">
+      <div className="inline-flex space-x-3">
         <Link href="/">Home</Link>
         {/* Link directly to the /artist route */}
         <Link href="/artist">Artist</Link>
