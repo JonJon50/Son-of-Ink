@@ -51,28 +51,13 @@
     transform: translate(0, 0); /* Remove the -50% translation on mobile */
     left: auto; /* Reset left positioning */
     top: 8rem; /* Reset top positioning */
-     font-size: 2rem; /* Adjust the font size for mobile */
+     font-size: 3rem; /* Adjust the font size for mobile */
   }
 }
 
 .customFont {
   font-family: 'Snell Roundhand', sans-serif;
   font-stretch: ultra-condensed;
-  animation: ease, colorFlash 7s;
-}
-
-
-@keyframes colorFlash {
-  0% {
-    background-image: linear-gradient(to right, red, yellow);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-  100% {
-    background-image: none;
-    -webkit-background-clip: initial;
-    color: white;
-  }
 }
 
 /* Styling for the button container */
@@ -186,6 +171,7 @@
   padding-top: 35%;
   overflow: hidden; /* This ensures no part of the video overflows the container */
 }
+
 .videoOverlaySection::after {
   content: '';
   position: absolute;
@@ -193,7 +179,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1); /* Black shade with 50% opacity */
+  background: rgba(0, 0, 0, 0.6); /* Black shade with 50% opacity */
   z-index: 0; /* Ensure it's above the video but below the text */
 }
 .overlayVideo {

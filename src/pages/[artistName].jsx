@@ -37,7 +37,7 @@ const ArtistGalleryPage = () => {
   const backgroundStyle = {
     background: `url("${selectedArtist.imageUrl}") no-repeat center top / cover`,
     width: "100vw",
-    height: "60vh",
+    height: "80vh",
   };
   // Define your animation variants
   const variants = {

@@ -83,12 +83,12 @@ const Home = () => {
       {/* New video section with overlay */}
       <div className={styles.videoOverlaySection}>
         <video
-          src="https://www.sentinelone.com/wp-content/uploads/2019/11/S1_Website_Section4_Background_Waves-1.mp4%22%20type=%22video/mp4%22%20src=%22https://www.sentinelone.com/wp-content/uploads/2019/11/S1_Website_Section4_Background_Waves-1.mp4"
+          // src="https://www.sentinelone.com/wp-content/uploads/2019/11/S1_Website_Section4_Background_Waves-1.mp4%22%20type=%22video/mp4%22%20src=%22https://www.sentinelone.com/wp-content/uploads/2019/11/S1_Website_Section4_Background_Waves-1.mp4"
           autoPlay
           loop
           muted
           preload="auto"
-          poster="./Assets/Contact us.jpeg" // Add a poster image
+          poster="./Assets/HandsTattooing.jpeg" // Add a poster image
           className={styles.overlayVideo}
         />
         <div className={styles.overlayContent}>
@@ -99,7 +99,7 @@ const Home = () => {
             animate="animate"
             transition={{ duration: 1.0, delay: 0.5 }}
           >
-            Listening to your vision, <br /> and bringing it to <br /> life.
+            Imagine your vision, <br /> and bring it to <br /> life.
           </motion.h1>
           <div className={styles.sideBySideParagraphs}>
             <div className={styles.paragraphSection}>
