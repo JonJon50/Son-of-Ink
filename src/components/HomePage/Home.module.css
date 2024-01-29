@@ -10,7 +10,7 @@
 .videoContainer {
   position: relative; /* Changed to relative */
   width: 100%;
-  padding-top: 53%; /* Aspect ratio for 16:9 videos */
+  padding-top: 56.25%;   /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   overflow: hidden;
 }
 
@@ -32,7 +32,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0; /* Below the overlay */
+  /* z-index: 0; Below the overlay */
 }
 
 .text-overlay {
@@ -64,7 +64,7 @@
 .button-container {
   position: absolute;
   bottom: 72%;
-  left: 47%;
+  left: 45%;
   transform: translateX(-50%);
   z-index: 2; /* Ensure it's above the video */
 }
@@ -272,4 +272,30 @@
   .videoOverlaySection {
     display: none;
   }
+} */
+/* .mobileBackground {
+  background-image: url('/Assets/MobileView.png');
+   display: none;
+} */
+/* This will hide the video container on mobile devices */
+/* @media (max-width: 768px) {
+  .videoContainer {
+    display: none; 
+  } */
+
+  /* Ensure that the .mobileBackground class is actually being used in your component like this: <div className={styles.mobileBackground}></div> */
+  /* .mobileBackground {
+    display: block; 
+    background-image: url('/Assets/MobileView.png'); 
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+  }
+  
+ 
 } */
