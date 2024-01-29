@@ -42,9 +42,9 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.videoContainer}>
-        <video src={videoBg} autoPlay loop muted className={styles.video} />
+        <video src={videoBg} autoPlay loop muted  playsInline className={styles.video} />
       </div>
-
+      {/* <div className={styles.mobileBackground}></div> */}
       <motion.h5
         className={`${styles["text-overlay"]} ${styles["customFont"]}`}
         variants={fadeInUp}
