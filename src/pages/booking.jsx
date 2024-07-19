@@ -95,7 +95,7 @@ const Booking = ({ showBackground = true }) => {
         </motion.h2>
         {/* Button container */}
         <div className={styles["button-container round-button"]}>
-          <Link href="https://www.google.com/search?q=sons+of+ink&oq=son&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIOCAEQRRgnGDsYgAQYigUyBggCEEUYOTIGCAMQRRg7MhIIBBAuGEMYrwEYxwEYgAQYigUyEAgFEC4YgwEYsQMYgAQY5QQyEAgGEC4YxwEYsQMY0QMYgAQyDAgHEAAYQxiABBiKBTIQCAgQLhiDARjUAhixAxiABDIQCAkQLhiDARjUAhixAxiABNIBCTU4MTlqMGoxNagCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x89c260d8d6782ea3:0x6c46c1b72a85ddd7,1,,,,">
+          <Link href="https://www.google.com/search?q=son+of+ink+&sca_esv=e84c6bd2b5cb9bcc&sca_upv=1&sxsrf=ADLYWIIRFVGTlY84rvNr03vZ7Esfw597Sg%3A1721418265735&ei=GcKaZuG_LJKu5NoPlsqpuAM&ved=0ahUKEwihsPTh7rOHAxUSF1kFHRZlCjcQ4dUDCA8&oq=son+of+ink+&gs_lp=Egxnd3Mtd2l6LXNlcnAiC3NvbiBvZiBpbmsgMgoQIxiABBgnGIoFMgUQABiABDIFEAAYgAQyERAuGIAEGJECGMcBGIoFGK8BMgsQLhiABBjHARivATIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5IwmVQ4AtYoFtwAXgBkAEBmAGjAaAB0guqAQQwLjEyuAEMyAEA-AEBmAIMoAKCC8ICChAAGLADGNYEGEfCAhAQABiABBiwAxhDGMkDGIoFwgIOEAAYgAQYsAMYkgMYigXCAgcQIxiwAhgnwgIGEAAYBxgewgILEAAYgAQYhgMYigXCAgoQABgIGA0YHhgPwgIIEAAYgAQYogTCAgYQABgNGB7CAgQQABgemAMAiAYBkAYGkgcEMS4xMaAH-40B&sclient=gws-wiz-serp#lrd=0x89b7a1700cf1d6cf:0x71fb69d645eccf44,1,,,,">
             <motion.button
               className={`${styles["round-button"]} ${styles["text-overlay"]}`}
               initial="hidden"
