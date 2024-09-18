@@ -1,16 +1,19 @@
 /* Styling for the main container of the home section */
 .home {
   position: relative;
-  width: 100%; /* Changed to width to prevent overflow on small screens */
+  width: 100%;
+  /* Changed to width to prevent overflow on small screens */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .videoContainer {
-  position: relative; /* Changed to relative */
+  position: relative;
+  /* Changed to relative */
   width: 100%;
-  padding-top: 56.25%;   /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   overflow: hidden;
 }
 
@@ -21,8 +24,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Black shade with 50% opacity */
-  z-index: 0; /* Ensure it's above the video but below the text */
+  background: rgba(0, 0, 0, 0.6);
+  /* Black shade with 50% opacity */
+  z-index: 0;
+  /* Ensure it's above the video but below the text */
 }
 
 .video {
@@ -47,11 +52,17 @@
 }
 
 @media (max-width: 768px) {
-  .text-overlay, .overlayContent {
-    transform: translate(0, 0); /* Remove the -50% translation on mobile */
-    left: auto; /* Reset left positioning */
-    top: 8rem; /* Reset top positioning */
-     font-size: 3rem; /* Adjust the font size for mobile */
+
+  .text-overlay,
+  .overlayContent {
+    transform: translate(0, 0);
+    /* Remove the -50% translation on mobile */
+    left: auto;
+    /* Reset left positioning */
+    top: 8rem;
+    /* Reset top positioning */
+    font-size: 3rem;
+    /* Adjust the font size for mobile */
   }
 }
 
@@ -66,7 +77,8 @@
   bottom: 72%;
   left: 45%;
   transform: translateX(-50%);
-  z-index: 2; /* Ensure it's above the video */
+  z-index: 2;
+  /* Ensure it's above the video */
 }
 
 /* Styling for the transparent round button */
@@ -90,15 +102,19 @@
 /* Adjustments for mobile view */
 @media (max-width: 768px) {
   .button-container {
-    transform: translate(0, 0); /* Align without translation on mobile */
-    left: 33%; /* Reset left positioning */
-    bottom: auto; /* You may adjust this as needed */
+    transform: translate(0, 0);
+    /* Align without translation on mobile */
+    left: 33%;
+    /* Reset left positioning */
+    bottom: auto;
+    /* You may adjust this as needed */
     top: 5%;
     /* Adjust the position to match the desired mobile layout */
   }
 
   .round-button {
-    font-size: 0.75rem; /* Smaller button font on mobile */
+    font-size: 0.75rem;
+    /* Smaller button font on mobile */
     /* Add any other necessary adjustments for mobile layout */
   }
 }
@@ -108,58 +124,72 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start; /* Align items to start to prevent stretching */
+  align-items: flex-start;
+  /* Align items to start to prevent stretching */
   width: 100%;
   padding: 20px;
   background: #f8f9fa;
-  position: relative; /* Relative positioning to follow the flow */
-  z-index: 0; /* Above the video */
+  position: relative;
+  /* Relative positioning to follow the flow */
+  z-index: 0;
+  /* Above the video */
 }
 
 .statItem {
-  flex: 1 0 21%; /* Flex grow, no shrink, basis of 21% to fit 4 items */
+  flex: 1 0 21%;
+  /* Flex grow, no shrink, basis of 21% to fit 4 items */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   margin: 10px;
   text-align: center;
-  max-width: 200px; /* Maximum width for each stat item */
+  max-width: 200px;
+  /* Maximum width for each stat item */
 }
 
 .statIcon {
-  font-size: 3em; /* Adjust icon size */
-  color: blue; /* Icon color */
+  font-size: 3em;
+  /* Adjust icon size */
+  color: blue;
+  /* Icon color */
   margin-bottom: 10px;
 }
 
 .statNumber {
-  font-size: 2.5rem; /* Adjust number size */
+  font-size: 2.5rem;
+  /* Adjust number size */
   font-weight: bold;
 }
 
 .statText {
-  font-size: 1.2rem; /* Adjust text size */
+  font-size: 1.2rem;
+  /* Adjust text size */
   color: #6c757d;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .statItem {
-    flex-basis: 100%; /* Full width for each stat item on mobile */
-    margin: 10px 0; /* Margin top and bottom only */
+    flex-basis: 100%;
+    /* Full width for each stat item on mobile */
+    margin: 10px 0;
+    /* Margin top and bottom only */
   }
 
   .statIcon {
-    font-size: 2em; /* Smaller icon size on mobile */
+    font-size: 2em;
+    /* Smaller icon size on mobile */
   }
 
   .statNumber {
-    font-size: 1.5rem; /* Smaller number size on mobile */
+    font-size: 1.5rem;
+    /* Smaller number size on mobile */
   }
 
   .statText {
-    font-size: 1rem; /* Smaller text size on mobile */
+    font-size: 1rem;
+    /* Smaller text size on mobile */
   }
 }
 
@@ -169,7 +199,8 @@
   width: 100%;
   /* This padding-top will be 25% of the width, which is half the height of a 16:9 aspect ratio video */
   padding-top: 35%;
-  overflow: hidden; /* This ensures no part of the video overflows the container */
+  overflow: hidden;
+  /* This ensures no part of the video overflows the container */
 }
 
 .videoOverlaySection::after {
@@ -179,17 +210,21 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Black shade with 50% opacity */
-  z-index: 0; /* Ensure it's above the video but below the text */
+  background: rgba(0, 0, 0, 0.6);
+  /* Black shade with 50% opacity */
+  z-index: 0;
+  /* Ensure it's above the video but below the text */
 }
+
 .overlayVideo {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the area without distorting the ratio */
-  /* Center the video horizontally */ 
+  object-fit: cover;
+  /* Cover the area without distorting the ratio */
+  /* Center the video horizontally */
 }
 
 .overlayContent {
@@ -199,7 +234,8 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  z-index: 2; /* This ensures the text appears above the video */
+  z-index: 2;
+  /* This ensures the text appears above the video */
 }
 
 .mainTitle {
@@ -237,16 +273,21 @@
     font-size: calc(1rem + 1.5vw);
   }
 }
+
 @media (max-width: 768px) {
+
   /* Hide elements that are not needed on mobile */
-   .paragraphSection, .button-container {
+  .paragraphSection,
+  .button-container {
     display: none;
   }
 
   /* Ensure the video overlay section has a blue background */
   .videoOverlaySection {
-    padding-top: 0; /* Remove padding-top to fit the content */
-    background-color: #0000ff; /* Set the background color to blue */
+    padding-top: 0;
+    /* Remove padding-top to fit the content */
+    background-color: #0000ff;
+    /* Set the background color to blue */
   }
 
   /* Adjust the overlay content to be relative and fit within the new blue background */
@@ -256,46 +297,17 @@
     left: initial;
     transform: none;
     text-align: center;
-    padding: 2rem 1rem; /* Add some padding around the text */
+    padding: 2rem 1rem;
+    /* Add some padding around the text */
   }
 
   /* Adjust the main title font size and margins for mobile */
   .mainTitle {
-    font-size: 2rem; /* Adjust the font size for mobile readability */
-    margin-bottom: 1rem; /* Adjust the bottom margin */
-    color: white; /* Ensure the title color is white for contrast */
+    font-size: 2rem;
+    /* Adjust the font size for mobile readability */
+    margin-bottom: 1rem;
+    /* Adjust the bottom margin */
+    color: white;
+    /* Ensure the title color is white for contrast */
   }
 }
-
-/* 
-@media (max-width: 768px) {
-  .videoOverlaySection {
-    display: none;
-  }
-} */
-/* .mobileBackground {
-  background-image: url('/Assets/MobileView.png');
-   display: none;
-} */
-/* This will hide the video container on mobile devices */
-/* @media (max-width: 768px) {
-  .videoContainer {
-    display: none; 
-  } */
-
-  /* Ensure that the .mobileBackground class is actually being used in your component like this: <div className={styles.mobileBackground}></div> */
-  /* .mobileBackground {
-    display: block; 
-    background-image: url('/Assets/MobileView.png'); 
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; 
-  }
-  
- 
-} */
