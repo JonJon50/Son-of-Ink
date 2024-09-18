@@ -1,36 +1,39 @@
+// Map.js
 import React, { useEffect, useState } from 'react';
 import MapStyles from './Map.module.css';
 
-
-
-// Define defaultLocation outside of the component
-function Map() {
-  const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Ensure this is set in your environment variables
-  
-  // Define the default location here
+const Map = () => {
   const defaultLocation = { lat: 38.6171, lng: -76.9178 }; // Replace with your desired coordinates
-  
-  const [userLocation, setUserLocation] = useState(defaultLocation); // Initialize state with defaultLocation
+  const [userLocation, setUserLocation] = useState(defaultLocation);
   const [map, setMap] = useState(null);
   const officeAddress = '2181 Crain Hwy, Waldorf, MD 20601';
+
+  // Load the Google Maps script dynamically
+  const loadGoogleMaps = () => {
+    if (!window.google) {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_API_KEY}&callback=initMap`;
+      script.async = true;
+      script.defer = true;
+      script.onerror = () => {
+        console.error('Failed to load Google Maps script.');
+      };
+      document.head.appendChild(script);
+    } else {
+      window.initMap(); // If already loaded, directly initialize
+    }
+  };
 
   useEffect(() => {
     window.initMap = function () {
       getLocationAndRenderMap(officeAddress);
     };
 
-    // Create a script element to load the Google Maps API
-    const script = document.createElement('script');
-    script.src = process.env.NEXT_PUBLIC_API_URL 
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-  }, [officeAddress, apiKey]);
+    loadGoogleMaps(); // Load Google Maps script
+  }, [officeAddress]);
 
-  // Geolocation useEffect
   useEffect(() => {
     const handleSuccess = (position) => {
-     
       setUserLocation({
         lat: position.coords.latitude,
         lng: position.coords.longitude,
@@ -38,28 +41,20 @@ function Map() {
     };
 
     const handleError = (error) => {
-      console.error('Geolocation error:', error);
+      console.error('Geolocation error:', error.message);
       setUserLocation(defaultLocation); // Fallback to default location
     };
 
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
     } else {
-      console.error("Geolocation is not supported by this browser.");
+      console.error('Geolocation is not supported by this browser.');
     }
   }, []);
 
-  // Directions useEffect
-  useEffect(() => {
-    if (map && userLocation.lat && userLocation.lng) {
-      drawDirections(map, userLocation, officeAddress);
-    }
-  }, [map, userLocation, officeAddress]);
-
-  function getLocationAndRenderMap(address) {
-    // Initialize the map with the given address
+  const getLocationAndRenderMap = (address) => {
     const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'address': address }, (results, status) => {
+    geocoder.geocode({ address }, (results, status) => {
       if (status === 'OK') {
         const location = results[0].geometry.location;
         const newMap = new google.maps.Map(document.getElementById('map'), {
@@ -71,10 +66,15 @@ function Map() {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
-  }
+  };
 
-  function drawDirections(map, userLocation, destination) {
-    // Draw directions from the user's location to the destination
+  useEffect(() => {
+    if (map && userLocation.lat && userLocation.lng) {
+      drawDirections(map, userLocation, officeAddress);
+    }
+  }, [map, userLocation, officeAddress]);
+
+  const drawDirections = (map, userLocation, destination) => {
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer();
     directionsRenderer.setMap(map);
@@ -89,16 +89,17 @@ function Map() {
       if (status === 'OK') {
         directionsRenderer.setDirections(result);
       } else {
-        console.error('Directions request failed due to ' + status);
+        console.error('Directions request failed: ' + status);
+        alert('Could not load directions: ' + status);
       }
     });
-  }
+  };
 
   return (
     <div className={MapStyles.mapContainer}>
       <div id="map" style={{ width: '100%', height: '685px' }}></div>
     </div>
   );
-}
+};
 
 export default Map;

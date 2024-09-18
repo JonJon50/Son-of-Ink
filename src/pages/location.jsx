@@ -22,23 +22,23 @@ const Location = () => {
     hidden: { x: 20, opacity: 0 },
     visible: { x: 0, opacity: 1 },
   };
+
   return (
     <div className={styles["whole-container"]}>
-    <div className={styles["location-header"]}>
-      <motion.h4
-        initial="hidden"
-        animate="visible"
-        variants={slideIn}
-        transition={{ duration: 1.0, delay: 1.0 }}
-      >
-        Contact Information
-      </motion.h4>
-    </div>
+      <div className={styles["location-header"]}>
+        <motion.h4
+          initial="hidden"
+          animate="visible"
+          variants={slideIn}
+          transition={{ duration: 1.0, delay: 1.0 }}
+        >
+          Contact Information
+        </motion.h4>
+      </div>
       <div className={styles["content-container"]}>
         <div
-          className={`${styles["contact-container"]} ${
-            isContactVisible ? styles.visible : ""
-          }`}
+          className={`${styles["contact-container"]} ${isContactVisible ? styles.visible : ""
+            }`}
         >
           {/* Address Section */}
           <div className={styles["contact-info"]}>
@@ -55,7 +55,7 @@ const Location = () => {
               initial="hidden"
               animate="visible"
               variants={slideIn}
-              transition={{ duration: 1.5, delay: 0.4 }} // Delay of 0.4 seconds
+              transition={{ duration: 1.5, delay: 0.4 }}
             >
               2181 Crain Hwy, Waldorf, MD 20601
             </motion.p>
@@ -83,10 +83,20 @@ const Location = () => {
           {/* Opening Hours Section */}
           <div className={styles["contact-info"]}>
             <FontAwesomeIcon icon={faClock} />
-            <motion.h5 initial="hidden" animate="visible" variants={slideIn} transition={{ duration: .8, delay: 0.1 }} >
+            <motion.h5
+              initial="hidden"
+              animate="visible"
+              variants={slideIn}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
               OPENING HOURS
             </motion.h5>
-            <motion.p initial="hidden" animate="visible" variants={slideIn} transition={{ duration: .8, delay: 0.1 }}>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={slideIn}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
               Mon – Fri, 3pm – 8pm
               <br />
               Closed on Weekends, Thanksgiving, Christmas, New Years, Memorial
