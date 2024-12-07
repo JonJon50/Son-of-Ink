@@ -212,8 +212,12 @@ const Booking = ({ showBackground = true }) => {
                 </select>
               </div>
               <div className="mb-3">
+                <label htmlFor="tattooPic" className="form-label">
+                  Upload a Tattoo Reference Picture (Optional)
+                </label>
                 <input
                   type="file"
+                  id="tattooPic"
                   name="tattooPic"
                   value={values.tattooPic}
                   onChange={handleChange}
@@ -221,6 +225,7 @@ const Booking = ({ showBackground = true }) => {
                   className="form-control"
                 />
               </div>
+
               <div className="mb-3 form-check">
                 <input
                   type="checkbox"
