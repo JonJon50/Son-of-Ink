@@ -12,11 +12,11 @@ import {
   faChalkboardTeacher,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Component to display the stats
+// Component to display statistics
 const StatItem = ({ end, suffix, title, icon }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3, // Animation triggers when 30% of the element is in view
+    threshold: 0.3,
   });
 
   return (
@@ -25,14 +25,13 @@ const StatItem = ({ end, suffix, title, icon }) => {
         <FontAwesomeIcon icon={icon} />
       </div>
       <div className={styles.statNumber}>
-        <CountUp end={inView ? end : 0} duration={1} suffix={suffix} />
+        <CountUp end={inView ? end : 0} duration={1.5} suffix={suffix} />
       </div>
       <div className={styles.statText}>{title}</div>
     </div>
   );
 };
 
-// Main Home component
 const Home = () => {
   const fadeInUp = {
     initial: { y: 90, opacity: 0 },
@@ -41,42 +40,45 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
+      {/* Video Section */}
       <div className={styles.videoContainer}>
         <video
-          src="/static/videos/Tattoo-Videos.mp4"  // Direct file path from public directory
+          src="/static/videos/Tattoo-Videos.mp4"
           autoPlay
           loop
           muted
           playsInline
           className={styles.video}
         />
-      </div>
-
-      <motion.h5
-        className={`${styles["text-overlay"]} ${styles["customFont"]}`}
-        variants={fadeInUp}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 1.9, delay: 0.2 }}
-      >
-        Son of Ink
-      </motion.h5>
-
-      <div className={styles["button-container"]}>
-        <Link href="/booking">
-          <motion.button
-            className={`${styles["round-button"]} ${styles["text-overlay"]}`}
+        <div className={styles.videoOverlay}>
+          <motion.h1
+            className={`${styles["text-overlay"]} ${styles["customFont"]}`}
             variants={fadeInUp}
             initial="initial"
             animate="animate"
-            transition={{ duration: 1.9, delay: 0.4 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
           >
-            CONSULTATIONS
+            Son of Ink
+          </motion.h1>
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className={styles.buttonContainer}>
+        <Link href="/booking">
+          <motion.button
+            className={styles.roundButton}
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 1.2, delay: 0.5 }}
+          >
+            Book a Consultation
           </motion.button>
         </Link>
       </div>
 
-      {/* Statistics section */}
+      {/* Statistics Section */}
       <div className={styles.statisticsSection}>
         <StatItem
           end={10}
@@ -89,14 +91,14 @@ const Home = () => {
         <StatItem end={6173} title="Members" icon={faChalkboardTeacher} />
       </div>
 
-      {/* Video section with overlay */}
+      {/* Video Overlay Section */}
       <div className={styles.videoOverlaySection}>
         <video
           autoPlay
           loop
           muted
           preload="auto"
-          poster="/Assets/HandsTattooing.jpeg" // Poster image before the video loads
+          poster="/Assets/HandsTattooing.jpeg"
           className={styles.overlayVideo}
         />
         <div className={styles.overlayContent}>
@@ -105,35 +107,27 @@ const Home = () => {
             variants={fadeInUp}
             initial="initial"
             animate="animate"
-            transition={{ duration: 1.0, delay: 0.5 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
           >
-            Imagine your vision, and <br /> bring it to life.
+            Imagine Your Vision <br /> And Bring It to Life
           </motion.h1>
           <div className={styles.sideBySideParagraphs}>
             <div className={styles.paragraphSection}>
-              <h2 className={styles.subtitle}>Who we are</h2>
+              <h2 className={styles.subtitle}>Who We Are</h2>
               <p>
-                I am passionate about what I do and offer clients, and want to
-                give them the ultimate tattoo experience. Whether it's the
-                ability to book their appointments online, offering and
-                including specific aftercare, or just within the tattoo design
-                itself. I want your tattoo experience with me to stand out from
-                the rest. My goal is to create an instant positive reaction each
-                and every time I show a client the initial drawing of their new
-                tattoo. With over a decade of experience, I have found the right
-                location for me, at Grey Havens Tattoo.
+                At Son of Ink, we are passionate about providing an exceptional
+                tattoo experience. From personalized designs to aftercare
+                guidance, we ensure every client feels valued and leaves with a
+                piece of art they’re proud to wear.
               </p>
             </div>
             <div className={styles.paragraphSection}>
-              <h2 className={styles.subtitle}>What we do</h2>
+              <h2 className={styles.subtitle}>What We Do</h2>
               <p>
-                I pride myself on standing out by being a client-driven artist
-                who listens and wants the customer to have a one-of-a-kind
-                experience they will always remember. Based on past personal
-                experiences at other shops, I realize the process of getting a
-                tattoo can be intimidating for anyone, so I want them to be
-                comfortable and understand that I’m on the same page, patient,
-                and listening.
+                Our team stands out by delivering client-driven artistry.
+                Whether it’s your first tattoo or your tenth, we make the
+                process comfortable and collaborative, ensuring a unique and
+                memorable experience.
               </p>
             </div>
           </div>

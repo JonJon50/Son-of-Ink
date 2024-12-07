@@ -1,33 +1,17 @@
-/* Styling for the main container of the home section */
 .home {
-  position: relative;
-  width: 100%;
-  /* Changed to width to prevent overflow on small screens */
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.videoContainer {
-  position: relative;
-  /* Changed to relative */
   width: 100%;
-  padding-top: 56.25%;
-  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   overflow: hidden;
 }
 
-.videoContainer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  /* Black shade with 50% opacity */
-  z-index: 0;
-  /* Ensure it's above the video but below the text */
+/* Video Section */
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
 }
 
 .video {
@@ -37,183 +21,90 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* z-index: 0; Below the overlay */
 }
 
-.text-overlay {
-  position: absolute;
-  color: white;
-  font-size: 6rem;
-  font-weight: bold;
-  top: 20%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  animation: fadeInAnimation 20s ease;
-}
-
-@media (max-width: 768px) {
-
-  .text-overlay,
-  .overlayContent {
-    transform: translate(0, 0);
-    /* Remove the -50% translation on mobile */
-    left: auto;
-    /* Reset left positioning */
-    top: 8rem;
-    /* Reset top positioning */
-    font-size: 3rem;
-    /* Adjust the font size for mobile */
-  }
-}
-
-.customFont {
-  font-family: 'Times', sans-serif;
-  font-stretch: ultra-condensed;
-}
-
-/* Styling for the button container */
-.button-container {
-  position: absolute;
-  bottom: 72%;
-  left: 45%;
-  transform: translateX(-50%);
-  z-index: 2;
-  /* Ensure it's above the video */
-}
-
-/* Styling for the transparent round button */
-.round-button {
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  border-radius: 999px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: lighter;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-transform: uppercase;
-}
-
-.button-container .round-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Adjustments for mobile view */
-@media (max-width: 768px) {
-  .button-container {
-    transform: translate(0, 0);
-    /* Align without translation on mobile */
-    left: 33%;
-    /* Reset left positioning */
-    bottom: auto;
-    /* You may adjust this as needed */
-    top: 5%;
-    /* Adjust the position to match the desired mobile layout */
-  }
-
-  .round-button {
-    font-size: 0.75rem;
-    /* Smaller button font on mobile */
-    /* Add any other necessary adjustments for mobile layout */
-  }
-}
-
-/* This will be your stats section styling */
-.statisticsSection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  /* Align items to start to prevent stretching */
-  width: 100%;
-  padding: 20px;
-  background: #f8f9fa;
-  position: relative;
-  /* Relative positioning to follow the flow */
-  z-index: 0;
-  /* Above the video */
-}
-
-.statItem {
-  flex: 1 0 21%;
-  /* Flex grow, no shrink, basis of 21% to fit 4 items */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
-  max-width: 200px;
-  /* Maximum width for each stat item */
-}
-
-.statIcon {
-  font-size: 3em;
-  /* Adjust icon size */
-  color: blue;
-  /* Icon color */
-  margin-bottom: 10px;
-}
-
-.statNumber {
-  font-size: 2.5rem;
-  /* Adjust number size */
-  font-weight: bold;
-}
-
-.statText {
-  font-size: 1.2rem;
-  /* Adjust text size */
-  color: #6c757d;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .statItem {
-    flex-basis: 100%;
-    /* Full width for each stat item on mobile */
-    margin: 10px 0;
-    /* Margin top and bottom only */
-  }
-
-  .statIcon {
-    font-size: 2em;
-    /* Smaller icon size on mobile */
-  }
-
-  .statNumber {
-    font-size: 1.5rem;
-    /* Smaller number size on mobile */
-  }
-
-  .statText {
-    font-size: 1rem;
-    /* Smaller text size on mobile */
-  }
-}
-
-/* blue background */
-.videoOverlaySection {
-  position: relative;
-  width: 100%;
-  /* This padding-top will be 25% of the width, which is half the height of a 16:9 aspect ratio video */
-  padding-top: 35%;
-  overflow: hidden;
-  /* This ensures no part of the video overflows the container */
-}
-
-.videoOverlaySection::after {
-  content: '';
+.videoOverlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  /* Black shade with 50% opacity */
-  z-index: 0;
-  /* Ensure it's above the video but below the text */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6); /* Black overlay */
+  color: white;
+}
+
+.text-overlay {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.customFont {
+  font-family: "Times New Roman", serif;
+}
+
+/* Button Section */
+.buttonContainer {
+  margin-top: 20px;
+}
+
+.roundButton {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.roundButton:hover {
+  background: #0056b3;
+}
+
+/* Statistics Section */
+.statisticsSection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+
+.statItem {
+  text-align: center;
+  flex: 1 1 200px;
+}
+
+.statIcon {
+  font-size: 2.5rem;
+  color: #007bff;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.statText {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* Video Overlay Section */
+.videoOverlaySection {
+  position: relative;
+  width: 100%;
+  padding: 50px 20px;
+  background: #343a40;
+  color: white;
 }
 
 .overlayVideo {
@@ -223,91 +114,41 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Cover the area without distorting the ratio */
-  /* Center the video horizontally */
+  opacity: 0.4;
 }
 
 .overlayContent {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-  /* This ensures the text appears above the video */
+  position: relative;
+  z-index: 1;
 }
 
 .mainTitle {
-  font-size: 3.0rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .sideBySideParagraphs {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .paragraphSection {
-  width: 45%;
+  flex: 1;
 }
 
 .subtitle {
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
-  .sideBySideParagraphs {
+  .statisticsSection {
     flex-direction: column;
   }
 
-  .paragraphSection {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .mainTitle,
-  .subtitle {
-    /* Adjust font sizes for mobile responsiveness */
-    font-size: calc(1rem + 1.5vw);
-  }
-}
-
-@media (max-width: 768px) {
-
-  /* Hide elements that are not needed on mobile */
-  .paragraphSection,
-  .button-container {
-    display: none;
-  }
-
-  /* Ensure the video overlay section has a blue background */
-  .videoOverlaySection {
-    padding-top: 0;
-    /* Remove padding-top to fit the content */
-    background-color: #0000ff;
-    /* Set the background color to blue */
-  }
-
-  /* Adjust the overlay content to be relative and fit within the new blue background */
-  .overlayContent {
-    position: relative;
-    top: initial;
-    left: initial;
-    transform: none;
-    text-align: center;
-    padding: 2rem 1rem;
-    /* Add some padding around the text */
-  }
-
-  /* Adjust the main title font size and margins for mobile */
-  .mainTitle {
-    font-size: 2rem;
-    /* Adjust the font size for mobile readability */
-    margin-bottom: 1rem;
-    /* Adjust the bottom margin */
-    color: white;
-    /* Ensure the title color is white for contrast */
+  .sideBySideParagraphs {
+    flex-direction: column;
   }
 }
