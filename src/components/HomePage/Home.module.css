@@ -6,6 +6,7 @@
   overflow: hidden;
 }
 
+
 /* Video Section */
 .videoContainer {
   position: relative;
@@ -83,9 +84,10 @@
 }
 
 .statIcon {
-  font-size: 2.5rem;
-  color: #007bff;
+  font-size: 2.5rem; /* Adjust this value to make the icons smaller */
+  color: #007bff; /* Retain the existing color */
 }
+
 
 .statNumber {
   font-size: 2rem;
@@ -150,5 +152,11 @@
 
   .sideBySideParagraphs {
     flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .statIcon {
+    font-size: 1.5rem;
+    /* Smaller size for mobile */
   }
 }
