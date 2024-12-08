@@ -5,13 +5,7 @@ export default function Document() {
     return (
         <Html lang="en"> {/* Sets the <html> element with a lang attribute */}
             <Head>
-                {/* Meta tags */}
-                <meta charSet="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-                {/* Title and Favicon */}
-                <link rel="icon" href="/favicon.ico" />
-
+             
                 {/* Additional styles */}
                 <link
                     rel="stylesheet"

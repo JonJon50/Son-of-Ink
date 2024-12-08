@@ -14,6 +14,7 @@ const HomePage = () => {
           name="description"
           content="Son of Ink - Bringing your vision to life with personalized tattoos and exceptional client experiences."
         />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         {/* Hero Section or Main Homepage Content */}
@@ -36,3 +37,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

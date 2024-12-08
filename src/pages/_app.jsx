@@ -1,9 +1,11 @@
-// pages/_app.js
-import React from "react";
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/footer/Footer";
-import "../styles/styles.css";
+// pages/_app.jxs
+
+import React from 'react';
+import Head from 'next/head';
+import Navbar from '../components/Navbar';
+import Footer from '../components/footer/Footer';
+import '../styles/styles.css'; // Include your global styles
+import 'tailwindcss/tailwind.css'; // If you're using Tailwind CSS from node_modules
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -19,11 +21,10 @@ const MyApp = ({ Component, pageProps }) => {
       <Navbar />
       <Component {...pageProps} />
       <Footer />
-    </>
+  </>
   );
 };
 
 export default MyApp;
-
 
 
