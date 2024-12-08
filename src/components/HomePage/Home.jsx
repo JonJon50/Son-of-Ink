@@ -91,6 +91,7 @@ const Home = () => {
         <StatItem end={6173} title="Members" icon={faChalkboardTeacher} />
       </div>
 
+
       {/* Video Overlay Section */}
       <div className={styles.videoOverlaySection}>
         <video

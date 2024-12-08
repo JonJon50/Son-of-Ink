@@ -75,7 +75,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px 20px;
-  background: #f8f9fa;
+  background: #ffffff;
 }
 
 .statItem {
@@ -85,7 +85,7 @@
 
 .statIcon {
   font-size: 2.5rem; /* Adjust this value to make the icons smaller */
-  color: #007bff; /* Retain the existing color */
+  color: #0056b3; /* Retain the existing color */
 }
 
 
@@ -97,7 +97,7 @@
 
 .statText {
   font-size: 1rem;
-  color: #6c757d;
+  color: #333333;
 }
 
 /* Video Overlay Section */
