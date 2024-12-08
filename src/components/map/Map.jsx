@@ -11,7 +11,7 @@ const Map = () => {
     if (!window.google) {
       const script = document.createElement('script');
       script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_API_KEY}&callback=initMap`;
-      console.log("API Key from Environment Variables:", process.env.NEXT_PUBLIC_API_KEY);
+      ("API Key from Environment Variables:", process.env.NEXT_PUBLIC_API_KEY);
 
       script.async = true;
       script.defer = true;
