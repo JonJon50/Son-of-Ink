@@ -1,22 +1,18 @@
+// pages/_document.js
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
     return (
         <Html lang="en"> {/* Sets the <html> element with a lang attribute */}
             <Head>
-                {/* Charset Meta */}
+                {/* Meta tags */}
                 <meta charSet="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-                {/* Viewport meta is not required here because Next.js automatically injects it in the `_app.jsx` */}
-
-                {/* Global Favicon */}
+                {/* Title and Favicon */}
                 <link rel="icon" href="/favicon.ico" />
 
-                {/* Global CSS (e.g., Tailwind or custom CSS) */}
-                {/* External styles like Tailwind are better imported in _app.js */}
-                {/* Remove this line: <link rel="stylesheet" href="/styles/tailwind.css" /> */}
-
-                {/* Font Awesome */}
+                {/* Additional styles */}
                 <link
                     rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -26,8 +22,8 @@ export default function Document() {
                 />
             </Head>
             <body>
-                <Main /> {/* This renders the current page */}
-                <NextScript /> {/* This injects Next.js scripts */}
+                <Main />
+                <NextScript />
             </body>
         </Html>
     );

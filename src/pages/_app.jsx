@@ -1,15 +1,13 @@
-// pages/_app.jxs
-
-import React from 'react';
-import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer/Footer';
-import '../styles/styles.css'; 
-import 'tailwindcss/tailwind.css';
+// pages/_app.js
+import React from "react";
+import Head from "next/head";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer/Footer";
+import "../styles/styles.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Son of Ink | Tattoo Studio</title>
         <meta
@@ -19,11 +17,9 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Navbar />
-      <div>
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
       <Footer />
-    </div>
+    </>
   );
 };
 
