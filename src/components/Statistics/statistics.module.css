@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 40px 20px;
-    background: #f8f9fa;
 }
 
 .statItem {
@@ -13,15 +12,15 @@
 }
 
 .statIcon {
-    font-size: 2.5rem;
-    /* Adjust size */
-    color: #007bff;
+    font-size: 5px;
+    color: #02080f;
 }
 
 .statNumber {
     font-size: 2rem;
     font-weight: bold;
     margin: 10px 0;
+    color: blue;
 }
 
 .statText {
