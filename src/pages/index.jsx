@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import Home from "../components/HomePage/Home";
+import Home from "../components/homePage/Home";
 import Artist from "../components/artist/Artist";
 import Booking from "./booking";
-import Statistics from "../components/Statistics/Statistics";
+import Statistics from "../components/Statistics/statistics";
 
 const HomePage = () => {
   return (
