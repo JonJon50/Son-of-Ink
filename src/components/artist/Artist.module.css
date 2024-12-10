@@ -37,10 +37,11 @@
 }
 
 .artistTitle {
-  margin-top: 17rem;
+  margin-top: 13rem;
   text-align: center;
   font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 3rem;
+  margin-bottom: 4rem;
 }
 
 /* Cards layout */

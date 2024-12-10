@@ -1,39 +1,73 @@
-/* components/Navbar.module.css */
-
-/* Styles for the navigation bar container */
 .navbar {
-  position: absolute; /* Position the navbar */
-  top: 2%; /* Adjust to move the Navbar higher up */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally using translation */
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-  padding: 8px 16px; /* Add padding to the navbar */
-  border-radius: 50px; /* Rounded corners */
-  box-shadow: 0 9px 1px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  z-index: 1; 
-}
-/* Styles for navigation links in the navbar */
-.navbar a {
-  color: rgb(9, 8, 8); /* Set link color */
-  text-decoration: none; /* Remove underline */
-  font-size: 1.1rem; 
-  transition: font-size 0.3s ease; /* Add a smooth transition effect for font size */
+  background-color: #000;
+  /* Black background */
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Remove margin from the last link to prevent unnecessary space */
-.navbar a:last-child {
-  margin-right: 0;
+.navLinks {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Styles for navigation links when hovered over */
-.navbar a:hover {
-  color: black; /* Darker color on hover */
-  font-size: 1.5rem; /* Increase the font size on hover */
-  text-decoration: underline;
-}
-.prepLink {
-  font-family:Apple Chancery, cursive;
+.hamburger {
+  display: none;
+  /* Hidden on larger screens */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
 
-  
+.navOpen {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+    /* Hide the links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent black background */
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
+    transform: translateY(-100%);
+  }
+
+  .navLinks a {
+    padding: 10px 0;
+    color: white;
+    /* Ensure the links are visible */
+    text-decoration: none;
+  }
+
+  .hamburger {
+    display: flex;
+    /* Show hamburger on smaller screens */
+  }
+
+  .navOpen {
+    display: flex;
+    /* Show menu when toggled */
+    transform: translateY(0);
+  }
+}

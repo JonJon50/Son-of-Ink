@@ -38,21 +38,24 @@
 }
 
 .text-overlay {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
+  color: white; /* Optional: Ensure the text is visible */
 }
 
+
 .customFont {
-  font-family: "Times New Roman", serif;
+  font-family: "Times New Roman";
 }
 
 /* Button Section */
 .buttonContainer {
-  margin-top: 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .roundButton {
-  background: #007bff;
+  background: #030303;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -65,7 +68,7 @@
 }
 
 .roundButton:hover {
-  background: #0056b3;
+  background: #8f1204;
 }
 
 /* Statistics Section */

@@ -1,9 +1,9 @@
-// pages/index.js
 import React from "react";
 import Head from "next/head";
 import Home from "../components/HomePage/Home";
 import Artist from "../components/artist/Artist";
 import Booking from "./booking";
+import Statistics from "../components/Statistics/Statistics"; // Import Statistics component
 
 const HomePage = () => {
   return (
@@ -30,6 +30,11 @@ const HomePage = () => {
         {/* Booking Section */}
         <section id="booking">
           <Booking showBackground={false} showReviewsButton={false} />
+        </section>
+
+        {/* Statistics Section */}
+        <section id="statistics">
+          <Statistics />
         </section>
       </main>
     </>

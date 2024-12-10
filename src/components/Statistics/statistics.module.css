@@ -1,0 +1,31 @@
+.statisticsSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    background: #f8f9fa;
+}
+
+.statItem {
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.statIcon {
+    font-size: 2.5rem;
+    /* Adjust size */
+    color: #007bff;
+}
+
+.statNumber {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.statText {
+    font-size: 1rem;
+    color: #6c757d;
+}
+

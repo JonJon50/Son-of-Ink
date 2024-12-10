@@ -38,7 +38,7 @@
   color: #050505;
   margin-bottom: 1rem;
   font-family: 'Hoefler Text', 'Arial Narrow Bold', sans-serif;
-  margin-top: 10%;
+  margin-top: 1%;
 }
 
 .form {
@@ -89,7 +89,7 @@
 .round-button {
   background-color: transparent;
   border: 1px solid rgb(8, 8, 8);
-  color: rgb(8, 8, 8);
+  color: rgb(230, 84, 84);
   border-radius: 999px;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -105,5 +105,5 @@
 
 /* Show a slightly opaque background on button hover */
 .round-button:hover {
-  background-color: rgba(117, 115, 115, 0.329);
+  background-color: rgba(30, 104, 223, 0.329);
 }

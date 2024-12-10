@@ -2,35 +2,6 @@ import React from "react";
 import styles from "./Home.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHourglass,
-  faHandshake,
-  faUsers,
-  faChalkboardTeacher,
-} from "@fortawesome/free-solid-svg-icons";
-
-// Component to display statistics
-const StatItem = ({ end, suffix, title, icon }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  });
-
-  return (
-    <div className={styles.statItem} ref={ref}>
-      <div className={styles.statIcon}>
-        <FontAwesomeIcon icon={icon} />
-      </div>
-      <div className={styles.statNumber}>
-        <CountUp end={inView ? end : 0} duration={1.5} suffix={suffix} />
-      </div>
-      <div className={styles.statText}>{title}</div>
-    </div>
-  );
-};
 
 const Home = () => {
   const fadeInUp = {
@@ -57,8 +28,8 @@ const Home = () => {
             initial="initial"
             animate="animate"
             transition={{ duration: 1.5, delay: 0.2 }}
-          >
-            Son of Ink
+          > Son of
+            <span style={{ color: "red" }}> I</span>nk
           </motion.h1>
         </div>
       </div>
@@ -77,20 +48,6 @@ const Home = () => {
           </motion.button>
         </Link>
       </div>
-
-      {/* Statistics Section */}
-      <div className={styles.statisticsSection}>
-        <StatItem
-          end={10}
-          suffix="+"
-          title="Years in the Industry"
-          icon={faHourglass}
-        />
-        <StatItem end={3192} title="Client Relationships" icon={faHandshake} />
-        <StatItem end={204070} title="Tattoos Done" icon={faUsers} />
-        <StatItem end={6173} title="Members" icon={faChalkboardTeacher} />
-      </div>
-
 
       {/* Video Overlay Section */}
       <div className={styles.videoOverlaySection}>
