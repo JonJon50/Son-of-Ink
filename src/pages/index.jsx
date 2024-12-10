@@ -3,7 +3,7 @@ import Head from "next/head";
 import Home from "../components/HomePage/Home";
 import Artist from "../components/artist/Artist";
 import Booking from "./booking";
-import Statistics from "../components/Statistics/Statistics"; // Import Statistics component
+import Statistics from "../components/Statistics/Statistics";
 
 const HomePage = () => {
   return (
