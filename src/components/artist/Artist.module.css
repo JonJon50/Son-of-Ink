@@ -43,6 +43,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -107,18 +108,19 @@
   font-family: Hoefler Text, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-/* Button Styles */
+/* Button Container */
 .buttonContainer {
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 20px;
   z-index: 1;
+  transform: none;
 }
 
+/* Round Button */
 .round-button {
   border: 1px solid rgb(5, 4, 4);
-  color: rgb(5, 5, 5);
+  color: rgb(224, 35, 35);
   border-radius: 999px;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -134,24 +136,6 @@
   color: #000;
   transform: scale(1.05);
   border-color: #000;
-}
-
-/* Button Overlay */
-.button-overlay {
-  position: absolute;
-  top: 15%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.artistCard:hover .button-overlay {
-  opacity: 1;
 }
 
 /* Gallery Styling */
@@ -203,18 +187,30 @@
   .artistArt {
     width: calc(50% - 10px);
   }
-}
 
-@media (min-width: 751px) and (max-width: 1024px) {
-  .artistCardWrapper {
-    width: calc(50% - 1rem);
+  .buttonContainer {
+    bottom: 25px;
+    right: 10px;
+  }
+
+  .round-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    width: auto;
   }
 }
 
-/* Adjust for Mobile Screens */
 @media (max-width: 480px) {
   .artistArt {
     width: 100%;
     margin: 5px 0;
   }
+
+  .round-button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
+

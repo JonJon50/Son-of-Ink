@@ -56,35 +56,49 @@ const ArtistGalleryPage = () => {
       <div className="background-image" style={backgroundStyle}></div>
 
       {/* Gallery content */}
-      <div
-        className="gallery-content"
-        style={{
-          position: "absolute",
-          top: "16%", // Position from the top
-          left: "70%", // Start in the horizontal center
-          transform: "translate(-50%, -50%)", // Adjust for the element's own width and height
-          maxWidth: "1200px",
-          width: "100%",
-          padding: "50px",
-        }}
-      >
+<div
+  className="gallery-content"
+  style={{
+    position: "absolute",
+    top: "12%", // Adjust positioning from the top for better alignment
+    left: "50%", // Center horizontally by default
+    transform: "translate(-50%, 0)", // Adjust horizontal alignment and remove vertical centering
+    maxWidth: "1200px",
+    width: "90%", // Ensure responsive width for smaller screens
+    padding: "20px", // Reduce padding for better mobile fit
+    textAlign: "center", // Center-align text for consistent mobile display
+  }}
+>
         {/* Artist name and booking button */}
         <h2
-          className={`${styles.artistName} ${
-            selectedArtist.name === "Theron" ? styles.theronText : ""
-          } ${selectedArtist.name === "Art" ? styles.artText : ""}`}
+          className={`${styles.artistName}`}
+          style={{
+            color: "#ffffff", // Set the text color to white
+            fontSize: "1.8rem", // Adjust font size for smaller screens
+            marginBottom: "10px", // Add space between the name and button
+          }}
         >
           {selectedArtist.name}'s Gallery
         </h2>
         <Link href="/booking">
           <button
-            className={`${styles["round-button"]} ${styles["text-overlay"]}`}
-            style={{ padding: "10px 20px" }}
+            className={`${styles["round-button"]}`}
+            style={{
+              padding: "10px 20px", // Adjust padding for the button
+              fontSize: "1rem", // Ensure button text is readable
+              marginTop: "10px", // Add spacing from the text
+              textAlign: "center", // Center-align the button content
+              color: "#ffffff", // Set button text color to white
+              borderColor: "#ffffff", // Set border color to white
+              backgroundColor: "transparent", // Make the button transparent
+            }}
           >
             Book Now
           </button>
         </Link>
-      </div>
+
+</div>
+
 
       {/* Gallery images */}
       <div className={styles.galleryContainer}>
