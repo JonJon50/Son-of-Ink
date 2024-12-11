@@ -19,7 +19,7 @@ const artistsData = [
           .
         </p>
         <p>I grew up in DMV, producing creative drawings from a young age. I have a passion for art and graphic design, along with several art show awards and publicized pieces of work.</p>
-        <p>Although I have room to flourish in unlimited styles of tattoos, I have a fondness for American Traditional work. I’m still pushing my limits and expanding my skill set every day.</p>
+        <p>I have room to flourish in unlimited styles of tattoos, I specialize in black and grey tealistic style. I’m still pushing my limits and expanding my skill set every day.</p>
       </>
     ),
     galleryImages: [
@@ -38,9 +38,9 @@ const artistsData = [
     imageUrl: "/Assets/douglas.png", // Image URL for Art profile picture
     bio: (
       <>
-        <p>Hello, my name Douglas.</p>
+        <p>Hello, my name Lunchbox.</p>
         <p>
-          I am a new artist and recent apprentice at Inkstaind Tattoo,  <a
+          I been tattooing for over 15 years, check out some of my merch @ <a
             href="https://planetlbx.com/"
             style={{ color: "red" }} // Corrected style object
           >
@@ -48,8 +48,8 @@ const artistsData = [
           </a>
           .
         </p>
-        <p>Welcome to the home planet of earth bound Tattoo Artist Doug-E! You can find all his Art and Merch exclusively here!
-          Ready for your next Tattoo? Just click and book your appointment today! </p>
+        <p>Welcome to the home planet of earth bound Tattoo Artist! You can find all his Art and Merch exclusively here!
+          Ready for your next Tattoo? Just click and book your appointment today with he at Son of Ink! </p>
 
       </>
     ),

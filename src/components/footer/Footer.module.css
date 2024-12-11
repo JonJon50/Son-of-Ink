@@ -6,26 +6,91 @@
 }
 
 .container {
-    max-width: 100vw;
-    margin: 0 auto;
-}
-
-.footerContent {
     display: flex;
-    justify-content: center; 
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+}
+
+/* Left Content */
+.leftContent {
+    text-align: left;
+    font-size: 0.9rem;
+    flex: 1;
+    margin-bottom: 1rem;
+    /* Add spacing for mobile view */
+}
+
+/* Center Content */
+.centerContent {
     text-align: center;
+    font-size: 0.9rem;
+    flex: 1;
+    margin-bottom: 1rem;
+    /* Add spacing for mobile view */
 }
 
+/* Right Content */
+.rightContent {
+    text-align: right;
+    font-size: 0.7rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Ensure alignment to the right */
+}
 
+/* Powered by Link Styling */
+.poweredByLink {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.poweredByLink:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
 .socialIcons {
-    color: white;
-    text-decoration: none;
-    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+    /* Adjust spacing between icons and text */
 }
 
-.socialIcons1 {
+.icon {
     color: white;
+    font-size: 1rem;
     text-decoration: none;
-    margin-left: 15px;
 }
 
+.icon:hover {
+    color: #ccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leftContent,
+    .centerContent,
+    .rightContent {
+        text-align: center;
+        margin-bottom: 1rem;
+        align-items: center;
+        /* Center-align all content for mobile view */
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+}
