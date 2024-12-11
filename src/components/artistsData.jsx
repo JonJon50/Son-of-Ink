@@ -34,7 +34,7 @@ const artistsData = [
   },
   {
     id: 2,
-    name: "Douglas",
+    name: "Lunchbox",
     imageUrl: "/Assets/douglas.png", // Image URL for Art profile picture
     bio: (
       <>
