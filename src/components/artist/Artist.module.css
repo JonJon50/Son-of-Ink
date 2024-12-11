@@ -1,7 +1,6 @@
-/* Artist.module.css */
-
+/* Background Styles */
 .parallaxBackground {
-  background-image: url('https://i.pinimg.com/564x/06/a5/b0/06a5b00829dc10325e2d6fcaaec68711.jpg');
+  background-image: url("https://i.pinimg.com/564x/06/a5/b0/06a5b00829dc10325e2d6fcaaec68711.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,55 +13,78 @@
   z-index: -1;
 }
 
+/* Main Container */
 .wholeContainer {
   margin-top: -5rem;
 }
 
-/* General container styles */
+/* Title Styling */
+.artistTitle {
+  margin-top: 13rem;
+  text-align: center;
+  font-family: Hoefler Text, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* General Container Styles */
 .artistContainer,
 .artistBios {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+/* Fade-in Animation */
 @keyframes fadeInAnimation {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
 
-.artistTitle {
-  margin-top: 13rem;
-  text-align: center;
-  font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 4rem;
-}
-
-/* Cards layout */
 .artistContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   animation: fadeInAnimation 2s ease;
   margin-top: 2%;
 }
 
-/* Individual card */
-.artistCard {
+/* Artist Card Wrapper */
+.artistCardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: calc(50% - 1rem);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Artist Bio Styling */
+.artistBio {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  font-family: Hoefler Text, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* Artist Card Styling */
+.artistCard {
+  width: 100%;
   padding: 1rem;
   border: 1px solid #ddd;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   position: relative;
   background-color: #ffffff;
-  /* Ensure a solid white background */
 }
 
 .artistImage {
@@ -72,36 +94,20 @@
   border-radius: 8px;
 }
 
-.artistBios {
-  padding-top: 1rem;
-}
-
-.artistBio p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #333;
-  text-align: justify;
-  margin-bottom: 1rem;
-  font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
 .artistOverlay {
   color: #050505;
 }
 
-.artistCard:hover .artistOverlay {
-  opacity: 1;
-}
-
 .artistName {
-  font-size: 2.0rem;
+  font-size: 2rem;
   margin: 0.5rem 0;
   padding-top: 3%;
-  font-family: Hoefler Text, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
   color: #050505;
+  font-family: Hoefler Text, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
+/* Button Styles */
 .buttonContainer {
   position: absolute;
   bottom: 20px;
@@ -117,25 +123,20 @@
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-transform: uppercase;
   display: inline-block;
   text-decoration: none;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .round-button:hover {
   background-color: rgba(106, 102, 102, 0.2);
-  /* Light background on hover */
   color: #000;
-  /* Change text color on hover */
   transform: scale(1.05);
-  /* Slightly increase button size */
   border-color: #000;
-  /* Change border color on hover */
 }
 
-/* Button overlay */
+/* Button Overlay */
 .button-overlay {
   position: absolute;
   top: 15%;
@@ -153,43 +154,28 @@
   opacity: 1;
 }
 
-/* Text and other elements */
-.button-text {
-  font-size: 1.2rem;
-}
-
-/* Art Gallery */
-.theronText {
-  color: #f5f3f3;
-}
-
-.artText {
-  color: #fff;
-}
-
-/* Gallery styles */
+/* Gallery Styling */
 .galleryContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: stretch;
-  min-height: 30vh;
-}
-
-.galleryImages {
-  display: flex;
-  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
+.galleryImages,
 .artistArt {
-  width: calc(25% - 10px);
+  width: calc(33.333% - 10px);
   margin: 5px;
   cursor: pointer;
   display: block;
   object-fit: cover;
   height: auto;
- 
+}
+
+.artistArt:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .noImages {
@@ -199,68 +185,36 @@
   text-align: center;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 750px) {
-
-  .artistContainer,
-  .artistBios {
-    padding: 0 1rem;
+  .artistCardWrapper {
+    width: 100%;
   }
 
-  .artistCard,
-  .artistArt {
-    width: 100%;
-    margin-bottom: 1rem;
+  .artistBio {
+    font-size: 1.2rem;
+    padding: 1.5rem;
   }
 
   .artistImage {
     height: auto;
   }
 
-  .artistDetails {
-    padding: 0.25rem;
-  }
-
-  .artistName {
-    font-size: 1.25rem;
-  }
-
-  .buttonContainer {
-    bottom: 10px;
+  .artistArt {
+    width: calc(50% - 10px);
   }
 }
 
 @media (min-width: 751px) and (max-width: 1024px) {
-  .artistCard {
+  .artistCardWrapper {
     width: calc(50% - 1rem);
   }
 }
 
-/* Adjust .artistArt to display three images per row */
-.artistArt {
-  width: calc(33.333% - 10px);
-  /* Change the percentage to adjust for three images */
-  margin: 5px;
-  /* Adjust margin for spacing */
-  cursor: pointer;
-  /* Indicates the image is clickable */
-}
-
-/* Update your media queries to handle the new layout */
-@media (max-width: 750px) {
-  .artistArt {
-    width: calc(50% - 10px);
-    /* Two images per row for smaller screens */
-  }
-}
-
-/* Media query for mobile screens */
+/* Adjust for Mobile Screens */
 @media (max-width: 480px) {
   .artistArt {
     width: 100%;
-    /* Make each image full width */
     margin: 5px 0;
-    /* Adjust the margin to only have vertical spacing */
   }
-
 }
