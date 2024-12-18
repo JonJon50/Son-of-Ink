@@ -225,6 +225,7 @@ const Booking = ({ showBackground = true }) => {
                   }}
                   className="form-control"
                 />
+                <div>File Limit Size 4.5MB</div>
               </div>
 
 
