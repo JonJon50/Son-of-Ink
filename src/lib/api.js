@@ -1,3 +1,5 @@
+// lib/api.js
+
 export const sendContactForm = async (data) => {
   const formData = new FormData();
 
