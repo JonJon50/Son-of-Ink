@@ -219,12 +219,14 @@ const Booking = ({ showBackground = true }) => {
                   type="file"
                   id="tattooPic"
                   name="tattooPic"
-                  value={values.tattooPic}
-                  onChange={handleChange}
-                  onBlur={onBlur}
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    handleChange({ target: { name: "tattooPic", value: file } });
+                  }}
                   className="form-control"
                 />
               </div>
+
 
               <div className="mb-3 form-check">
                 <input
