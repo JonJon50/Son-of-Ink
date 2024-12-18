@@ -72,7 +72,7 @@ Whether you are a CEO or just starting out, our app is designed to help you find
 
 👨‍💻  Here you will terminal and install Node, Express, Mongoose. 
 
-🤝  RUN server.js.
+🤝  RUN server.js. NPM RUN DEV
 
 📫  **YOUR IN!** In Insomnia run localhost path.
 
