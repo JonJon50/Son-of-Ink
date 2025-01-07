@@ -19,7 +19,7 @@ const artistsData = [
           .
         </p>
         <p>I grew up in DMV, producing creative drawings from a young age. I have a passion for art and graphic design, along with several art show awards and publicized pieces of work.</p>
-        <p>I have room to flourish in unlimited styles of tattoos, I specialize in black and grey tealistic style. I’m still pushing my limits and expanding my skill set every day.</p>
+        <p>I have room to flourish in unlimited styles of tattoos, I specialize in black and grey realistic style. I’m still pushing my limits and expanding my skill set every day.</p>
       </>
     ),
     galleryImages: [

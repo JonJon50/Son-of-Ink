@@ -23,7 +23,7 @@ const Footer = () => {
                                 2181 Crain Hwy, Waldorf, MD 20601
                             </a>
                         </p>
-                        <p>407-990-1921</p>
+                        <p>(202)440-0855</p>
                         <p>Mon – Fri, 3pm – 8pm</p>
                     </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
                                 onMouseOver={(e) => (e.target.style.color = 'red')}
                                 onMouseOut={(e) => (e.target.style.color = 'white')}
                             >
-                                Theron Fenwick
+                                Theron Issac
                             </a>{' '}
                             All Rights Reserved.
                         </p>
