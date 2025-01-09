@@ -20,8 +20,7 @@
     text-align: left;
     font-size: 0.9rem;
     flex: 1;
-    margin-bottom: 1rem;
-    /* Add spacing for mobile view */
+    margin-bottom: 1rem; /* Spacing for mobile view */
 }
 
 /* Center Content */
@@ -29,8 +28,7 @@
     text-align: center;
     font-size: 0.9rem;
     flex: 1;
-    margin-bottom: 1rem;
-    /* Add spacing for mobile view */
+    margin-bottom: 1rem; /* Spacing for mobile view */
 }
 
 /* Right Content */
@@ -40,8 +38,19 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    /* Ensure alignment to the right */
+    align-items: flex-end; /* Align content to the right */
+}
+
+/* Link Styling */
+.link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-right: 10px; /* Add spacing for social icons */
+}
+
+.link:hover {
+    color: red;
 }
 
 /* Powered by Link Styling */
@@ -52,18 +61,18 @@
 }
 
 .poweredByLink:hover {
-    text-decoration: underline;
+    color: red; /* Matches hover effect for other links */
 }
 
 /* Social Icons */
 .socialIcons {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 5px;
-    /* Adjust spacing between icons and text */
+    gap: 10px; /* Spacing between icons */
+    margin-top: 5px; /* Add spacing above icons */
 }
 
+/* Icon Styling */
 .icon {
     color: white;
     font-size: 1rem;
@@ -71,7 +80,7 @@
 }
 
 .icon:hover {
-    color: #ccc;
+    color: red;
 }
 
 /* Responsive Adjustments */
@@ -86,8 +95,7 @@
     .rightContent {
         text-align: center;
         margin-bottom: 1rem;
-        align-items: center;
-        /* Center-align all content for mobile view */
+        align-items: center; /* Center-align content for smaller screens */
     }
 
     .socialIcons {

@@ -11,15 +11,7 @@ const Footer = () => {
                     {/* Left Content */}
                     <div className={styles.leftContent}>
                         <p>
-                            <a
-                                href="/location"
-                                style={{
-                                    color: 'white',
-                                    textDecoration: 'none',
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = 'red')}
-                                onMouseOut={(e) => (e.target.style.color = 'white')}
-                            >
+                            <a href="/location" className={styles.link}>
                                 2181 Crain Hwy, Waldorf, MD 20601
                             </a>
                         </p>
@@ -35,105 +27,38 @@ const Footer = () => {
                                 href="https://www.instagram.com/theronissac/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{
-                                    color: 'white',
-                                    textDecoration: 'none',
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = 'red')}
-                                onMouseOut={(e) => (e.target.style.color = 'white')}
+                                className={styles.link}
                             >
                                 Theron Issac
                             </a>{' '}
                             All Rights Reserved.
                         </p>
+                        <p>
+                            Follow us on{' '}
+                            <a
+                                href="https://www.instagram.com/theronissac/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.link}
+                            >
+                                ~ Instagram ~
+                            </a>
+                        </p>
                     </div>
+
 
                     {/* Right Content */}
                     <div className={styles.rightContent}>
-                        <div className={styles.socialIcons}>
-                            {/* Social Icons */}
-                            <a
-                                href="https://github.com/JonJon50"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub"
-                                style={{
-                                    color: 'white',
-                                    fontSize: '1rem',
-                                    marginRight: '10px',
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = 'red')}
-                                onMouseOut={(e) => (e.target.style.color = 'white')}
-                            >
-                                <FontAwesomeIcon icon={faGithub} />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/john-hagens-55b15212a/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                                style={{
-                                    color: 'white',
-                                    fontSize: '1rem',
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = 'red')}
-                                onMouseOut={(e) => (e.target.style.color = 'white')}
-                            >
-                                <FontAwesomeIcon icon={faLinkedinIn} />
-                            </a>
-                        </div>
                         <p>
                             Powered by{' '}
-                            <a
-                                href="https://www.linkedin.com/in/john-hagens-55b15212a/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    color: 'white',
-                                    textDecoration: 'none',
-                                    fontWeight: 'bold',
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = 'red')}
-                                onMouseOut={(e) => (e.target.style.color = 'white')}
-                            >
+                            <a href="https://www.linkedin.com/in/john-hagens-55b15212a/" target="_blank" className={styles.link}>
                                 John Hagens
                             </a>
                         </p>
-                        <div className={styles.socialIcons}>
-                            {/* Social Icons */}
-                            <a
-                                href="https://github.com/JonJon50"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub"
-                                style={{
-                                    color: 'white',
-                                    fontSize: '1rem',
-                                    marginRight: '10px',
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = 'red')}
-                                onMouseOut={(e) => (e.target.style.color = 'white')}
-                            >
-                                <FontAwesomeIcon icon={faGithub} />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/john-hagens-55b15212a/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                                style={{
-                                    color: 'white',
-                                    fontSize: '1rem',
-                                }}
-                                onMouseOver={(e) => (e.target.style.color = 'red')}
-                                onMouseOut={(e) => (e.target.style.color = 'white')}
-                            >
-                                <FontAwesomeIcon icon={faLinkedinIn} />
-                            </a>
-                        </div>
                     </div>
                 </div>
             </footer>
+
         </>
     );
 };
