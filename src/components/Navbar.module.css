@@ -37,6 +37,30 @@
   transform: translateY(0);
 }
 
+.brand {
+  font-size: 1.5rem;
+  /* Font size for "Sons of Ink" */
+  color: white;
+  /* Default text color */
+  margin-left: auto;
+  /* Push the text to the right */
+  padding-right: 20px;
+  /* Spacing from the edge */
+  overflow: visible;
+  /* Ensures hover effects aren't clipped */
+}
+
+.redLetter {
+  color: red;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.redLetter:hover {
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6);
+  transform: scale(1.2);
+  /* Slightly enlarge the letters */
+}
+
 @media (max-width: 768px) {
   .navLinks {
     display: none;
