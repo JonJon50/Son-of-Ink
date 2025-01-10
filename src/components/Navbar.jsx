@@ -48,7 +48,7 @@ const Navbar = () => {
 
       {/* Sons of Ink in Cursive */}
       <div className={`${styles.brand} ${dancingScript.className}`}>
-        Sons of <span className={styles.redLetter}>I</span>nk
+        Son of <span className={styles.redLetter}>I</span>nk
       </div>
     </nav>
   );
