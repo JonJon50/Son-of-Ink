@@ -13,6 +13,13 @@ const Map = () => {
       script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_API_KEY}&callback=initMap`;
       script.async = true;
       script.defer = true;
+
+      // Handle script load error
+      script.onerror = () => {
+        console.error('Failed to load the Google Maps script.');
+        alert('Failed to load Google Maps. Please check your connection or API key.');
+      };
+
       document.head.appendChild(script);
     } else {
       window.initMap();
@@ -92,9 +99,23 @@ const Map = () => {
     };
 
     loadGoogleMaps();
+
+    // Cleanup script and resources on unmount
+    return () => {
+      setMap(null);
+      setDirectionsRenderer(null);
+    };
   }, []);
 
-  return <div id="map" className={MapStyles.mapContainer} style={{ width: '100%', height: '685px' }}></div>;
+  return (
+    <div
+      id="map"
+      className={MapStyles.mapContainer}
+      style={{ width: '100%', height: '685px' }}
+    >
+      Map loading...
+    </div>
+  );
 };
 
 export default Map;
