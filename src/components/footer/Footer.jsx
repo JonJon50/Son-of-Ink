@@ -16,7 +16,7 @@ const Footer = () => {
                             </a>
                         </p>
                         <p>(202)440-0855</p>
-                        <p>Mon – Fri, 3pm – 8pm</p>
+                        <p>Mon – Fri, 10am – 8pm</p>
                     </div>
 
                     {/* Center Content */}

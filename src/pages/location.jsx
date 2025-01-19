@@ -97,7 +97,7 @@ const Location = () => {
               variants={slideIn}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              Mon – Fri, 3pm – 8pm
+              Mon – Fri, 10am – 8pm
               <br />
               Closed on Weekends, Thanksgiving, Christmas, New Years, Memorial
               Day, 4th of July, Labor Day
