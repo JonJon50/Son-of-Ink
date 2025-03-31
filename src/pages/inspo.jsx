@@ -1,6 +1,6 @@
 import React from 'react';
 import TattooInspoForm from '../components/HomePage/TattooInspoForm';
-import styles from '../styles/styles.module.css';
+import styles from './inspo.module.css'; // ✅ Local CSS module
 
 export default function InspoPage() {
     return (

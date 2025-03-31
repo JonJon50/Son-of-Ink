@@ -21,9 +21,16 @@ export default function TattooInspoForm() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
         });
-        const data = await res.json();
-        setResults(data.results);
+
+        try {
+            const data = await res.json();
+            setResults(Array.isArray(data.results) ? data.results : []);
+        } catch (error) {
+            console.error('Failed to parse results:', error);
+            setResults([]);
+        }
     };
+
 
     return (
         <div className={styles.container}>
@@ -46,7 +53,7 @@ export default function TattooInspoForm() {
                     Placement:
                     <input type="text" name="placement" placeholder="E.g. forearm, back" onChange={handleChange} required />
                 </label>
-                <button type="submit">Get Inspiration</button>
+                <button type="submit" className={styles.button}>Get Inspiration</button>
             </form>
 
             {results.length > 0 && (
