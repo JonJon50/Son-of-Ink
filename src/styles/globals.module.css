@@ -5,15 +5,14 @@
   background: none;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#__next {
+.pageWrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+}
+
+.pageContainer {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
 }

@@ -9,6 +9,7 @@ export default function TattooInspoForm() {
     });
 
     const [results, setResults] = useState([]);
+    const [zoomedImage, setZoomedImage] = useState(null); // 🆕 state for zoom
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,7 +31,6 @@ export default function TattooInspoForm() {
             setResults([]);
         }
     };
-
 
     return (
         <div className={styles.container}>
@@ -62,11 +62,22 @@ export default function TattooInspoForm() {
                     <div className={styles.grid}>
                         {results.map((item, index) => (
                             <div key={index} className={styles.card}>
-                                <img src={item.image} alt="tattoo inspo" />
+                                <img
+                                    src={item.image}
+                                    alt="tattoo inspo"
+                                    className={styles.clickableImage}
+                                    onClick={() => setZoomedImage(item.image)}
+                                />
                                 <p>{item.caption}</p>
                             </div>
                         ))}
                     </div>
+                </div>
+            )}
+
+            {zoomedImage && (
+                <div className={styles.modal} onClick={() => setZoomedImage(null)}>
+                    <img src={zoomedImage} alt="Zoomed tattoo" className={styles.modalImage} />
                 </div>
             )}
         </div>

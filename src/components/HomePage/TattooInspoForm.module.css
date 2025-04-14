@@ -80,3 +80,33 @@
     border-radius: 5px;
     margin-bottom: 0.75rem;
 }
+
+.clickableImage {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.clickableImage:hover {
+    transform: scale(1.02);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    cursor: zoom-out;
+}
+
+.modalImage {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
