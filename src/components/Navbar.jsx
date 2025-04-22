@@ -35,6 +35,9 @@ const Navbar = () => {
         <Link href="/artist" onClick={closeMenu}>
           Artist
         </Link>
+        <Link href="/inspo" onClick={closeMenu}>
+          Tattoo Inspo
+        </Link>
         <Link href="/booking" onClick={closeMenu}>
           Booking
         </Link>

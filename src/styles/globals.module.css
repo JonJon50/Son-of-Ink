@@ -5,3 +5,14 @@
   background: none;
 }
 
+.pageWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContainer {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}

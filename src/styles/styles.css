@@ -9,4 +9,15 @@ body {
   background-color: rgb(3, 2, 2); /* Set the background color to white */
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

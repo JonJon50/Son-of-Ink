@@ -61,6 +61,15 @@
   /* Slightly enlarge the letters */
 }
 
+.highlight {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.highlight:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .navLinks {
     display: none;
