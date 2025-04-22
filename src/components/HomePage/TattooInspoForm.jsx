@@ -9,7 +9,7 @@ export default function TattooInspoForm() {
     });
 
     const [results, setResults] = useState([]);
-    const [zoomedImage, setZoomedImage] = useState(null); // 🆕 state for zoom
+    const [zoomedImage, setZoomedImage] = useState(null);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,6 +31,8 @@ export default function TattooInspoForm() {
             setResults([]);
         }
     };
+
+    const proxyImg = (url) => `/api/proxy-image?url=${encodeURIComponent(url)}`;
 
     return (
         <div className={styles.container}>
@@ -63,7 +65,7 @@ export default function TattooInspoForm() {
                         {results.map((item, index) => (
                             <div key={index} className={styles.card}>
                                 <img
-                                    src={item.image}
+                                    src={proxyImg(item.image)}
                                     alt="tattoo inspo"
                                     className={styles.clickableImage}
                                     onClick={() => setZoomedImage(item.image)}
@@ -77,7 +79,11 @@ export default function TattooInspoForm() {
 
             {zoomedImage && (
                 <div className={styles.modal} onClick={() => setZoomedImage(null)}>
-                    <img src={zoomedImage} alt="Zoomed tattoo" className={styles.modalImage} />
+                    <img
+                        src={proxyImg(zoomedImage)}
+                        alt="Zoomed tattoo"
+                        className={styles.modalImage}
+                    />
                 </div>
             )}
         </div>
