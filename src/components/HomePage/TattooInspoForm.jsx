@@ -64,6 +64,7 @@ export default function TattooInspoForm() {
                     <div className={styles.grid}>
                         {results.map((item, index) => (
                             <div key={index} className={styles.card}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={proxyImg(item.image)}
                                     alt="tattoo inspo"
@@ -79,6 +80,7 @@ export default function TattooInspoForm() {
 
             {zoomedImage && (
                 <div className={styles.modal} onClick={() => setZoomedImage(null)}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={proxyImg(zoomedImage)}
                         alt="Zoomed tattoo"

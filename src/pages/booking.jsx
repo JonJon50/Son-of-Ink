@@ -2,10 +2,14 @@
 
 import React, { useState } from "react";
 import BookingStyles from "../pages/booking.module.css"; 
-import { sendContactForm } from "../lib/api"; 
 import Link from "next/link";
 import styles from "./booking.module.css";
 import { motion } from "framer-motion";
+
+const MAX_FILES = 5;
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+const ALLOWED_IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
 
 const initValues = {
   firstName: "",
@@ -16,7 +20,7 @@ const initValues = {
   bodyLocation: "",
   artist: "",
   hearAbout: "",
-  tattooPic: "",
+  tattooPic: [],
   newClient: false,
 };
 
@@ -30,52 +34,125 @@ const initState = { isLoading: false, error: "", values: initValues };
 const Booking = ({ showBackground = true }) => {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
   const { values, isLoading, error } = state;
 
   const onBlur = ({ target }) =>
     setTouched((prev) => ({ ...prev, [target.name]: true }));
 
-  const handleChange = ({ target }) =>
+  const handleChange = ({ target }) => {
+    setSuccessMessage("");
     setState((prev) => ({
       ...prev,
+      error: "",
       values: {
         ...prev.values,
         [target.name]: target.value,
       },
     }));
+  };
 
-  const handleChangeCheckbox = ({ target }) =>
+  const handleChangeCheckbox = ({ target }) => {
+    setSuccessMessage("");
     setState((prev) => ({
       ...prev,
+      error: "",
       values: {
         ...prev.values,
         [target.name]: target.checked,
       },
     }));
+  };
+
+  const hasValidImageExtension = (fileName) =>
+    ALLOWED_IMAGE_EXTENSIONS.some((extension) => fileName.toLowerCase().endsWith(extension));
+
+  const handleFileChange = ({ target }) => {
+    setSuccessMessage("");
+    const selectedFiles = Array.from(target.files || []);
+
+    if (selectedFiles.length > MAX_FILES) {
+      target.value = "";
+      setState((prev) => ({
+        ...prev,
+        error: `Please upload no more than ${MAX_FILES} image files.`,
+        values: { ...prev.values, tattooPic: [] },
+      }));
+      return;
+    }
+
+    const invalidFile = selectedFiles.find(
+      (file) =>
+        file.size > MAX_FILE_SIZE ||
+        !ALLOWED_IMAGE_TYPES.includes(file.type) ||
+        !hasValidImageExtension(file.name)
+    );
+
+    if (invalidFile) {
+      target.value = "";
+      setState((prev) => ({
+        ...prev,
+        error: "Please upload JPEG, PNG, WebP, or GIF images that are 10 MB or smaller.",
+        values: { ...prev.values, tattooPic: [] },
+      }));
+      return;
+    }
+
+    setState((prev) => ({
+      ...prev,
+      error: "",
+      values: {
+        ...prev.values,
+        tattooPic: selectedFiles,
+      },
+    }));
+  };
+
+  const submitContactForm = async (data) => {
+    const formData = new FormData();
+
+    Object.entries(data).forEach(([key, value]) => {
+      if (key === "tattooPic") {
+        value.forEach((file) => formData.append(key, file));
+      } else if (value !== null) {
+        formData.append(key, value);
+      }
+    });
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error("We could not submit your booking request. Please try again.");
+    }
+
+    return response.json();
+  };
 
   // Handle form submission logic here
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isLoading) return;
+
+    setSuccessMessage("");
     setState((prev) => ({
       ...prev,
       isLoading: true,
+      error: "",
     }));
     try {
-      await sendContactForm(values);
+      await submitContactForm(values);
       setTouched({});
       setState(initState);
-      toast({
-        title: "Message sent.",
-        status: "success",
-        duration: 2000,
-        position: "top",
-      });
+      setSuccessMessage("Your booking request was sent successfully.");
     } catch (error) {
       setState((prev) => ({
         ...prev,
         isLoading: false,
-        error: error.message,
+        error: error.message || "We could not submit your booking request. Please try again.",
       }));
     }
   };
@@ -219,14 +296,25 @@ const Booking = ({ showBackground = true }) => {
                   type="file"
                   id="tattooPic"
                   name="tattooPic"
-                  onChange={(e) => {
-                    const file = e.target.files[0];
-                    handleChange({ target: { name: "tattooPic", value: file } });
-                  }}
+                  accept=".jpg,.jpeg,.png,.webp,.gif,image/jpeg,image/png,image/webp,image/gif"
+                  multiple
+                  onChange={handleFileChange}
                   className="form-control"
                 />
-                <div>File Limit Size 4.5MB</div>
+                <div>File Limit: 5 images, 10MB each</div>
               </div>
+
+              {successMessage && (
+                <div className="alert alert-success" role="status">
+                  {successMessage}
+                </div>
+              )}
+
+              {error && (
+                <div className="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              )}
 
 
               <div className="mb-3 form-check">
@@ -248,11 +336,10 @@ const Booking = ({ showBackground = true }) => {
                   type="submit"
                   className="btn btn-primary"
                   disabled={
-                    !values.firstName || !values.email || !values.phoneNumber
+                    isLoading || !values.firstName || !values.email || !values.phoneNumber
                   }
-                  onClick={handleSubmit}
                 >
-                  Submit
+                  {isLoading ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </form>

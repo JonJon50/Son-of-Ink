@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from './Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -11,9 +12,9 @@ const Footer = () => {
                     {/* Left Content */}
                     <div className={styles.leftContent}>
                         <p>
-                            <a href="/location" className={styles.link}>
+                            <Link href="/location" className={styles.link}>
                                 2181 Crain Hwy, Waldorf, MD 20601
-                            </a>
+                            </Link>
                         </p>
                         <p>(202)440-0855</p>
                         <p>Mon – Fri, 10am – 8pm</p>

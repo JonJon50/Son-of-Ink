@@ -78,7 +78,7 @@ const ArtistGalleryPage = () => {
             marginBottom: "10px", // Add space between the name and button
           }}
         >
-          {selectedArtist.name}'s Gallery
+          {selectedArtist.name}&apos;s Gallery
         </h2>
         <Link href="/booking">
           <button

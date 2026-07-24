@@ -1,8 +1,14 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./Artist.module.css";
 import artistsData from "../artistsData";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
+const ARTIST_IMAGE_DIMENSIONS = {
+  "/Assets/d.png": { width: 932, height: 1162 },
+  "/Assets/douglas.png": { width: 1013, height: 1009 },
+};
 
 const Artist = () => {
   const containerVariants = {
@@ -45,10 +51,13 @@ const Artist = () => {
 
               {/* Animated Artist Card */}
               <motion.div className={styles.artistCard} variants={cardVariants}>
-                <img
+                <Image
                   src={artist.imageUrl}
                   alt={artist.name}
                   className={styles.artistImage}
+                  width={ARTIST_IMAGE_DIMENSIONS[artist.imageUrl]?.width}
+                  height={ARTIST_IMAGE_DIMENSIONS[artist.imageUrl]?.height}
+                  sizes="(max-width: 750px) 100vw, 50vw"
                 />
                 <div className={styles.artistOverlay}>
                   <h2 className={styles.artistName}>{artist.name}</h2>
