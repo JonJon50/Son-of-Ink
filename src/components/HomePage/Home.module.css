@@ -291,3 +291,28 @@
     transition: none;
   }
 }
+
+
+.bookingQuickInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  max-width: 760px;
+  margin-top: 22px;
+  color: #e2ddd6;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.bookingQuickInfo span::before {
+  content: "-";
+  margin-right: 8px;
+  color: #d02b21;
+}
+
+@media (max-width: 480px) {
+  .bookingQuickInfo {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

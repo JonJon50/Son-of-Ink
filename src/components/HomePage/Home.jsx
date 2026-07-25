@@ -55,6 +55,10 @@ const Home = () => {
                 Artist
               </Link>
             </div>
+            <div className={styles.bookingQuickInfo}>
+              <span>Custom pricing based on size, placement, and design detail</span>
+              <span>Consultation replies within 24 hours</span>
+            </div>
           </div>
         </div>
       </div>

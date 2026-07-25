@@ -70,7 +70,16 @@ const Artist = ({ homepageVariant = false, directoryVariant = false }) => {
                 {artist.bio}
               </motion.div>
 
-              {/* Animated Artist Card */}
+              {directoryVariant && (
+          <aside className={styles.bookingInfo}>
+            <h3>Specialties &amp; Booking Info</h3>
+            <p>Black-and-grey realism and custom lettering.</p>
+            <p>Custom pricing is based on tattoo size, placement, and design detail.</p>
+            <p>Consultation requests receive a response within 24 hours.</p>
+          </aside>
+        )}
+
+        {/* Animated Artist Card */}
               <motion.div
                 className={`${styles.artistCard} ${
                   homepageVariant ? styles.homepageArtistCard : ""

@@ -37,7 +37,7 @@
   font-size: 3rem;
   color: #050505;
   margin-bottom: 1rem;
-  font-family: 'Hoefler Text', 'Arial Narrow Bold', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   margin-top: 1%;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .Times {
-  font-family: 'Luminari', sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Simplify media queries and ensure they are mobile-first */

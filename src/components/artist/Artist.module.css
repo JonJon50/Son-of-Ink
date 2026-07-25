@@ -22,7 +22,7 @@
 .artistTitle {
   margin-top: 13rem;
   text-align: center;
-  font-family: Hoefler Text, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 3rem;
   margin-bottom: 4rem;
 }
@@ -75,7 +75,7 @@
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 100%;
-  font-family: Hoefler Text, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Artist Card Styling */
@@ -105,7 +105,7 @@
   padding-top: 3%;
   text-transform: uppercase;
   color: #050505;
-  font-family: Hoefler Text, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Button Container */
@@ -570,3 +570,33 @@
 .directoryContainer .artistTitle { text-align: center !important; }
 .directoryArtistContainer { grid-template-columns: minmax(0, 560px); justify-content: center; }
 .directoryArtistBio { text-align: center; }
+
+
+.bookingInfo {
+  width: 100%;
+  margin: 28px 0 32px;
+  border: 1px solid var(--ink-border);
+  padding: 24px;
+  background: var(--ink-surface);
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+.bookingInfo h3 {
+  margin: 0 0 14px;
+  color: var(--ink-text);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.bookingInfo p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .bookingInfo {
+    padding: 20px;
+  }
+}
