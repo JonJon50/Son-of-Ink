@@ -1,0 +1,6 @@
+.artistPage {
+  min-height: 100vh;
+  padding-top: var(--ink-nav-height);
+  background: var(--ink-bg);
+  color: var(--ink-text);
+}

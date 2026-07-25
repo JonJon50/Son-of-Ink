@@ -24,19 +24,20 @@ const Location = () => {
   };
 
   return (
-    <div className={styles["whole-container"]}>
+    <main className={styles["whole-container"]}>
       <div className={styles["location-header"]}>
-        <motion.h4
+        <motion.h1
           initial="hidden"
           animate="visible"
           variants={slideIn}
           transition={{ duration: 1.0, delay: 1.0 }}
         >
           Contact Information
-        </motion.h4>
+        </motion.h1>
       </div>
       <div className={styles["content-container"]}>
         <div
+          id="studio-contact-information"
           className={`${styles["contact-container"]} ${isContactVisible ? styles.visible : ""
             }`}
         >
@@ -103,17 +104,24 @@ const Location = () => {
               Day, 4th of July, Labor Day
             </motion.p>
           </div>
-          <div className={styles["toggle-arrow"]} onClick={toggleContactInfo}>
-            <FontAwesomeIcon
-              icon={isContactVisible ? faChevronLeft : faChevronRight}
-            />
-          </div>
         </div>
+        <button
+          type="button"
+          className={styles["toggle-arrow"]}
+          onClick={toggleContactInfo}
+          aria-expanded={isContactVisible}
+          aria-controls="studio-contact-information"
+          aria-label="Toggle contact information"
+        >
+          <FontAwesomeIcon
+            icon={isContactVisible ? faChevronLeft : faChevronRight}
+          />
+        </button>
         <div className={styles["map-container"]}>
           <Map />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

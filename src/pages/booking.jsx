@@ -31,7 +31,7 @@ const slideIn = {
 
 const initState = { isLoading: false, error: "", values: initValues };
 
-const Booking = ({ showBackground = true }) => {
+const Booking = ({ showBackground = true, homepageVariant = false }) => {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
@@ -160,9 +160,15 @@ const Booking = ({ showBackground = true }) => {
   return (
     <>
       {showBackground && <div className={BookingStyles.parallaxBackground} />}
-      <div className={BookingStyles.container}>
+      <div
+        className={`${BookingStyles.container} ${
+          homepageVariant ? BookingStyles.homepageContainer : ""
+        } ${!homepageVariant ? BookingStyles.standaloneContainer : ""}`}
+      >
         <motion.h2 
-          className={BookingStyles.title}
+          className={`${BookingStyles.title} ${
+            homepageVariant ? BookingStyles.homepageTitle : ""
+          } ${!homepageVariant ? BookingStyles.standaloneTitle : ""}`}
           initial="hidden"
           animate="visible"
           variants={slideIn}
@@ -171,7 +177,11 @@ const Booking = ({ showBackground = true }) => {
           Book Your Appointment
         </motion.h2>
         {/* Button container */}
-        <div className={styles["button-container round-button"]}>
+        <div
+          className={`${styles["button-container round-button"] || ""} ${
+            homepageVariant ? styles.homepageReviews : ""
+          } ${!homepageVariant ? styles.standaloneReviews : ""}`}
+        >
           <Link href="https://www.google.com/search?q=son+of+ink+&sca_esv=e84c6bd2b5cb9bcc&sca_upv=1&sxsrf=ADLYWIIRFVGTlY84rvNr03vZ7Esfw597Sg%3A1721418265735&ei=GcKaZuG_LJKu5NoPlsqpuAM&ved=0ahUKEwihsPTh7rOHAxUSF1kFHRZlCjcQ4dUDCA8&oq=son+of+ink+&gs_lp=Egxnd3Mtd2l6LXNlcnAiC3NvbiBvZiBpbmsgMgoQIxiABBgnGIoFMgUQABiABDIFEAAYgAQyERAuGIAEGJECGMcBGIoFGK8BMgsQLhiABBjHARivATIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5IwmVQ4AtYoFtwAXgBkAEBmAGjAaAB0guqAQQwLjEyuAEMyAEA-AEBmAIMoAKCC8ICChAAGLADGNYEGEfCAhAQABiABBiwAxhDGMkDGIoFwgIOEAAYgAQYsAMYkgMYigXCAgcQIxiwAhgnwgIGEAAYBxgewgILEAAYgAQYhgMYigXCAgoQABgIGA0YHhgPwgIIEAAYgAQYogTCAgYQABgNGB7CAgQQABgemAMAiAYBkAYGkgcEMS4xMaAH-40B&sclient=gws-wiz-serp#lrd=0x89b7a1700cf1d6cf:0x71fb69d645eccf44,1,,,,">
             <motion.button
               className={`${styles["round-button"]} ${styles["text-overlay"]}`}
@@ -184,11 +194,21 @@ const Booking = ({ showBackground = true }) => {
             </motion.button>
           </Link>
         </div>
-        <div className={BookingStyles.layout}>
-          <div className={BookingStyles.bookingCard}>
+        <div
+          className={`${BookingStyles.layout} ${
+            homepageVariant ? BookingStyles.homepageLayout : ""
+          } ${!homepageVariant ? BookingStyles.standaloneLayout : ""}`}
+        >
+          <div
+            className={`${BookingStyles.bookingCard} ${
+              homepageVariant ? BookingStyles.homepageBookingCard : ""
+            } ${!homepageVariant ? BookingStyles.standaloneBookingCard : ""}`}
+          >
             {/* Booking card */} {/* Adjust the width as needed */}
             <form
-              className={`card p-4 ${BookingStyles.form}`}
+              className={`card p-4 ${BookingStyles.form} ${
+                homepageVariant ? BookingStyles.homepageForm : ""
+              } ${!homepageVariant ? BookingStyles.standaloneForm : ""}`}
               onSubmit={handleSubmit}
             >
               <div className="mb-3">
@@ -200,6 +220,7 @@ const Booking = ({ showBackground = true }) => {
                   onChange={handleChange}
                   onBlur={onBlur}
                   placeholder="First Name"
+                  aria-label="First Name"
                 />
               </div>
               <div className="mb-3">
@@ -211,6 +232,7 @@ const Booking = ({ showBackground = true }) => {
                   onChange={handleChange}
                   onBlur={onBlur}
                   placeholder="Last Name"
+                  aria-label="Last Name"
                 />
               </div>
               <div className="mb-3">
@@ -222,6 +244,7 @@ const Booking = ({ showBackground = true }) => {
                   onChange={handleChange}
                   onBlur={onBlur}
                   placeholder="Phone Number"
+                  aria-label="Phone Number"
                 />
               </div>
               <div className="mb-3">
@@ -233,6 +256,7 @@ const Booking = ({ showBackground = true }) => {
                   onChange={handleChange}
                   onBlur={onBlur}
                   placeholder="Email"
+                  aria-label="Email"
                 />
               </div>
               <div className="mb-3">
@@ -245,6 +269,7 @@ const Booking = ({ showBackground = true }) => {
                   onChange={handleChange}
                   onBlur={onBlur}
                   placeholder="Brief description of tattoo"
+                  aria-label="Brief description of tattoo"
                 ></textarea>
               </div>
               <div className="mb-3">
@@ -256,6 +281,7 @@ const Booking = ({ showBackground = true }) => {
                   onChange={handleChange}
                   onBlur={onBlur}
                   placeholder="Location on body"
+                  aria-label="Location on body"
                 />
               </div>
               <div className="mb-3">

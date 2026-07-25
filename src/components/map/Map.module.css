@@ -1,28 +1,13 @@
-#map {
-  width: 100%;
-  height: 100%;
-}
-
 .mapContainer {
   width: 100%;
-  height: 685px;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
-  margin-bottom: 2rem;
+  height: clamp(520px, 66vh, 685px);
+  background: var(--ink-surface-raised);
+  color: var(--ink-muted);
 }
 
-/* Responsive Design */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .mapContainer {
-    width: 100%;
-    height: 500px;
+    height: min(620px, 70vh);
+    min-height: 480px;
   }
 }
-
-@media (min-width: 800px) {
-  .mapContainer {
-    width: 100%;
-    height: 685px;
-  }
-}
-
-

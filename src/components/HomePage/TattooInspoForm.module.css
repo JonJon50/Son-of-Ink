@@ -1,112 +1,206 @@
-/* TattooInspoForm.module.css */
 .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #0f0f0f;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
-    color: #fff;
+    width: min(var(--ink-content), 100%);
+    margin: 0 auto;
+    color: var(--ink-text);
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    border-top: 1px solid var(--ink-border);
+    border-bottom: 1px solid var(--ink-border);
+    padding: 32px 0;
 }
 
 .form label {
     display: flex;
     flex-direction: column;
-    font-weight: 600;
+    gap: 9px;
+    min-width: 0;
+    color: var(--ink-muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .form input,
 .form select {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #1a1a1a;
-    color: #fff;
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid #4a4743;
+    border-radius: 3px;
+    padding: 10px 12px;
+    background: var(--ink-surface-raised);
+    color: var(--ink-text);
+    text-transform: none;
+    transition: border-color var(--ink-transition), box-shadow var(--ink-transition);
+}
+
+.form input:hover,
+.form select:hover {
+    border-color: #6b655e;
 }
 
 .form input::placeholder {
-    color: #888;
+    color: #96918a;
+}
+
+.form input:focus,
+.form select:focus {
+    border-color: var(--ink-focus);
+    outline: 3px solid rgba(239, 98, 89, 0.18);
+    outline-offset: 0;
 }
 
 .button {
-    padding: 0.75rem 1.2rem;
-    background-color: #e63946;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
+    grid-column: 1 / -1;
+    justify-self: start;
+    min-width: 180px;
+    min-height: 48px;
+    border: 1px solid var(--ink-accent);
+    border-radius: 4px;
+    padding: 12px 20px;
+    background: var(--ink-accent);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--ink-transition),
+        border-color var(--ink-transition), transform var(--ink-transition);
 }
 
 .button:hover {
-    background-color: #d62839;
+    border-color: var(--ink-accent-hover);
+    background: var(--ink-accent-hover);
+    transform: translateY(-2px);
+}
+
+.button:focus-visible,
+.imageButton:focus-visible,
+.modal:focus-visible {
+    outline: 3px solid var(--ink-focus);
+    outline-offset: 4px;
 }
 
 .results {
-    margin-top: 2rem;
+    margin-top: 72px;
 }
 
 .results h2 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin: 0 0 28px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 500;
+    letter-spacing: 0;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .card {
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    padding: 1rem;
-    color: #ddd;
+    min-width: 0;
+    border-bottom: 1px solid var(--ink-border);
+    padding-bottom: 18px;
+    color: var(--ink-muted);
+    transition: border-color var(--ink-transition), transform var(--ink-transition);
 }
 
-.card img {
+.card:hover {
+    border-color: rgba(244, 241, 236, 0.38);
+    transform: translateY(-3px);
+}
+
+.card p {
+    margin: 14px 0 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.imageButton {
+    display: block;
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 0.75rem;
+    border: 0;
+    padding: 0;
+    background: var(--ink-surface);
+    cursor: zoom-in;
+    overflow: hidden;
 }
 
 .clickableImage {
-    cursor: zoom-in;
-    transition: transform 0.2s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform 180ms ease;
 }
 
-.clickableImage:hover {
+.imageButton:hover .clickableImage {
     transform: scale(1.02);
 }
 
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+    border: 0;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.92);
     cursor: zoom-out;
 }
 
 .modalImage {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    display: block;
+    max-width: min(1100px, 94vw);
+    max-height: 90vh;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    object-fit: contain;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .results {
+        margin-top: 56px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 430px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button,
+    .clickableImage,
+    .card,
+    .form input,
+    .form select {
+        transition: none;
+    }
 }

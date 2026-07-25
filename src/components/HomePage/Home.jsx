@@ -22,31 +22,41 @@ const Home = () => {
           className={styles.video}
         />
         <div className={styles.videoOverlay}>
-          <motion.h1
-            className={`${styles["text-overlay"]} ${styles["customFont"]}`}
-            variants={fadeInUp}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 1.5, delay: 0.2 }}
-          > Son of
-            <span style={{ color: "red" }}> I</span>nk
-          </motion.h1>
+          <div className={styles.heroContent}>
+            <motion.h1
+              className={`${styles["text-overlay"]} ${styles.customFont}`}
+              variants={fadeInUp}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 1.5, delay: 0.2 }}
+            >
+              Son of <span className={styles.accentLetter}>I</span>nk
+            </motion.h1>
+            <p className={styles.heroStatement}>
+              Imagine Your Vision <span>And Bring It to Life</span>
+            </p>
+            <p className={styles.heroCopy}>
+              Bringing your vision to life with personalized tattoos and
+              exceptional client experiences.
+            </p>
+            <div className={styles.heroActions}>
+              <Link href="/booking">
+                <motion.button
+                  className={styles.roundButton}
+                  variants={fadeInUp}
+                  initial="initial"
+                  animate="animate"
+                  transition={{ duration: 1.2, delay: 0.5 }}
+                >
+                  Book a Consultation
+                </motion.button>
+              </Link>
+              <Link href="/artist" className={styles.secondaryAction}>
+                Artist
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className={styles.buttonContainer}>
-        <Link href="/booking">
-          <motion.button
-            className={styles.roundButton}
-            variants={fadeInUp}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 1.2, delay: 0.5 }}
-          >
-            Book a Consultation
-          </motion.button>
-        </Link>
       </div>
 
       {/* Video Overlay Section */}
@@ -60,7 +70,7 @@ const Home = () => {
           className={styles.overlayVideo}
         />
         <div className={styles.overlayContent}>
-          <motion.h1
+          <motion.h2
             className={styles.mainTitle}
             variants={fadeInUp}
             initial="initial"
@@ -68,7 +78,7 @@ const Home = () => {
             transition={{ duration: 1.5, delay: 0.5 }}
           >
             Imagine Your Vision <br /> And Bring It to Life
-          </motion.h1>
+          </motion.h2>
           <div className={styles.sideBySideParagraphs}>
             <div className={styles.paragraphSection}>
               <h2 className={styles.subtitle}>Who We Are</h2>

@@ -108,11 +108,7 @@ const Map = () => {
   }, []);
 
   return (
-    <div
-      id="map"
-      className={MapStyles.mapContainer}
-      style={{ width: '100%', height: '685px' }}
-    >
+    <div id="map" className={MapStyles.mapContainer}>
       Map loading...
     </div>
   );

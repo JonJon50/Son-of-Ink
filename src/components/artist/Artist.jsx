@@ -10,7 +10,7 @@ const ARTIST_IMAGE_DIMENSIONS = {
   "/Assets/douglas.png": { width: 1013, height: 1009 },
 };
 
-const Artist = () => {
+const Artist = ({ homepageVariant = false, directoryVariant = false }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,35 +31,67 @@ const Artist = () => {
 
   return (
     <>
-      <div className={styles.parallaxBackground} /> {/* Parallax Background */}
-      <div className={styles.wholeContainer}>
+      <div
+        className={`${styles.parallaxBackground} ${
+          homepageVariant ? styles.homepageParallax : ""
+        } ${directoryVariant ? styles.directoryParallax : ""}`}
+      />{" "}
+      {/* Parallax Background */}
+      <div
+        className={`${styles.wholeContainer} ${
+          homepageVariant ? styles.homepageContainer : ""
+        } ${directoryVariant ? styles.directoryContainer : ""}`}
+      >
         <h2 className={`text-center ${styles.artistTitle}`}>Artist</h2>
 
         {/* Artist Cards with Bio */}
         <motion.div
-          className={styles.artistContainer}
+          className={`${styles.artistContainer} ${
+            homepageVariant ? styles.homepageArtistContainer : ""
+          } ${directoryVariant ? styles.directoryArtistContainer : ""}`}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {artistsData.map((artist) => (
-            <div key={artist.id} className={styles.artistCardWrapper}>
+            <div
+              key={artist.id}
+              className={`${styles.artistCardWrapper} ${
+                homepageVariant ? styles.homepageArtistWrapper : ""
+              } ${directoryVariant ? styles.directoryArtistWrapper : ""}`}
+            >
               {/* Animated Artist Bio */}
-              <motion.div className={styles.artistBio} variants={bioVariants}>
+              <motion.div
+                className={`${styles.artistBio} ${
+                  homepageVariant ? styles.homepageArtistBio : ""
+                } ${directoryVariant ? styles.directoryArtistBio : ""}`}
+                variants={bioVariants}
+              >
                 {artist.bio}
               </motion.div>
 
               {/* Animated Artist Card */}
-              <motion.div className={styles.artistCard} variants={cardVariants}>
+              <motion.div
+                className={`${styles.artistCard} ${
+                  homepageVariant ? styles.homepageArtistCard : ""
+                } ${directoryVariant ? styles.directoryArtistCard : ""}`}
+                variants={cardVariants}
+              >
                 <Image
                   src={artist.imageUrl}
                   alt={artist.name}
-                  className={styles.artistImage}
+                  className={`${styles.artistImage} ${
+                    homepageVariant ? styles.homepageArtistImage : ""
+                  } ${directoryVariant ? styles.directoryArtistImage : ""}`}
                   width={ARTIST_IMAGE_DIMENSIONS[artist.imageUrl]?.width}
                   height={ARTIST_IMAGE_DIMENSIONS[artist.imageUrl]?.height}
                   sizes="(max-width: 750px) 100vw, 50vw"
                 />
-                <div className={styles.artistOverlay}>
+                <div
+                  className={`${styles.artistOverlay} ${
+                    homepageVariant ? styles.homepageArtistOverlay : ""
+                  } ${directoryVariant ? styles.directoryArtistOverlay : ""}`}
+                >
                   <h2 className={styles.artistName}>{artist.name}</h2>
                   <div className={styles.buttonContainer}>
                     <Link href={`/${artist.name}`} passHref>

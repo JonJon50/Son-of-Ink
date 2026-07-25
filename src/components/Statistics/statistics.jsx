@@ -29,9 +29,13 @@ const StatItem = ({ end, suffix, title, icon }) => {
   );
 };
 
-const Statistics = () => {
+const Statistics = ({ homepageVariant = false }) => {
   return (
-    <div className={styles.statisticsSection}>
+    <div
+      className={`${styles.statisticsSection} ${
+        homepageVariant ? styles.homepageStatistics : ""
+      }`}
+    >
       <StatItem
         end={10}
         suffix="+"

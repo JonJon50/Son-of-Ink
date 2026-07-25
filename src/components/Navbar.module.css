@@ -1,106 +1,175 @@
 .navbar {
-  background-color: #000;
-  /* Black background */
-  color: white;
   position: fixed;
-  width: 100%;
-  z-index: 100;
   top: 0;
   left: 0;
-  padding: 10px 20px;
+  z-index: 100;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: var(--ink-nav-height);
+  border-bottom: 1px solid var(--ink-border);
+  padding: 8px 28px;
+  background: rgba(5, 5, 5, 0.94);
+  color: var(--ink-text);
+  backdrop-filter: blur(12px);
 }
 
 .navLinks {
   display: flex;
-  gap: 20px;
-  transition: transform 0.3s ease-in-out;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLinks a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--ink-text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.navLinks a:hover,
+.navLinks a[aria-current="page"] {
+  color: var(--ink-focus);
+}
+
+.navLinks a[aria-current="page"]::after {
+  position: absolute;
+  right: 12px;
+  bottom: 5px;
+  left: 12px;
+  height: 1px;
+  background: var(--ink-accent);
+  content: "";
 }
 
 .hamburger {
   display: none;
-  /* Hidden on larger screens */
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 8px;
+  background: transparent;
+  cursor: pointer;
 }
 
 .bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
+  width: 24px;
+  height: 2px;
+  background: var(--ink-text);
+  transform-origin: center;
+  transition: opacity var(--ink-transition), transform var(--ink-transition);
 }
 
-.navOpen {
-  transform: translateY(0);
+.hamburger[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .brand {
-  font-size: 1.5rem;
-  /* Font size for "Sons of Ink" */
-  color: white;
-  /* Default text color */
   margin-left: auto;
-  /* Push the text to the right */
-  padding-right: 20px;
-  /* Spacing from the edge */
-  overflow: visible;
-  /* Ensures hover effects aren't clipped */
+  padding-right: 4px;
+  color: var(--ink-text);
+  font-size: 1.65rem;
+  line-height: 1;
+  transition: color var(--ink-transition);
 }
 
 .redLetter {
-  color: red;
-  transition: text-shadow 0.3s ease-in-out;
+  color: var(--ink-accent-hover);
 }
 
-.redLetter:hover {
-  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6);
-  transform: scale(1.2);
-  /* Slightly enlarge the letters */
+.navLinks a:focus-visible,
+.hamburger:focus-visible {
+  outline: 3px solid var(--ink-focus);
+  outline-offset: 2px;
 }
 
-.highlight {
-  color: #e63946;
-  font-weight: bold;
-}
-
-.highlight:hover {
-  text-decoration: underline;
+.homepageNavbar {
+  background: rgba(5, 5, 5, 0.9);
 }
 
 @media (max-width: 768px) {
-  .navLinks {
-    display: none;
-    /* Hide the links by default */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Semi-transparent black background */
-    width: 100%;
-    padding: 10px 0;
-    align-items: center;
-    transform: translateY(-100%);
-  }
-
-  .navLinks a {
-    padding: 10px 0;
-    color: white;
-    /* Ensure the links are visible */
-    text-decoration: none;
+  .navbar {
+    padding: 8px 16px;
   }
 
   .hamburger {
     display: flex;
-    /* Show hamburger on smaller screens */
+  }
+
+  .navLinks {
+    position: absolute;
+    top: var(--ink-nav-height);
+    left: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--ink-border);
+    padding: 12px 0 18px;
+    background: rgba(5, 5, 5, 0.99);
+  }
+
+  .navLinks a {
+    justify-content: center;
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  .navLinks a[aria-current="page"]::after {
+    right: calc(50% - 28px);
+    left: calc(50% - 28px);
   }
 
   .navOpen {
     display: flex;
-    /* Show menu when toggled */
+    animation: menuReveal 180ms var(--ink-ease);
+  }
+
+  .brand {
+    padding-right: 0;
+  }
+}
+
+@keyframes menuReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navLinks a,
+  .bar,
+  .brand {
+    transition: none;
+  }
+
+  .navOpen {
+    animation: none;
   }
 }

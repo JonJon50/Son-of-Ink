@@ -1,13 +1,35 @@
 .pageContainer {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem;
     flex: 1;
+    min-height: 100vh;
+    padding: calc(var(--ink-nav-height) + 72px) 24px 104px;
+    background: var(--ink-bg);
+    color: var(--ink-text);
 }
 
 .pageTitle {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1.5rem;
+    width: min(var(--ink-content), 100%);
+    margin: 0 auto 48px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(2.7rem, 5vw, 4.75rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .pageContainer {
+        padding: calc(var(--ink-nav-height) + 48px) 20px 80px;
+    }
+
+    .pageTitle {
+        margin-bottom: 36px;
+    }
+}
+
+@media (max-width: 430px) {
+    .pageContainer {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }

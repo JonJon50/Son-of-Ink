@@ -1,97 +1,134 @@
 .whole-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin-top: 10rem;
   min-height: 100vh;
-  padding-bottom: 10%;
+  padding: calc(var(--ink-nav-height) + 72px) 24px 104px;
+  background: var(--ink-bg);
+  color: var(--ink-text);
 }
 
 .location-header {
-  background-color: rgb(3, 2, 2);
-  /* Dark background */
-  padding: 1rem 2%;
-  color: white;
-  /* White text color */
-  font-size: 2rem;
-  /* Make the header text bigger */
-  text-align: center;
-  /* Center the header text */
-  font-weight: bold;
-  /* Make the text bold */
-  letter-spacing: 1px;
-  /* Add slight spacing for better readability */
+  width: min(var(--ink-content), 100%);
+  margin: 0 auto 48px;
+}
+
+.location-header h1 {
+  max-width: 800px;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(2.7rem, 5vw, 4.75rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .content-container {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  color: white;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 24px;
+  width: min(var(--ink-content), 100%);
+  margin: 0 auto;
 }
 
 .contact-container {
-  background-color: orange;
-  width: 300px;
-  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  height: fit-content;
-  position: relative;
-  transition: transform 0.3s ease-in-out;
-}
-
-.contact-container.visible {
-  transform: translateX(0);
+  gap: 0;
+  border: 1px solid var(--ink-border);
+  padding: 12px 28px;
+  background: var(--ink-surface);
 }
 
 .contact-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 12px;
+  border-bottom: 1px solid var(--ink-border);
+  padding: 28px 0;
+  transition: border-color var(--ink-transition), transform var(--ink-transition);
 }
 
-.contact-info h5 {
-  margin-left: 0.5rem;
-  font-size: 1rem;
+.contact-info:hover {
+  border-color: rgba(244, 241, 236, 0.38);
+  transform: translateX(3px);
 }
 
-.contact-info p {
-  margin-left: 2rem;
-  margin-top: 0.5rem;
+.contact-info:last-child {
+  border-bottom: 0;
 }
 
 .contact-info svg {
-  font-size: 1.5rem;
-  color: white;
+  grid-row: 1 / 3;
+  width: 18px;
+  margin-top: 2px;
+  color: var(--ink-focus);
+  font-size: 1rem;
+}
+
+.contact-info h5 {
+  margin: 0 0 8px;
+  color: var(--ink-text);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.contact-info p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
 }
 
 .map-container {
-  flex-grow: 1;
+  min-width: 0;
+  border: 1px solid var(--ink-border);
+  background: var(--ink-surface);
+  overflow: hidden;
 }
 
 .toggle-arrow {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--ink-border);
+  border-radius: 3px;
+  background: var(--ink-accent);
+  color: #ffffff;
   cursor: pointer;
-  color: red;
-  font-size: 2rem;
+}
+
+.toggle-arrow:focus-visible {
+  outline: 3px solid var(--ink-focus);
+  outline-offset: 3px;
 }
 
 @media (max-width: 768px) {
+  .whole-container {
+    padding: calc(var(--ink-nav-height) + 48px) 20px 80px;
+  }
+
+  .location-header {
+    margin-bottom: 36px;
+    padding-left: 60px;
+  }
+
+  .content-container {
+    grid-template-columns: 1fr;
+  }
+
   .contact-container {
     position: fixed;
+    top: var(--ink-nav-height);
     left: 0;
-    width: 80%;
-    height: 70%;
+    z-index: 90;
+    width: min(88%, 370px);
+    max-height: calc(100vh - var(--ink-nav-height));
+    padding: 12px 24px;
     transform: translateX(-100%);
-    z-index: 10;
-    padding: 1.5rem;
-    box-sizing: border-box;
+    transition: transform 220ms ease;
+    overflow-y: auto;
   }
 
   .contact-container.visible {
@@ -99,12 +136,28 @@
   }
 
   .toggle-arrow {
-    right: -25px;
+    position: fixed;
+    top: calc(var(--ink-nav-height) + 22px);
+    left: 20px;
+    z-index: 91;
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 430px) {
+  .whole-container {
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
-  .map-container {
-    width: 100%;
-    height: calc(100vh - 50px);
-    z-index: 5;
+  .toggle-arrow {
+    left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-container,
+  .contact-info {
+    transition: none;
   }
 }

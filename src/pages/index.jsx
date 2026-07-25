@@ -4,6 +4,7 @@ import Home from "../components/HomePage/Home";
 import Artist from "../components/artist/Artist";
 import Booking from "./booking";
 import Statistics from "../components/Statistics/statistics";
+import styles from "./index.module.css";
 
 const HomePage = () => {
   return (
@@ -16,25 +17,29 @@ const HomePage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className={styles.homepage}>
         {/* Hero Section or Main Homepage Content */}
-        <section id="home">
+        <section id="home" className={styles.heroSection}>
           <Home />
         </section>
 
         {/* Artist Section */}
-        <section id="artist">
-          <Artist showBio={false} />
+        <section id="artist" className={styles.artistSection}>
+          <Artist showBio={false} homepageVariant />
         </section>
 
         {/* Booking Section */}
-        <section id="booking">
-          <Booking showBackground={false} showReviewsButton={false} />
+        <section id="booking" className={styles.bookingSection}>
+          <Booking
+            showBackground={false}
+            showReviewsButton={false}
+            homepageVariant
+          />
         </section>
 
         {/* Statistics Section */}
-        <section id="statistics">
-          <Statistics />
+        <section id="statistics" className={styles.statisticsSection}>
+          <Statistics homepageVariant />
         </section>
       </main>
     </>
@@ -42,4 +47,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-

@@ -1,0 +1,160 @@
+.galleryPage {
+  position: relative;
+  min-height: 100vh;
+  padding-top: var(--ink-nav-height);
+  background: var(--ink-bg);
+  color: var(--ink-text);
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: relative;
+  height: min(680px, 72vh);
+  min-height: 480px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.backgroundImage::after {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 7, 7, 0.62);
+  content: "";
+}
+
+.galleryHeader {
+  position: absolute;
+  top: calc(var(--ink-nav-height) + 72px);
+  left: 50%;
+  z-index: 1;
+  width: min(var(--ink-content), calc(100% - 48px));
+  transform: translateX(-50%);
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--ink-focus);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.artistName {
+  max-width: 760px;
+  margin: 0 0 32px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.bookingLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 1px solid var(--ink-text);
+  border-radius: 4px;
+  padding: 12px 22px;
+  color: var(--ink-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color var(--ink-transition), color var(--ink-transition),
+    transform var(--ink-transition);
+}
+
+.bookingLink:hover {
+  background: var(--ink-text);
+  color: var(--ink-bg);
+  transform: translateY(-2px);
+}
+
+.backLink:focus-visible,
+.bookingLink:focus-visible,
+.artistArt:focus-visible {
+  outline: 3px solid var(--ink-focus);
+  outline-offset: 4px;
+}
+
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: min(var(--ink-content), 100%);
+  margin: 0 auto;
+  padding: 72px 24px 104px;
+}
+
+.artistArt {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  background: var(--ink-surface);
+  cursor: zoom-in;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px transparent;
+  transition: box-shadow var(--ink-transition);
+}
+
+.artistArt img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: filter var(--ink-transition);
+}
+
+.artistArt:hover {
+  box-shadow: 0 0 0 1px rgba(244, 241, 236, 0.4);
+}
+
+.artistArt:hover img {
+  filter: contrast(1.04);
+}
+
+@media (max-width: 768px) {
+  .backgroundImage {
+    height: 600px;
+  }
+
+  .galleryHeader {
+    top: calc(var(--ink-nav-height) + 56px);
+    width: calc(100% - 40px);
+  }
+
+  .galleryContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 56px 20px 80px;
+  }
+}
+
+@media (max-width: 430px) {
+  .backgroundImage {
+    min-height: 520px;
+  }
+
+  .galleryContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artistArt {
+    transform: none !important;
+    transition: none;
+  }
+
+  .artistArt img,
+  .bookingLink {
+    transition: none;
+  }
+}

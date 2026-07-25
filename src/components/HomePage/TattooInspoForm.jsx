@@ -64,13 +64,19 @@ export default function TattooInspoForm() {
                     <div className={styles.grid}>
                         {results.map((item, index) => (
                             <div key={index} className={styles.card}>
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                    src={proxyImg(item.image)}
-                                    alt="tattoo inspo"
-                                    className={styles.clickableImage}
+                                <button
+                                    type="button"
+                                    className={styles.imageButton}
                                     onClick={() => setZoomedImage(item.image)}
-                                />
+                                    aria-label={`Open inspiration image ${index + 1}`}
+                                >
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        src={proxyImg(item.image)}
+                                        alt="tattoo inspo"
+                                        className={styles.clickableImage}
+                                    />
+                                </button>
                                 <p>{item.caption}</p>
                             </div>
                         ))}
@@ -79,14 +85,19 @@ export default function TattooInspoForm() {
             )}
 
             {zoomedImage && (
-                <div className={styles.modal} onClick={() => setZoomedImage(null)}>
+                <button
+                    type="button"
+                    className={styles.modal}
+                    onClick={() => setZoomedImage(null)}
+                    aria-label="Close inspiration image"
+                >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={proxyImg(zoomedImage)}
                         alt="Zoomed tattoo"
                         className={styles.modalImage}
                     />
-                </div>
+                </button>
             )}
         </div>
     );

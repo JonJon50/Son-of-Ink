@@ -1,0 +1,35 @@
+.homepage {
+  --home-background: var(--ink-bg);
+  --home-surface: var(--ink-surface);
+  --home-surface-raised: var(--ink-surface-raised);
+  --home-text: var(--ink-text);
+  --home-muted: var(--ink-muted);
+  --home-accent: var(--ink-accent);
+  --home-border: var(--ink-border);
+  background: var(--home-background);
+  color: var(--home-text);
+  overflow: hidden;
+}
+
+.heroSection,
+.artistSection,
+.bookingSection,
+.statisticsSection {
+  position: relative;
+  width: 100%;
+}
+
+.artistSection {
+  background: var(--home-surface);
+  border-top: 1px solid var(--home-border);
+}
+
+.bookingSection {
+  background: #ece8e1;
+  color: #151515;
+}
+
+.statisticsSection {
+  background: var(--home-background);
+  border-top: 1px solid var(--home-border);
+}

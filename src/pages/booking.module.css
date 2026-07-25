@@ -107,3 +107,336 @@
 .round-button:hover {
   background-color: rgba(30, 104, 223, 0.329);
 }
+
+.standaloneContainer {
+  position: relative;
+  min-height: 100vh;
+  padding: calc(var(--ink-nav-height) + 72px) 24px 104px;
+  background: rgba(9, 9, 9, 0.86);
+  color: var(--ink-text);
+}
+
+.standaloneTitle {
+  margin: 0 0 20px;
+  color: var(--ink-text);
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(2.7rem, 5vw, 4.75rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.standaloneReviews {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.standaloneReviews .round-button {
+  min-height: 44px;
+  border: 1px solid rgba(244, 241, 236, 0.48);
+  border-radius: 4px;
+  padding: 11px 18px;
+  background: transparent;
+  color: var(--ink-focus);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease,
+    color 180ms ease;
+}
+
+.standaloneReviews .round-button:hover {
+  border-color: var(--ink-text);
+  background: var(--ink-text);
+  color: var(--ink-bg);
+}
+
+.standaloneReviews .round-button:focus-visible {
+  outline: 3px solid var(--ink-focus);
+  outline-offset: 3px;
+}
+
+.standaloneLayout {
+  max-width: 860px;
+}
+
+.standaloneBookingCard {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.standaloneForm {
+  border: 1px solid var(--ink-border);
+  border-radius: 6px;
+  background: var(--ink-surface);
+  color: var(--ink-text);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  animation-duration: 800ms;
+}
+
+.standaloneForm :global(.form-control),
+.standaloneForm :global(.form-select) {
+  min-height: 48px;
+  border: 1px solid #4a4743;
+  border-radius: 3px;
+  background-color: var(--ink-surface-raised);
+  color: var(--ink-text);
+  transition: border-color var(--ink-transition), box-shadow var(--ink-transition),
+    background-color var(--ink-transition);
+}
+
+.standaloneForm :global(.form-control):hover,
+.standaloneForm :global(.form-select):hover {
+  border-color: #6b655e;
+}
+
+.standaloneForm :global(.form-control)::placeholder {
+  color: #96918a;
+}
+
+.standaloneForm textarea:global(.form-control) {
+  min-height: 130px;
+}
+
+.standaloneForm :global(.form-control):focus,
+.standaloneForm :global(.form-select):focus,
+.standaloneForm :global(.form-check-input):focus {
+  border-color: var(--ink-focus);
+  box-shadow: 0 0 0 3px rgba(239, 98, 89, 0.18);
+}
+
+.standaloneForm :global(.form-label),
+.standaloneForm :global(.form-check-label) {
+  color: var(--ink-text);
+  font-weight: 600;
+}
+
+.standaloneForm :global(.btn-primary) {
+  min-width: 150px;
+  min-height: 48px;
+  border-color: var(--ink-accent);
+  border-radius: 4px;
+  background: var(--ink-accent);
+  font-weight: 700;
+  transition: background-color var(--ink-transition),
+    border-color var(--ink-transition), transform var(--ink-transition);
+}
+
+.standaloneForm :global(.btn-primary):hover:not(:disabled) {
+  border-color: var(--ink-accent-hover);
+  background: var(--ink-accent-hover);
+  transform: translateY(-2px);
+}
+
+.standaloneForm :global(.btn-primary):focus-visible {
+  outline: 3px solid var(--ink-focus);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.standaloneForm :global(.btn-primary):disabled {
+  border-color: #77716a;
+  background: #77716a;
+}
+
+/* Homepage-only booking presentation. Standalone booking defaults remain above. */
+.homepageContainer {
+  min-height: 0;
+  padding: 104px 24px;
+}
+
+.homepageTitle {
+  margin: 0 0 20px;
+  color: #151515;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(2.7rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.homepageReviews {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.homepageReviews .round-button {
+  min-height: 44px;
+  border: 1px solid #5f5a54;
+  border-radius: 4px;
+  padding: 11px 18px;
+  background: transparent;
+  color: #8f1d17;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease,
+    color 180ms ease;
+}
+
+.homepageReviews .round-button:hover {
+  border-color: #151515;
+  background: #151515;
+  color: #ffffff;
+}
+
+.homepageReviews .round-button:focus-visible {
+  outline: 3px solid #8f1d17;
+  outline-offset: 3px;
+}
+
+.homepageLayout {
+  max-width: 860px;
+}
+
+.homepageBookingCard {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.homepageForm {
+  border: 1px solid rgba(21, 21, 21, 0.16);
+  border-radius: 6px;
+  background: #f8f6f2;
+  box-shadow: 0 24px 70px rgba(21, 21, 21, 0.12);
+  animation-duration: 800ms;
+}
+
+.homepageForm :global(.form-control),
+.homepageForm :global(.form-select) {
+  min-height: 48px;
+  border: 1px solid #c8c2ba;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #151515;
+  transition: border-color var(--ink-transition), box-shadow var(--ink-transition),
+    background-color var(--ink-transition);
+}
+
+.homepageForm :global(.form-control):hover,
+.homepageForm :global(.form-select):hover {
+  border-color: #8f8880;
+}
+
+.homepageForm textarea:global(.form-control) {
+  min-height: 130px;
+}
+
+.homepageForm :global(.form-control):focus,
+.homepageForm :global(.form-select):focus,
+.homepageForm :global(.form-check-input):focus {
+  border-color: #8f1d17;
+  box-shadow: 0 0 0 3px rgba(143, 29, 23, 0.18);
+}
+
+.homepageForm :global(.form-label),
+.homepageForm :global(.form-check-label) {
+  color: #27231f;
+  font-weight: 600;
+}
+
+.homepageForm :global(.btn-primary) {
+  min-width: 150px;
+  min-height: 48px;
+  border-color: #a5231c;
+  border-radius: 4px;
+  background: #a5231c;
+  font-weight: 700;
+  transition: background-color var(--ink-transition),
+    border-color var(--ink-transition), transform var(--ink-transition);
+}
+
+.homepageForm :global(.btn-primary):hover:not(:disabled) {
+  border-color: #7e1712;
+  background: #7e1712;
+  transform: translateY(-2px);
+}
+
+.homepageForm :global(.btn-primary):focus-visible {
+  outline: 3px solid #151515;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.homepageForm :global(.btn-primary):disabled {
+  border-color: #77716a;
+  background: #77716a;
+}
+
+.standaloneForm input[type="file"]::file-selector-button,
+.homepageForm input[type="file"]::file-selector-button {
+  min-height: 38px;
+  border: 0;
+  border-right: 1px solid currentColor;
+  margin: -6px 14px -6px -10px;
+  padding: 8px 14px;
+  background: transparent;
+  color: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .standaloneContainer {
+    padding: calc(var(--ink-nav-height) + 48px) 20px 80px;
+  }
+
+  .standaloneBookingCard {
+    width: 100%;
+  }
+
+  .homepageContainer {
+    padding: 72px 20px;
+  }
+
+  .homepageBookingCard {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .standaloneContainer {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .standaloneForm {
+    padding: 20px !important;
+  }
+
+  .homepageContainer {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .homepageForm {
+    padding: 20px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .standaloneForm {
+    animation: none;
+  }
+
+  .standaloneReviews .round-button {
+    transition: none;
+  }
+
+  .standaloneForm :global(.form-control),
+  .standaloneForm :global(.form-select),
+  .standaloneForm :global(.btn-primary) {
+    transition: none;
+  }
+
+  .homepageForm {
+    animation: none;
+  }
+
+  .homepageReviews .round-button,
+  .homepageForm :global(.btn-primary),
+  .homepageForm :global(.form-control),
+  .homepageForm :global(.form-select) {
+    transition: none;
+  }
+}

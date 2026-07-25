@@ -2,11 +2,37 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
 
+:root {
+  --ink-bg: #090909;
+  --ink-surface: #111111;
+  --ink-surface-raised: #171717;
+  --ink-paper: #ece8e1;
+  --ink-text: #f4f1ec;
+  --ink-muted: #b8b3ac;
+  --ink-accent: #b5261e;
+  --ink-accent-hover: #d13a31;
+  --ink-border: rgba(244, 241, 236, 0.16);
+  --ink-focus: #ef6259;
+  --ink-content: 1240px;
+  --ink-reading: 720px;
+  --ink-nav-height: 64px;
+  --ink-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ink-transition: 180ms var(--ink-ease);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0; /* Reset default margin */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background-color: rgb(3, 2, 2); /* Set the background color to white */
+  margin: 0;
+  background-color: var(--ink-bg);
+  color: var(--ink-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
 }
 
 html,
@@ -16,8 +42,34 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #__next {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--ink-accent);
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

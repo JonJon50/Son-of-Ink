@@ -2,13 +2,14 @@
 
 import React from "react";
 import Artist from "../components/artist/Artist";
+import styles from "./artist.module.css";
 
 const ArtistPage = () => {
   return (
-    <div>
+    <main className={styles.artistPage}>
       {/* Add any content specific to the artist page */}
-      <Artist showBioSection={true} />
-    </div>
+      <Artist showBioSection={true} directoryVariant />
+    </main>
   );
 };
 

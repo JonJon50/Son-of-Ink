@@ -1,104 +1,109 @@
 .siteFooter {
-    background-color: black;
-    color: white;
-    padding: 2rem 0;
-    margin-top: 3rem;
+  margin-top: auto;
+  border-top: 1px solid var(--ink-border);
+  padding: 56px 0;
+  background: var(--ink-bg);
+  color: var(--ink-muted);
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: start;
+  gap: 40px;
+  width: min(var(--ink-content), 100%);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* Left Content */
-.leftContent {
-    text-align: left;
-    font-size: 0.9rem;
-    flex: 1;
-    margin-bottom: 1rem; /* Spacing for mobile view */
-}
-
-/* Center Content */
-.centerContent {
-    text-align: center;
-    font-size: 0.9rem;
-    flex: 1;
-    margin-bottom: 1rem; /* Spacing for mobile view */
-}
-
-/* Right Content */
+.leftContent,
+.centerContent,
 .rightContent {
-    text-align: right;
-    font-size: 0.7rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Align content to the right */
+  min-width: 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
 }
 
-/* Link Styling */
-.link {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    margin-right: 10px; /* Add spacing for social icons */
+.leftContent {
+  text-align: left;
 }
 
-.link:hover {
-    color: red;
+.centerContent {
+  text-align: center;
 }
 
-/* Powered by Link Styling */
-.poweredByLink {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.rightContent {
+  text-align: right;
 }
 
-.poweredByLink:hover {
-    color: red; /* Matches hover effect for other links */
+.leftContent p,
+.centerContent p,
+.rightContent p {
+  margin: 0 0 8px;
 }
 
-/* Social Icons */
-.socialIcons {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* Spacing between icons */
-    margin-top: 5px; /* Add spacing above icons */
-}
-
-/* Icon Styling */
+.link,
+.poweredByLink,
 .icon {
-    color: white;
-    font-size: 1rem;
-    text-decoration: none;
+  color: var(--ink-text);
+  font-size: inherit;
+  text-decoration-color: transparent;
+  transition: color var(--ink-transition), text-decoration-color var(--ink-transition);
 }
 
+.link:hover,
+.poweredByLink:hover,
 .icon:hover {
-    color: red;
+  color: var(--ink-focus);
+  text-decoration-color: currentColor;
 }
 
-/* Responsive Adjustments */
+.link:active,
+.poweredByLink:active,
+.icon:active {
+  color: var(--ink-accent-hover);
+}
+
+.link:focus-visible,
+.poweredByLink:focus-visible,
+.icon:focus-visible {
+  outline: 3px solid var(--ink-focus);
+  outline-offset: 3px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.homepageFooter {
+  margin-top: 0;
+}
+
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .siteFooter {
+    padding: 48px 0;
+  }
 
-    .leftContent,
-    .centerContent,
-    .rightContent {
-        text-align: center;
-        margin-bottom: 1rem;
-        align-items: center; /* Center-align content for smaller screens */
-    }
+  .container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 20px;
+  }
 
-    .socialIcons {
-        justify-content: center;
-    }
+  .leftContent,
+  .centerContent,
+  .rightContent {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .poweredByLink,
+  .icon {
+    transition: none;
+  }
 }

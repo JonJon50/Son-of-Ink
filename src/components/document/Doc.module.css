@@ -1,67 +1,124 @@
-/* Doc.module.css */
-
 .container {
-  font-family: 'Arial', sans-serif;
-  padding: 40px; /* Add more padding */
-  max-width: 800px;
-  margin: 50px auto; /* Increase margin to center it more */
-  background: linear-gradient(to bottom, rgba(31, 170, 212, 0.95) 9%, rgb(4, 4, 4) 15%); /* Adjusted gradient stops */
-  color: #000;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  text-align: center;
-  margin-top: 10rem;
-  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+  width: min(900px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: calc(var(--ink-nav-height) + 72px) 0 104px;
+  color: var(--ink-text);
 }
 
 .title {
-  font-size: 36px; /* Larger font size for title */
-  margin-bottom: 30px; /* More space after the title */
-  color: #efecec; /* Darker color for the title */
-  font-family:Apple Chancery, cursive;
+  max-width: 760px;
+  margin: 0 0 56px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(2.7rem, 5vw, 4.75rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.guide {
+  max-width: var(--ink-reading);
+  border-top: 1px solid var(--ink-border);
 }
 
 .text {
-  text-align: justify;
-  margin-bottom: 20px; /* Space between paragraph and button */
-  color: #efecec;
+  margin: 0;
+  border-bottom: 1px solid var(--ink-border);
+  padding: 24px 0;
+  color: var(--ink-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: left;
+  transition: border-color var(--ink-transition), color var(--ink-transition),
+    transform var(--ink-transition);
 }
 
-/* Add to Doc.module.css */
-
-.downloadLink {
-  display: inline-block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: rgba(31, 170, 212, 0.95); /* Specific color for the button */
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+.text:hover {
+  border-color: rgba(244, 241, 236, 0.38);
+  color: var(--ink-text);
+  transform: translateX(4px);
 }
 
-.downloadLink:hover {
-  background-color: rgba(31, 170, 212, 1); /* Darker or different color on hover */
-  transform: translateY(-5px); /* Slight lift */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for depth */
+.consent {
+  max-width: var(--ink-reading);
+  margin-top: 64px;
+  border-left: 2px solid var(--ink-accent);
+  padding: 6px 0 6px 28px;
 }
 
 .download {
-  color: #fff;
-};
-/* Additional global styles if needed */
-.body {
-  background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%); /* Example gradient */
-  font-family: 'Arial', sans-serif;
-}
-.description {
-  margin-bottom: 20px; /* Space above the download link */
-  color: #efecec; /* Adjust color as needed */
-  font-size: 16px; /* Match with the font size of your text */
-  text-align: center; /* Center the text if desired */
+  margin: 0 0 12px;
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-/* Make sure to add media queries to handle different screen sizes */
+.downloadLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 1px solid var(--ink-accent);
+  border-radius: 4px;
+  padding: 12px 20px;
+  background: var(--ink-accent);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.downloadLink:hover {
+  border-color: var(--ink-accent-hover);
+  background: var(--ink-accent-hover);
+  color: #ffffff;
+}
+
+.downloadLink:focus-visible {
+  outline: 3px solid var(--ink-focus);
+  outline-offset: 3px;
+}
+
+.description {
+  margin: 20px 0 0;
+  color: var(--ink-muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 40px);
+    padding: calc(var(--ink-nav-height) + 48px) 0 80px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .consent {
+    margin-top: 48px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .downloadLink {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .downloadLink,
+  .text {
+    transition: none;
+  }
+}

@@ -1,13 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
+    const router = useRouter();
+
     return (
         <>
-            <footer className={styles.siteFooter}>
+            <footer className={`${styles.siteFooter} ${router.pathname === '/' ? styles.homepageFooter : ''}`}>
                 <div className={styles.container}>
                     {/* Left Content */}
                     <div className={styles.leftContent}>
@@ -52,7 +55,12 @@ const Footer = () => {
                     <div className={styles.rightContent}>
                         <p>
                             Powered by{' '}
-                            <a href="https://www.linkedin.com/in/john-hagens-55b15212a/" target="_blank" className={styles.link}>
+                            <a
+                                href="https://www.linkedin.com/in/john-hagens-55b15212a/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.link}
+                            >
                                 John Hagens
                             </a>
                         </p>

@@ -5,10 +5,10 @@ import Doc from '../components/document/Doc';
 
 const Prep = () => {
   return (
-    <div>
+    <main>
       <Doc />
       {/* You can add more components or content here if needed */}
-    </div>
+    </main>
   );
 };
 
