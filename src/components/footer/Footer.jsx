@@ -56,12 +56,12 @@ const Footer = () => {
                         <p>
                             Powered by{' '}
                             <a
-                                href="https://www.linkedin.com/in/john-hagens-55b15212a/"
+                                href="https://www.withandus.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.link}
                             >
-                                John Hagens
+                                Andus LLC
                             </a>
                         </p>
                     </div>
