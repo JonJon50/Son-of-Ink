@@ -75,3 +75,9 @@
     min-height: 420px;
   }
 }
+
+
+/* Aerial map hover treatment */
+.mapImage { transition: transform 400ms ease; }
+.imageFrame:hover .mapImage { transform: scale(1.04); }
+.imageFrame:hover .locationMarker { transform: translate(-50%, -100%) rotate(-45deg) scale(1.12); }

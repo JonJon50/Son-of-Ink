@@ -32,35 +32,6 @@ const artistsData = [
       { url: "/Assets/7.png" },
     ],
   },
-  {
-    id: 2,
-    name: "Lunchbox",
-    imageUrl: "/Assets/douglas.png", // Image URL for Art profile picture
-    bio: (
-      <>
-        <p>Hello, my name Lunchbox.</p>
-        <p>
-          I been tattooing for over 15 years, check out some of my merch @ <a
-            href="https://planetlbx.com/"
-            style={{ color: "red" }} // Corrected style object
-          >
-            PLANET LUNCHBOX
-          </a>
-          .
-        </p>
-        <p>Welcome to the home planet of earth bound Tattoo Artist! You can find all his Art and Merch exclusively here!
-          Ready for your next Tattoo? Just click and book your appointment today with he at Son of Ink! </p>
-
-      </>
-    ),
-    galleryImages: [
-      { url: "/Assets/f.png" },
-      { url: "/Assets/g.png" },
-      { url: "/Assets/h.png" },
-      { url: "/Assets/i.png" },
-      { url: "/Assets/j.png" },
-    ],
-  },
   // ... add more artists with their data
 ];
 
