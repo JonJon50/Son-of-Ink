@@ -211,6 +211,23 @@
   font-weight: 600;
 }
 
+.planNotice {
+  margin-bottom: 18px;
+  border: 1px solid rgba(239, 98, 89, 0.42);
+  border-radius: 4px;
+  padding: 12px 14px;
+  background: rgba(239, 98, 89, 0.09);
+  color: inherit;
+  font-weight: 600;
+}
+
+.selectedFiles {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
+
 .standaloneForm :global(.btn-primary) {
   min-width: 150px;
   min-height: 48px;

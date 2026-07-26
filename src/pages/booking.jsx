@@ -1,15 +1,16 @@
 // pages/booking.jxs
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BookingStyles from "../pages/booking.module.css"; 
 import Link from "next/link";
 import styles from "./booking.module.css";
 import { motion } from "framer-motion";
-
-const MAX_FILES = 5;
-const MAX_FILE_SIZE = 10 * 1024 * 1024;
-const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
-const ALLOWED_IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
+import {
+  ALLOWED_REFERENCE_IMAGE_EXTENSIONS,
+  MAX_REFERENCE_IMAGES,
+  formatTattooPlanDescription,
+  validateReferenceImages,
+} from "../utils/tattooPlan";
 
 const initValues = {
   firstName: "",
@@ -31,12 +32,34 @@ const slideIn = {
 
 const initState = { isLoading: false, error: "", values: initValues };
 
-const Booking = ({ showBackground = true, homepageVariant = false }) => {
+const Booking = ({
+  showBackground = true,
+  homepageVariant = false,
+  initialPlan = null,
+}) => {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
+  const [planMessage, setPlanMessage] = useState("");
 
   const { values, isLoading, error } = state;
+
+  useEffect(() => {
+    if (!initialPlan) return;
+
+    setSuccessMessage("");
+    setPlanMessage("Your tattoo plan has been added to this booking request.");
+    setState((prev) => ({
+      ...prev,
+      error: "",
+      values: {
+        ...prev.values,
+        tattoo: formatTattooPlanDescription(initialPlan),
+        bodyLocation: initialPlan.placement,
+        tattooPic: initialPlan.referenceImages,
+      },
+    }));
+  }, [initialPlan]);
 
   const onBlur = ({ target }) =>
     setTouched((prev) => ({ ...prev, [target.name]: true }));
@@ -65,35 +88,17 @@ const Booking = ({ showBackground = true, homepageVariant = false }) => {
     }));
   };
 
-  const hasValidImageExtension = (fileName) =>
-    ALLOWED_IMAGE_EXTENSIONS.some((extension) => fileName.toLowerCase().endsWith(extension));
-
   const handleFileChange = ({ target }) => {
     setSuccessMessage("");
+    setPlanMessage("");
     const selectedFiles = Array.from(target.files || []);
+    const validationError = validateReferenceImages(selectedFiles);
 
-    if (selectedFiles.length > MAX_FILES) {
+    if (validationError) {
       target.value = "";
       setState((prev) => ({
         ...prev,
-        error: `Please upload no more than ${MAX_FILES} image files.`,
-        values: { ...prev.values, tattooPic: [] },
-      }));
-      return;
-    }
-
-    const invalidFile = selectedFiles.find(
-      (file) =>
-        file.size > MAX_FILE_SIZE ||
-        !ALLOWED_IMAGE_TYPES.includes(file.type) ||
-        !hasValidImageExtension(file.name)
-    );
-
-    if (invalidFile) {
-      target.value = "";
-      setState((prev) => ({
-        ...prev,
-        error: "Please upload JPEG, PNG, WebP, or GIF images that are 10 MB or smaller.",
+        error: validationError,
         values: { ...prev.values, tattooPic: [] },
       }));
       return;
@@ -147,6 +152,7 @@ const Booking = ({ showBackground = true, homepageVariant = false }) => {
       await submitContactForm(values);
       setTouched({});
       setState(initState);
+      setPlanMessage("");
       setSuccessMessage("Your booking request was sent successfully.");
     } catch (error) {
       setState((prev) => ({
@@ -211,6 +217,11 @@ const Booking = ({ showBackground = true, homepageVariant = false }) => {
               } ${!homepageVariant ? BookingStyles.standaloneForm : ""}`}
               onSubmit={handleSubmit}
             >
+              {planMessage && (
+                <div className={BookingStyles.planNotice} role="status">
+                  {planMessage}
+                </div>
+              )}
               <div className="mb-3">
                 <input
                   type="text"
@@ -322,12 +333,21 @@ const Booking = ({ showBackground = true, homepageVariant = false }) => {
                   type="file"
                   id="tattooPic"
                   name="tattooPic"
-                  accept=".jpg,.jpeg,.png,.webp,.gif,image/jpeg,image/png,image/webp,image/gif"
+                  accept={ALLOWED_REFERENCE_IMAGE_EXTENSIONS.join(",")}
                   multiple
                   onChange={handleFileChange}
                   className="form-control"
                 />
-                <div>File Limit: 5 images, 10MB each</div>
+                <div>
+                  File Limit: {MAX_REFERENCE_IMAGES} images, 10MB each
+                </div>
+                {values.tattooPic.length > 0 && (
+                  <ul className={BookingStyles.selectedFiles}>
+                    {values.tattooPic.map((file) => (
+                      <li key={`${file.name}-${file.lastModified}`}>{file.name}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               {successMessage && (

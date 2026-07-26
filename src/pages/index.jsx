@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Home from "../components/HomePage/Home";
 import Artist from "../components/artist/Artist";
@@ -7,6 +7,8 @@ import Statistics from "../components/Statistics/statistics";
 import styles from "./index.module.css";
 
 const HomePage = () => {
+  const [tattooPlan, setTattooPlan] = useState(null);
+
   return (
     <>
       <Head>
@@ -20,7 +22,7 @@ const HomePage = () => {
       <main className={styles.homepage}>
         {/* Hero Section or Main Homepage Content */}
         <section id="home" className={styles.heroSection}>
-          <Home />
+          <Home onPlanComplete={setTattooPlan} />
         </section>
 
         {/* Artist Section */}
@@ -34,6 +36,7 @@ const HomePage = () => {
             showBackground={false}
             showReviewsButton={false}
             homepageVariant
+            initialPlan={tattooPlan}
           />
         </section>
 
