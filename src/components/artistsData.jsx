@@ -10,7 +10,7 @@ const artistsData = [
       <>
         <p>Hello, my name is Theron.</p>
         <p>
-          I am the owner and operator of,  <a
+           I’m a artist of,  <a
             href="https://www.instagram.com/theronissac/"
             style={{ color: "red" }} // Corrected style object
           >
